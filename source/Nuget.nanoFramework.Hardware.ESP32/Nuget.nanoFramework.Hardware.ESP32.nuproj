@@ -46,7 +46,7 @@
     </Dependency>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>523F36D1-7C31-44DF-AF89-F0A2D532FFD9</ProjectGuid>
+    <ProjectGuid>04FF2AEC-F12E-4685-9E2D-D8CF0C958C0F</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <NuProjPath>..\packages\NuProj.0.20.4-beta\tools\</NuProjPath>
