@@ -50,6 +50,8 @@
   before_build:
   - ps: >-
 
+      nuget sources add -name MyGet -Source https://www.myget.org/F/nanoframework-dev
+
       nuget restore source\nanoFramework.Hardware.Esp32.sln
 
       gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
@@ -143,6 +145,8 @@
 
   before_build:
   - ps: >-
+
+      nuget sources add -name MyGet -Source https://www.myget.org/F/nanoframework-dev
 
       nuget restore source\nanoFramework.Hardware.Esp32.sln
 
@@ -252,6 +256,8 @@
 
   before_build:
   - ps: >-
+
+      nuget sources add -name MyGet -Source https://www.myget.org/F/nanoframework-dev
 
       nuget restore source\nanoFramework.Hardware.Esp32.sln
         
