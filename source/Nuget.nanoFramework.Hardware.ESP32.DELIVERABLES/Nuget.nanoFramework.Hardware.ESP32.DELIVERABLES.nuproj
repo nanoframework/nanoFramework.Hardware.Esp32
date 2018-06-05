@@ -56,9 +56,9 @@
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>nanoFramework.Nuget.Hardware.ESP32.DELIVERABLES</Id>
+    <Id>nanoFramework.Hardware.ESP32.DELIVERABLES</Id>
     <Version>$(GitVersion_NuGetVersionV2)</Version>
-    <Title>nanoFramework.Nuget.Hardware.ESP32.DELIVERABLES</Title>
+    <Title>nanoFramework.Hardware.ESP32.DELIVERABLES</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
     <Summary>nanoFramework.Hardware.ESP32.DELIVERABLES is not meant for development.</Summary>
