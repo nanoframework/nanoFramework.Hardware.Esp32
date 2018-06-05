@@ -56,13 +56,13 @@
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>nanoFramework.Hardware.ESP32.DELIVERABLES</Id>
+    <Id>nanoFramework.Hardware.Esp32.DELIVERABLES</Id>
     <Version>$(GitVersion_NuGetVersionV2)</Version>
-    <Title>nanoFramework.Hardware.ESP32.DELIVERABLES</Title>
+    <Title>nanoFramework.Hardware.Esp32.DELIVERABLES</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
-    <Summary>nanoFramework.Hardware.ESP32.DELIVERABLES is not meant for development.</Summary>
-    <Description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the Hardware.ESP32 assembly for nanoFramework. These are for testing purposes and for updating the native code base of the core library.</Description>
+    <Summary>nanoFramework.Hardware.Esp32.DELIVERABLES is not meant for development.</Summary>
+    <Description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the Hardware.Esp32 assembly for nanoFramework. These are for testing purposes and for updating the native code base of the core library.</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>https://github.com/nanoframework/nf-class-libraries</ProjectUrl>
