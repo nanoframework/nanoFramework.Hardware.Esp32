@@ -65,7 +65,7 @@
     <Description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the Hardware.Esp32 assembly for nanoFramework. These are for testing purposes and for updating the native code base of the core library.</Description>
     <ReleaseNotes>
     </ReleaseNotes>
-    <ProjectUrl>https://github.com/nanoframework/nf-class-libraries</ProjectUrl>
+    <ProjectUrl>https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32</ProjectUrl>
     <LicenseUrl>
     </LicenseUrl>
     <Copyright>Copyright (c) 2017 The nanoFramework project contributors</Copyright>
