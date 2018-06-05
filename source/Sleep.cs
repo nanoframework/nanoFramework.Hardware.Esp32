@@ -9,19 +9,19 @@ namespace nanoFramework.Hardware.Esp32
     public class Sleep
     {
         /// <summary>
-        /// Wakup modeused by EnableWakeupByMultiPins
+        /// Wakeup mode used by EnableWakeupByMultiPins
         /// </summary>
-        public enum WakupMode
+        public enum WakeupMode
         {
             /// <summary>
-            /// Wakup when all pins are low
+            /// Wakeup when all pins are low
             /// </summary>
-            WakeUpAllLow = 0,
+            AllLow = 0,
 
             /// <summary>
             /// Wakeup when any pin is high
             /// </summary>
-            WakupUpAnyHigh = 1
+            AnyHigh = 1
         };
 
         /// <summary>
@@ -32,27 +32,27 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             /// Wakeup not caused from exit from sleep
             /// </summary>
-            ESP_SLEEP_WAKEUP_UNDEFINED = 0,
+            Undefined = 0,
             /// <summary>
             /// Wakeup caused by external signal using RTC_IO
             /// </summary>
-            ESP_SLEEP_WAKEUP_EXT0,         
+            Ext0,         
             /// <summary>
             /// Wakeup caused by external signal using RTC_CNTL
             /// </summary>
-            ESP_SLEEP_WAKEUP_EXT1,       
+            Ext1,       
             /// <summary>
             /// Wakeup caused by timer
             /// </summary>
-            ESP_SLEEP_WAKEUP_TIMER,        
+            Timer,        
             /// <summary>
             ///  Wakeup caused by touchpad
             /// </summary>
-            ESP_SLEEP_WAKEUP_TOUCHPAD,     
+            TouchPad,     
             /// <summary>
             ///  Wakeup caused by ULP program
             /// </summary>
-            ESP_SLEEP_WAKEUP_ULP           
+            Ulp          
         };
 
 
@@ -65,79 +65,79 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             /// No wake up pin
             /// </summary>
-            none  = 0,
+            None  = 0,
             /// <summary>
             /// Gpio Pin 1 used for wakeup
             /// </summary>
-            pin0  = 1,
+            Pin0  = 1,
             /// <summary>
             /// Gpio Pin 2 used for wakeup
             /// </summary>
-            pin2 = 1 << 2,
+            Pin2 = 1 << 2,
             /// <summary>
             /// Gpio Pin 4 used for wakeup
             /// </summary>
-            pin4 = 1 << 4,
+            Pin4 = 1 << 4,
             /// <summary>
             /// Gpio Pin 12 used for wakeup
             /// </summary>
-            pin12 = 1 << 12,
+            Pin12 = 1 << 12,
             /// <summary>
             /// Gpio Pin 13 used for wakeup
             /// </summary>
-            pin13 = 1 << 13,
+            Pin13 = 1 << 13,
             /// <summary>
             /// Gpio Pin 14 used for wakeup
             /// </summary>
-            pin14 = 1 << 14,
+            Pin14 = 1 << 14,
             /// <summary>
             /// Gpio Pin 15 used for wakeup
             /// </summary>
-            pin15 = 1 << 15,
+            Pin15 = 1 << 15,
             /// <summary>
             /// Gpio Pin 25 used for wakeup
             /// </summary>
-            pin25 = 1 << 25,
+            Pin25 = 1 << 25,
             /// <summary>
             /// Gpio Pin 26 used for wakeup
             /// </summary>
-            pin26 = 1 << 26,
+            Pin26 = 1 << 26,
             /// <summary>
             /// Gpio Pin 27 used for wakeup
             /// </summary>
-            pin27 = 1 << 27,
+            Pin27 = 1 << 27,
             /// <summary>
             /// Gpio Pin 32 used for wakeup
             /// </summary>
-            pin32 = 1 << 32,
+            Pin32 = 1 << 32,
             /// <summary>
             /// Gpio Pin 33 used for wakeup
             /// </summary>
-            pin33 = 1 << 33,
+            Pin33 = 1 << 33,
             /// <summary>
             /// Gpio Pin 34 used for wakeup
             /// </summary>
-            pin34 = 1 << 34,
+            Pin34 = 1 << 34,
             /// <summary>
             /// Gpio Pin 35 used for wakeup
             /// </summary>
-            pin35 = 1 << 35,
+            Pin35 = 1 << 35,
             /// <summary>
             /// Gpio Pin 36 used for wakeup
             /// </summary>
-            pin36 = 1 << 36,
+            Pin36 = 1 << 36,
             /// <summary>
             /// Gpio Pin 37 used for wakeup
             /// </summary>
-            pin37 = 1 << 37,
+            Pin37 = 1 << 37,
             /// <summary>
             /// Gpio Pin 38 used for wakeup
             /// </summary>
-            pin38 = 1 << 38,
+            Pin38 = 1 << 38,
             /// <summary>
             /// Gpio Pin 39 used for wakeup
             /// </summary>
-            pin39 = 1 << 39
+            Pin39 = 1 << 39
         };
 
         /// <summary>
@@ -148,47 +148,47 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             ///  Touch pad channel 0 is GPIO4
             /// </summary>
-            TOUCH_PAD_NUM0 = 0,
+            Num0 = 0,
             /// <summary>
             /// Touch pad channel 1 is GPIO0
             /// </summary>
-            TOUCH_PAD_NUM1,
+            Num1,
             /// <summary>
             /// Touch pad channel 2 is GPIO2
             /// </summary>
-            TOUCH_PAD_NUM2,
+            Num2,
             /// <summary>
             /// Touch pad channel 3 is GPIO15
             /// </summary>
-            TOUCH_PAD_NUM3,
+            Num3,
             /// <summary>
             /// Touch pad channel 4 is GPIO13
             /// </summary>
-            TOUCH_PAD_NUM4,
+            Num4,
             /// <summary>
             /// Touch pad channel 5 is GPIO12
             /// </summary>
-            TOUCH_PAD_NUM5,
+            Num5,
             /// <summary>
             /// Touch pad channel 6 is GPIO14
             /// </summary>
-            TOUCH_PAD_NUM6,
+            Num6,
             /// <summary>
             /// Touch pad channel 7 is GPIO27
             /// </summary>
-            TOUCH_PAD_NUM7,
+            Num7,
             /// <summary>
             /// Touch pad channel 8 is GPIO33
             /// </summary>
-            TOUCH_PAD_NUM8,
+            Num8,
             /// <summary>
             /// Touch pad channel 9 is GPIO32
             /// </summary>
-            TOUCH_PAD_NUM9,     
+            Num9,     
             /// <summary>
             /// Number returned when no touch pad used on wakeup 
             /// </summary>
-            TOUCH_PAD_NONE,
+            None
         };
 
         /// <summary>
@@ -196,11 +196,11 @@ namespace nanoFramework.Hardware.Esp32
         /// </summary>
         /// <param name="time"></param>
         /// <returns></returns>
-        public static Errors.Esp EnableWakupByTimer(TimeSpan time)
+        public static EspNativeError EnableWakwupByTimer(TimeSpan time)
         {
             UInt64 time_us = (UInt64)time.Ticks / 10;
 
-            return (Errors.Esp)NativeEnableWakupByTimer(time_us);
+            return (EspNativeError)NativeEnableWakeupByTimer(time_us);
         }
 
         /// <summary>
@@ -210,9 +210,9 @@ namespace nanoFramework.Hardware.Esp32
         /// 0,2,4,12->15,25->27,32->39</param>
         /// <param name="level"></param>
         /// <returns></returns>
-        public static Errors.Esp EnableWakupByPin(WakeupGpioPin pin, int level)
+        public static EspNativeError EnableWakeupByPin(WakeupGpioPin pin, int level)
         {
-            return NativeEnableWakupByPin(pin, level);
+            return NativeEnableWakeupByPin(pin, level);
         }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <param name="pins"></param>
         /// <param name="mode"></param>
         /// <returns></returns>
-        public static Errors.Esp EnableWakeupByMultiPins(WakeupGpioPin pins, WakupMode mode)
+        public static EspNativeError EnableWakeupByMultiPins(WakeupGpioPin pins, WakeupMode mode)
         {
             return NativeEnableWakeupByMultiPins( pins, mode);
         }
@@ -234,7 +234,7 @@ namespace nanoFramework.Hardware.Esp32
         /// Enable wakeup by Touchpad
         /// </summary>
         /// <returns></returns>
-        public static Errors.Esp EnableWakeupByTouchPad()
+        public static EspNativeError EnableWakeupByTouchPad()
         {
             return NativeEnableWakeupByTouchPad();
         }
@@ -243,7 +243,7 @@ namespace nanoFramework.Hardware.Esp32
         /// Enter light sleep with the configured wakeup options. 
         /// </summary>
         /// <returns>Return ESP_ERR_INVALID_STATE if Wifi or BT not stopped.</returns>
-        public static Errors.Esp StartLightSleep()
+        public static EspNativeError StartLightSleep()
         {
             return NativeStartLightSleep();
         }
@@ -254,7 +254,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <remarks>
         /// If no sources configured then it will be a indefinate sleep.</remarks>
         /// <returns>ESP_OK if ok</returns>
-        public static Errors.Esp StartDeepSleep()
+        public static EspNativeError StartDeepSleep()
         {
             return NativeStartDeepSleep();
         }
@@ -290,22 +290,22 @@ namespace nanoFramework.Hardware.Esp32
         #region extenal calls to native implementations
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern Errors.Esp NativeEnableWakupByTimer(UInt64 time_us);
+        private static extern EspNativeError NativeEnableWakeupByTimer(UInt64 time_us);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern Errors.Esp NativeEnableWakupByPin(WakeupGpioPin pin, int level);
+        private static extern EspNativeError NativeEnableWakeupByPin(WakeupGpioPin pin, int level);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern Errors.Esp NativeEnableWakeupByMultiPins(WakeupGpioPin pins, WakupMode mode);
+        private static extern EspNativeError NativeEnableWakeupByMultiPins(WakeupGpioPin pins, WakeupMode mode);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern Errors.Esp NativeEnableWakeupByTouchPad();
+        private static extern EspNativeError NativeEnableWakeupByTouchPad();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern Errors.Esp NativeStartLightSleep();
+        private static extern EspNativeError NativeStartLightSleep();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern Errors.Esp NativeStartDeepSleep();
+        private static extern EspNativeError NativeStartDeepSleep();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern WakeupCause NativeGetWakeupCause();

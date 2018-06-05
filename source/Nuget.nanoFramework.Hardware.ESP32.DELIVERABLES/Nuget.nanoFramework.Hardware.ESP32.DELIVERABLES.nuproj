@@ -35,21 +35,21 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.CoreLibrary">
-      <Version>[1.0.0-preview042]</Version>
+      <Version>[1.0.0-preview050]</Version>
     </Dependency>
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.Runtime.Events">
-      <Version>[1.0.0-preview167]</Version>
+      <Version>[1.0.0-preview176]</Version>
     </Dependency>
   </ItemGroup>
   <ItemGroup>
-    <Dependency Include="nanoFramework.System.DateTime">
-      <Version>[1.0.0-preview007]</Version>
+    <Dependency Include="nanoFramework.Windows.Devices.Gpio">
+      <Version>[1.0.0-preview184]</Version>
     </Dependency>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>8FD36AD6-387C-48F0-A695-52D9149216FB</ProjectGuid>
+    <ProjectGuid>19E72838-7849-4917-92C2-5E84A5BB8A0D</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <NuProjPath>..\packages\NuProj.0.20.4-beta\tools\</NuProjPath>
