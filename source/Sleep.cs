@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 
 namespace nanoFramework.Hardware.Esp32
@@ -196,7 +196,7 @@ namespace nanoFramework.Hardware.Esp32
         /// </summary>
         /// <param name="time"></param>
         /// <returns></returns>
-        public static EspNativeError EnableWakwupByTimer(TimeSpan time)
+        public static EspNativeError EnableWakeupByTimer(TimeSpan time)
         {
             UInt64 time_us = (UInt64)time.Ticks / 10;
 
