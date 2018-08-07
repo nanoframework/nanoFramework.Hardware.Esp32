@@ -32,17 +32,17 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.CoreLibrary">
-      <Version>[1.0.0-preview060]</Version>
+      <Version>[1.0.0-preview062]</Version>
     </Dependency>
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.Runtime.Events">
-      <Version>[1.0.0-preview179]</Version>
+      <Version>[1.0.0-preview180]</Version>
     </Dependency>
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.Windows.Devices.Gpio">
-      <Version>[1.0.0-preview189]</Version>
+      <Version>[1.0.0-preview190]</Version>
     </Dependency>
   </ItemGroup>
   <PropertyGroup Label="Globals">
