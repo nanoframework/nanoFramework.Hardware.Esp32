@@ -1,10 +1,11 @@
+[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Hardware.Esp32.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)  [![Discord](https://img.shields.io/discord/478725473862549535.svg)](https://discord.gg/gCyBu8T)
+
+
 ![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
 
 -----
 
 ### Welcome to the **nanoFramework** nanoFramework.Hardware.Esp32 Library repository!
-
-[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Hardware.Esp32.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
 
 
 ## Build status
@@ -18,7 +19,7 @@
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
 
-Join our Discord community [here](https://discord.gg/XYpqcYW).
+Join our Discord community [here](https://discord.gg/gCyBu8T).
 
 
 ## Credits
