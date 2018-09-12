@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.Runtime.Events">
-      <Version>[1.0.0-preview183]</Version>
+      <Version>[1.0.0-preview188]</Version>
     </Dependency>
   </ItemGroup>
   <ItemGroup>
