@@ -25,7 +25,7 @@
   environment:
     APPVEYOR_SAVE_CACHE_ON_ERROR: true
     matrix:
-      - RUBY_VERSION: 24
+      - RUBY_VERSION: 25
     GitHubUserName:
       secure: 7OBtVAMTodMWK20wg6pGnQ==
     GitHubUserEmail:
@@ -122,6 +122,11 @@
   skip_tags: false
 
   test: off
+
+  environment:
+    APPVEYOR_SAVE_CACHE_ON_ERROR: true
+    matrix:
+      - RUBY_VERSION: 25
   
   pull_requests:
     do_not_increment_build_number: true
@@ -139,6 +144,7 @@
     verbosity: minimal
 
   install:
+    - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
     - choco install gitversion.portable -pre -y
     - ps: .\install-vsix-appveyor.ps1
 
@@ -228,7 +234,7 @@
 
   environment:
     matrix:
-      - RUBY_VERSION: 24
+      - RUBY_VERSION: 25
     GitHubUserName:
       secure: 7OBtVAMTodMWK20wg6pGnQ==
     GitHubUserEmail:
