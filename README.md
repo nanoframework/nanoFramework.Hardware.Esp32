@@ -12,8 +12,8 @@
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| nanoFramework.Hardware.Esp32 | [![Build status](https://ci.appveyor.com/api/projects/status/2qjp0dkdv00uxst8/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-nanoframework-hardware-esp32/branch/master) | [![NuGet](https://img.shields.io/nuget/vpre/nanoframework-hardware-esp32.svg)](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/)  |
-| nanoFramework.Hardware.Esp32 (preview) | [![Build status](https://ci.appveyor.com/api/projects/status/2qjp0dkdv00uxst8/branch/develop?svg=true)](https://ci.appveyor.com/project/nfbot/lib-nanoframework-hardware-esp32/branch/develop) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoframework-hardware-esp32.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Hardware.Esp32) |
+| nanoFramework.Hardware.Esp32 | [![Build status](https://ci.appveyor.com/api/projects/status/2qjp0dkdv00uxst8/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-nanoframework-hardware-esp32/branch/master) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Hardware.Esp32.svg)](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/)  |
+| nanoFramework.Hardware.Esp32 (preview) | [![Build status](https://ci.appveyor.com/api/projects/status/2qjp0dkdv00uxst8/branch/develop?svg=true)](https://ci.appveyor.com/project/nfbot/lib-nanoframework-hardware-esp32/branch/develop) |  [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.Hardware.Esp32.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Hardware.Esp32) |
 
 ## Feedback and documentation
 
