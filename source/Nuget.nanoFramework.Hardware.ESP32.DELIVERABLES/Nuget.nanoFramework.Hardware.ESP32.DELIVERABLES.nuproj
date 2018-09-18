@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.Windows.Devices.Gpio">
-      <Version>[1.0.0-preview197]</Version>
+      <Version>[1.0.0-preview199]</Version>
     </Dependency>
   </ItemGroup>
   <PropertyGroup Label="Globals">
