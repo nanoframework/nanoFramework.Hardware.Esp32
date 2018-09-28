@@ -57,6 +57,9 @@
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
+    <Compile Include="HighResEventListener.cs" />
+    <Compile Include="HighResTimer.cs" />
+    <Compile Include="HighResTimerEvent.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="DeviceTypePins.cs" />

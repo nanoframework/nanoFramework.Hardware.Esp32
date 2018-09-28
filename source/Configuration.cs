@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// Copyright (c) 2018 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System;
 using Windows.Devices.Gpio;
 
 namespace nanoFramework.Hardware.Esp32
