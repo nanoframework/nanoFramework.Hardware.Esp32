@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.CoreLibrary">
-      <Version>[1.0.0-preview073]</Version>
+      <Version>[1.0.1-preview094]</Version>
     </Dependency>
   </ItemGroup>
   <ItemGroup>
