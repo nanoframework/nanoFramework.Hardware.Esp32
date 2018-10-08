@@ -61,8 +61,6 @@
 
       msbuild source\nanoFramework.Hardware.Esp32.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-      msbuild source\nanoFramework.Hardware.Esp32.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
   before_deploy:
   # need this to keep ruby happy
   - ps: md c:\tmp
@@ -155,14 +153,12 @@
 
       nuget restore source\nanoFramework.Hardware.Esp32.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      # gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
 
   build_script:
   - ps: >-
 
       msbuild source\nanoFramework.Hardware.Esp32.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-      msbuild source\nanoFramework.Hardware.Esp32.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
   on_success:
   # for this environment variable to work here it has to be set in AppVeyor UI
@@ -174,12 +170,6 @@
     name: Nuget_Packages
 
   deploy:
-  # the provider is actually MyGet but works the same as NuGet
-  - provider: NuGet
-    server: https://www.myget.org/F/nanoframework-dev/api/v2/package
-    api_key:
-      secure: 0drE56FivPFYI3oVZWcVFTpjOXSqyjT6kGangIxFRcRLqMhV3lQHqUButuuiPM+N
-    skip_symbols: true
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework.Hardware.Esp32 Library v$(gitversion_semver)
@@ -271,8 +261,6 @@
   - ps: >-
 
       msbuild source\nanoFramework.Hardware.Esp32.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-      msbuild source\nanoFramework.Hardware.Esp32.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
   before_deploy:
   # need this to keep ruby happy
