@@ -25,13 +25,15 @@
   environment:
     APPVEYOR_SAVE_CACHE_ON_ERROR: true
     matrix:
-      - RUBY_VERSION: 25
+      - RUBY_VERSION: 24
     GitHubUserName:
       secure: 7OBtVAMTodMWK20wg6pGnQ==
     GitHubUserEmail:
-      secure: HeABB68Sn/Lhbd69C2cUcfWv0ab/rMDEcOLvcxf8gGw=
+      secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
     GitHubToken:
-      secure: WOqlCsnwTzfDPJFoNV/h8mEESIpG/9uFn1u6oE8hGZtXwIQQlsY+NyyLt9Y5xoFn
+      secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
+    GitRestAuth:
+      secure: E3bCMe4LtDdAhHSYRcLp0N6DixJe1m8TNxhYeJW/GnqM3WXdRqsgkHSbwootPjJQtOQJrps4twmzTVzofLSVgPgbzU8PxU0AkJV7zwkyVOE=
 
   init:
     - git config --global core.autocrlf true
@@ -42,8 +44,9 @@
 
   install:
     - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+    - bundle config --local path vendor/bundle
+    - gem install bundler --quiet --no-ri --no-rdoc
     - gem install github_changelog_generator --quiet --no-ri --no-rdoc
-    # - bundle install
     - choco install gitversion.portable -pre -y
     - ps: .\install-vsix-appveyor.ps1
 
@@ -54,7 +57,7 @@
 
       nuget restore source\nanoFramework.Hardware.Esp32.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo "source\nanoFramework.Runtime.Events\Properties\AssemblyInfo.cs"
 
   build_script:
   - ps: >-
@@ -62,12 +65,10 @@
       msbuild source\nanoFramework.Hardware.Esp32.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
   before_deploy:
-  # need this to keep ruby happy
-  - ps: md c:\tmp
-  - bundle exec github_changelog_generator --token %GitHubToken%
-  # add here the updated changelog and the updated assembly info files
-  - git add .
-  - git commit --amend --no-edit
+    - ps:  >-
+        .\commit-assemblyinfo-changes.ps1
+        
+        .\generate-change-log.ps1
 
   artifacts:
   - path: '**\bin\Release\*.nupkg'
@@ -83,7 +84,7 @@
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework.Hardware.Esp32 Library v$(gitversion_semver)
-    description: '[CHANGELOG.md](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Runtime.Events/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
@@ -93,11 +94,11 @@
 
   # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
   on_failure:
-  - ps: |
+    - ps: |
 
-        cd ..
+          &  cd $env:APPVEYOR_BUILD_FOLDER > $null
 
-        .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+          .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
 
   cache:
     - source\packages -> **source\packages.config
@@ -116,15 +117,9 @@
 
   skip_branch_with_pr: true
 
-  # Do not build on tags
   skip_tags: false
 
   test: off
-
-  environment:
-    APPVEYOR_SAVE_CACHE_ON_ERROR: true
-    matrix:
-      - RUBY_VERSION: 25
   
   pull_requests:
     do_not_increment_build_number: true
@@ -141,8 +136,31 @@
   build:
     verbosity: minimal
 
+  environment:
+    APPVEYOR_SAVE_CACHE_ON_ERROR: true
+    matrix:
+      - RUBY_VERSION: 24
+    GitHubUserName:
+      secure: 7OBtVAMTodMWK20wg6pGnQ==
+    GitHubUserEmail:
+      secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
+    GitHubToken:
+      secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
+    GitRestAuth:
+      secure: E3bCMe4LtDdAhHSYRcLp0N6DixJe1m8TNxhYeJW/GnqM3WXdRqsgkHSbwootPjJQtOQJrps4twmzTVzofLSVgPgbzU8PxU0AkJV7zwkyVOE=
+
+  init:
+    - git config --global core.autocrlf true
+    - git config --global credential.helper store
+    - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GitHubToken):x-oauth-basic@github.com`n"
+    - git config --global user.email "%GitHubUserEmail%"
+    - git config --global user.name "%GitHubUserName%"
+
   install:
     - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+    - bundle config --local path vendor/bundle
+    - gem install bundler --quiet --no-ri --no-rdoc
+    - gem install github_changelog_generator --quiet --no-ri --no-rdoc
     - choco install gitversion.portable -pre -y
     - ps: .\install-vsix-appveyor.ps1
 
@@ -153,7 +171,7 @@
 
       nuget restore source\nanoFramework.Hardware.Esp32.sln
 
-      # gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo "source\nanoFramework.Runtime.Events\Properties\AssemblyInfo.cs"
 
   build_script:
   - ps: >-
@@ -173,7 +191,7 @@
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework.Hardware.Esp32 Library v$(gitversion_semver)
-    description: '[CHANGELOG.md](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/blob/develop/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\npackage: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Runtime.Events/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
@@ -181,13 +199,19 @@
     prerelease: true
     force_update: true
 
+  before_deploy:
+    - ps:  >-
+        .\commit-assemblyinfo-changes.ps1
+
+        .\generate-change-log.ps1
+
   # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
   on_failure:
-  - ps: |
+    - ps: |
 
-        cd ..
+          &  cd $env:APPVEYOR_BUILD_FOLDER > $null
 
-        .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+          .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
 
   cache:
     - source\packages -> **source\packages.config
@@ -205,9 +229,6 @@
 
   skip_branch_with_pr: true
 
-  # OK to get only last commit as we don't need history
-  clone_depth: 1
-
   # Skipping commits affecting specific files
   skip_commits:
     files:
@@ -223,14 +244,17 @@
   test: off
 
   environment:
+    APPVEYOR_SAVE_CACHE_ON_ERROR: true
     matrix:
-      - RUBY_VERSION: 25
+      - RUBY_VERSION: 24
     GitHubUserName:
       secure: 7OBtVAMTodMWK20wg6pGnQ==
     GitHubUserEmail:
-      secure: HeABB68Sn/Lhbd69C2cUcfWv0ab/rMDEcOLvcxf8gGw=
+      secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
     GitHubToken:
-      secure: WOqlCsnwTzfDPJFoNV/h8mEESIpG/9uFn1u6oE8hGZtXwIQQlsY+NyyLt9Y5xoFn
+      secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
+    GitRestAuth:
+      secure: E3bCMe4LtDdAhHSYRcLp0N6DixJe1m8TNxhYeJW/GnqM3WXdRqsgkHSbwootPjJQtOQJrps4twmzTVzofLSVgPgbzU8PxU0AkJV7zwkyVOE=
 
   init:
     - git config --global core.autocrlf true
@@ -244,7 +268,6 @@
     - bundle config --local path vendor/bundle
     - gem install bundler --quiet --no-ri --no-rdoc
     - gem install github_changelog_generator --quiet --no-ri --no-rdoc
-    # - bundle install
     - choco install gitversion.portable -pre -y
     - ps: .\install-vsix-appveyor.ps1
 
@@ -255,20 +278,17 @@
 
       nuget restore source\nanoFramework.Hardware.Esp32.sln
         
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo "source\nanoFramework.Runtime.Events\Properties\AssemblyInfo.cs"
 
   build_script:
   - ps: >-
 
       msbuild source\nanoFramework.Hardware.Esp32.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-  before_deploy:
-  # need this to keep ruby happy
-  - ps: md c:\tmp
-  - bundle exec github_changelog_generator --token %GitHubToken%
-  # add here the updated changelog and the updated assembly info files
-  - git add .
-  - git commit --amend --no-edit
+  on_success:
+  # for this environment variable to work here it has to be set in AppVeyor UI
+  - nuget push source\Nuget.nanoFramework.Runtime.Events\bin\Release\nanoFramework.Runtime.Events.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
+  - nuget push source\Nuget.nanoFramework.Runtime.Events.DELIVERABLES\bin\Release\nanoFramework.Runtime.Events.DELIVERABLES.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
 
   artifacts:
   - path: '**\bin\Release\*.nupkg'
@@ -283,7 +303,7 @@
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework.Hardware.Esp32 Library v$(gitversion_semver)
-    description: '[CHANGELOG.md](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Runtime.Events/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
@@ -291,13 +311,19 @@
     prerelease: true
     force_update: true
 
+  before_deploy:
+    - ps:  >-
+        .\commit-assemblyinfo-changes.ps1
+
+        .\generate-change-log.ps1
+
   # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
   on_failure:
-  - ps: |
+    - ps: |
 
-        cd ..
+          &  cd $env:APPVEYOR_BUILD_FOLDER > $null
 
-        .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+          .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
 
   cache:
     - source\packages -> **source\packages.config
