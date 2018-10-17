@@ -11,6 +11,7 @@
 
 **Documentation and other chores:**
 
+- Merge 'develop' for Release 1.0.0 [\#26](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/26)
 - Update 3 NuGet dependencies [\#25](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/25)
 - Bumps nanoFramework.Windows.Devices.Gpio from 1.0.0-preview226 to 1.0.0-preview228 [\#24](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/24)
 - Update 3 NuGet dependencies [\#23](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/23)
