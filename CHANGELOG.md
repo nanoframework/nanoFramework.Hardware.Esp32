@@ -1,26 +1,25 @@
 # Change Log
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/tree/HEAD)
-
+## [v1.0.0](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.0) (2018-10-17)
 **Implemented enhancements:**
 
-- Update snk to match mscorlib [\#17](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/17)
-- Add WiFi event category [\#14](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/14)
-- Add SerialDevice event type [\#11](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/11)
-- Update mscorlib reference to 1.0.0-preview049 [\#8](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/8)
-- Added the Network event in the enum [\#7](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/7)
-- Update nuget refs [\#5](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/5)
-- Revert DateTime package \(now it's back in mscorlib\) [\#4](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/4)
-- Update corlib reference [\#2](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/2)
-- Update project [\#1](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/1)
+- Update strong name key to match mscorlib [\#12](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/12)
+
+**Fixed bugs:**
+
+- Fix typo in WakeupByTimer method name [\#4](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/4)
 
 **Documentation and other chores:**
 
-- 📦 Bumps nanoFramework.CoreLibrary from 1.0.1-preview116 to 1.0.1-preview118 [\#25](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/25)
-- 📦 Bumps nanoFramework.CoreLibrary from 1.0.1-preview103 to 1.0.1-preview116 [\#24](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/24)
-- Bump nanoFramework.CoreLibrary from 1.0.0-preview073 to 1.0.1-preview094 in /source [\#18](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/18)
-- Fix nuget version dependency [\#16](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/16)
-- Bump nanoFramework.CoreLibrary from 1.0.0-preview062 to 1.0.0-preview073 in /source [\#15](https://github.com/nanoframework/lib-nanoFramework.Runtime.Events/pull/15)
+- Update 3 NuGet dependencies [\#25](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/25)
+- Bumps nanoFramework.Windows.Devices.Gpio from 1.0.0-preview226 to 1.0.0-preview228 [\#24](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/24)
+- Update 3 NuGet dependencies [\#23](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/23)
+- Update 3 NuGet dependencies [\#22](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/22)
+- Update 3 NuGet dependencies [\#21](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/21)
+- Add High res timer class [\#15](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/15)
+- Bump nanoFramework.Runtime.Events from 1.0.0-preview188 to 1.0.0-preview191 in /source [\#14](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/14)
+- Bump nanoFramework.Windows.Devices.Gpio from 1.0.0-preview197 to 1.0.0-preview199 in /source [\#13](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/13)
+- Bump nanoFramework.CoreLibrary, Devices.Gpio  and Runtime.Events in /source [\#9](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/9)
 
 
 
