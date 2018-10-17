@@ -1,7 +1,13 @@
-# only need to commit assembly info changes when build is NOT for a pull-request
-if ($env:appveyor_pull_request_number)
+# Copyright (c) 2018 The nanoFramework project contributors
+# See LICENSE file in the project root for full license information.
+
+# skip updating assembly info changes if build is a pull-request or not a tag (master OR release)
+if ($env:appveyor_pull_request_number -or
+    ($env:APPVEYOR_REPO_BRANCH -eq "master" -and $env:APPVEYOR_REPO_TAG -eq 'true') -or
+    ($env:APPVEYOR_REPO_BRANCH -match "^release*" -and $env:APPVEYOR_REPO_TAG -eq 'true') -or
+    $env:APPVEYOR_REPO_TAG -eq "true")
 {
-    'Skip committing assembly info changes as this is a PR build...' | Write-Host -ForegroundColor White
+    'Skip committing assembly info changes...' | Write-Host -ForegroundColor White
 }
 else
 {
@@ -12,6 +18,12 @@ else
     
     'Updated assembly info...' | Write-Host -ForegroundColor White -NoNewline
     'OK' | Write-Host -ForegroundColor Green
+}
+
+# update assembly info in nf-interpreter if we are in development branch or if this is tag (master OR release)
+if ($env:APPVEYOR_REPO_BRANCH -match "^dev*" -or $env:APPVEYOR_REPO_TAG -eq "true")
+{
+    'Updating assembly version in nf-interpreter...' | Write-Host -ForegroundColor White -NoNewline
 
     # clone nf-interpreter repo (only a shallow clone with last commit)
     git clone https://github.com/nanoframework/nf-interpreter -b develop --depth 1 -q
@@ -51,7 +63,7 @@ else
 
         # commit changes
         git add -A 2>&1
-        git commit -m"$commitMessage" -m"[version update]" -q
+        git commit -m"$commitMessage [skip ci]" -m"[version update]" -q
         git push --set-upstream origin "$newBranch" --porcelain -q > $null
     
         # start PR
