@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup>
+    <GitVersion_NuGetVersionV2 Condition=" '$(GitVersion_NuGetVersionV2)' == '' ">1.0.0-preview001</GitVersion_NuGetVersionV2>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="..\nanoFramework.Hardware.Esp32\bin\$(Configuration)\nanoFramework.Hardware.Esp32.dll">
+      <Link>lib\nanoFramework.Hardware.Esp32.dll</Link>
+    </Content>
+    <Content Include="..\nanoFramework.Hardware.Esp32\bin\$(Configuration)\nanoFramework.Hardware.Esp32.pdb">
+      <Link>lib\nanoFramework.Hardware.Esp32.pdb</Link>
+    </Content>
+    <Content Include="..\nanoFramework.Hardware.Esp32\bin\$(Configuration)\nanoFramework.Hardware.Esp32.pdbx">
+      <Link>lib\nanoFramework.Hardware.Esp32.pdbx</Link>
+    </Content>
+    <Content Include="..\nanoFramework.Hardware.Esp32\bin\$(Configuration)\nanoFramework.Hardware.Esp32.pe">
+      <Link>lib\nanoFramework.Hardware.Esp32.pe</Link>
+    </Content>
+    <Content Include="..\nanoFramework.Hardware.Esp32\bin\$(Configuration)\nanoFramework.Hardware.Esp32.xml">
+      <Link>lib\nanoFramework.Hardware.Esp32.xml</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Dependency Include="nanoFramework.CoreLibrary">
+      <Version>[1.0.4]</Version>
+    </Dependency>
+  </ItemGroup>
+  <ItemGroup>
+    <Dependency Include="nanoFramework.Runtime.Events">
+      <Version>[1.0.0]</Version>
+    </Dependency>
+  </ItemGroup>
+  <ItemGroup>
+    <Dependency Include="nanoFramework.Windows.Devices.Gpio">
+      <Version>[1.0.0]</Version>
+    </Dependency>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>04FF2AEC-F12E-4685-9E2D-D8CF0C958C0F</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath>..\packages\NuProj.0.20.4-beta\tools\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>nanoFramework.Hardware.Esp32</Id>
+    <Version>$(GitVersion_NuGetVersionV2)</Version>
+    <Title>nanoFramework.Hardware.Esp32</Title>
+    <Authors>nanoFramework project contributors</Authors>
+    <Owners>nanoFramework project contributors</Owners>
+    <Summary>nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects</Summary>
+    <Description>This package includes the nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects. The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP32 device.</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32</ProjectUrl>
+    <LicenseUrl>
+    </LicenseUrl>
+    <Copyright>Copyright (c) 2017 The nanoFramework project contributors</Copyright>
+    <Tags>nanoFramework C# csharp netmf netnf nanoFramework.Hardware.Esp32</Tags>
+    <IconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</IconUrl>
+    <GenerateSymbolPackage>false</GenerateSymbolPackage>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>
