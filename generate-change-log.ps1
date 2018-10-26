@@ -1,18 +1,15 @@
 # Copyright (c) 2018 The nanoFramework project contributors
 # See LICENSE file in the project root for full license information.
 
-# generate change log when build is NOT a pull-request or not a tag (master OR release)
-if ($env:appveyor_pull_request_number -or 
-    ($env:APPVEYOR_REPO_BRANCH -eq "master" -and $env:APPVEYOR_REPO_TAG -eq 'true') -or
-    ($env:APPVEYOR_REPO_BRANCH -match "^release*" -and $env:APPVEYOR_REPO_TAG -eq 'true') -or
-    $env:APPVEYOR_REPO_TAG -eq "true")
+# skip generating the change log when build is a pull-request or not a tag (can't commit when repo is in a tag)
+if ($env:appveyor_pull_request_number -or $env:APPVEYOR_REPO_TAG -eq "true")
 {
     'Skip change log processing...' | Write-Host -ForegroundColor White
 }
 else
 {
     # need this to keep ruby happy
-    md c:\tmp
+    md c:\tmp > $null
 
     if ($env:APPVEYOR_REPO_BRANCH -eq "master" -or $env:APPVEYOR_REPO_BRANCH -match "^release*")
     {

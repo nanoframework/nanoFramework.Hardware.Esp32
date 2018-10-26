@@ -1,11 +1,8 @@
 # Copyright (c) 2018 The nanoFramework project contributors
 # See LICENSE file in the project root for full license information.
 
-# skip updating assembly info changes if build is a pull-request or not a tag (master OR release)
-if ($env:appveyor_pull_request_number -or
-    ($env:APPVEYOR_REPO_BRANCH -eq "master" -and $env:APPVEYOR_REPO_TAG -eq 'true') -or
-    ($env:APPVEYOR_REPO_BRANCH -match "^release*" -and $env:APPVEYOR_REPO_TAG -eq 'true') -or
-    $env:APPVEYOR_REPO_TAG -eq "true")
+# skip updating assembly info changes if build is a pull-request or not a tag (can't commit when repo is in a tag)
+if ($env:appveyor_pull_request_number -or $env:APPVEYOR_REPO_TAG -eq "true")
 {
     'Skip committing assembly info changes...' | Write-Host -ForegroundColor White
 }
@@ -20,14 +17,14 @@ else
     'OK' | Write-Host -ForegroundColor Green
 }
 
-# update assembly info in nf-interpreter if we are in development branch or if this is tag (master OR release)
-if ($env:APPVEYOR_REPO_BRANCH -match "^dev*" -or $env:APPVEYOR_REPO_TAG -eq "true")
+# update assembly info in nf-interpreter if this is tag
+if ($env:APPVEYOR_REPO_TAG -eq "true")
 {
     'Updating assembly version in nf-interpreter...' | Write-Host -ForegroundColor White -NoNewline
 
     # clone nf-interpreter repo (only a shallow clone with last commit)
     git clone https://github.com/nanoframework/nf-interpreter -b develop --depth 1 -q
-    cd nf-interpreter
+    cd nf-interpreter > $null
 
     # new branch name
     $newBranch = "$env:APPVEYOR_REPO_BRANCH-nfbot/update-version/nanoFramework.Hardware.Esp32/$env:GitVersion_NuGetVersionV2"
