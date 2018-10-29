@@ -21,6 +21,7 @@ build:
   verbosity: minimal
 
 environment:
+  APPVEYOR_IGNORE_COMMIT_FILTERING_ON_TAG: true
   APPVEYOR_SAVE_CACHE_ON_ERROR: true
   matrix:
     - RUBY_VERSION: 24
@@ -106,7 +107,7 @@ for:
       appveyor_repo_tag: true
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
-    release: nanoFramework.Hardware.Esp32 Library v$(gitversion_semver)
+    release: nanoFramework.Hardware.Esp32 Library v$(GitVersion_NuGetVersionV2)
     description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
@@ -125,7 +126,7 @@ for:
   deploy:
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
-    release: nanoFramework.Hardware.Esp32 Library v$(gitversion_semver)
+    release: nanoFramework.Hardware.Esp32 Library v$(GitVersion_NuGetVersionV2)
     description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\npackage: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Hardware.Esp32/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
@@ -149,7 +150,7 @@ for:
       appveyor_repo_tag: true
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
-    release: nanoFramework.Hardware.Esp32 Library v$(gitversion_semver)
+    release: nanoFramework.Hardware.Esp32 Library v$(GitVersion_NuGetVersionV2)
     description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
