@@ -1,5 +1,13 @@
 # Change Log
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.0...HEAD)
+
+**Documentation and other chores:**
+
+- Merge back changes from Release 1.0.0 [\#27](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/27)
+
 ## [v1.0.0](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.0) (2018-10-17)
 **Implemented enhancements:**
 
@@ -11,6 +19,7 @@
 
 **Documentation and other chores:**
 
+- Merge 'develop' for Release 1.0.0 [\#26](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/26)
 - Update 3 NuGet dependencies [\#25](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/25)
 - Bumps nanoFramework.Windows.Devices.Gpio from 1.0.0-preview226 to 1.0.0-preview228 [\#24](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/24)
 - Update 3 NuGet dependencies [\#23](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/23)
