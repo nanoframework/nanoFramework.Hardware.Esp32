@@ -1,22 +1,6 @@
 # Copyright (c) 2018 The nanoFramework project contributors
 # See LICENSE file in the project root for full license information.
 
-# skip updating assembly info changes if build is a pull-request or not a tag (can't commit when repo is in a tag)
-if ($env:appveyor_pull_request_number -or $env:APPVEYOR_REPO_TAG -eq "true")
-{
-    'Skip committing assembly info changes...' | Write-Host -ForegroundColor White
-}
-else
-{
-    # updated assembly info files   
-    git add "source\nanoFramework.Hardware.Esp32\Properties\AssemblyInfo.cs"
-    git commit -m "Update assembly info file for v$env:GitVersion_NuGetVersionV2" -m"[version update]"
-    git push origin --porcelain -q > $null
-    
-    'Updated assembly info...' | Write-Host -ForegroundColor White -NoNewline
-    'OK' | Write-Host -ForegroundColor Green
-}
-
 # update assembly info in nf-interpreter if this is tag
 if ($env:APPVEYOR_REPO_TAG -eq "true")
 {
@@ -27,7 +11,7 @@ if ($env:APPVEYOR_REPO_TAG -eq "true")
     cd nf-interpreter > $null
 
     # new branch name
-    $newBranch = "$env:APPVEYOR_REPO_BRANCH-nfbot/update-version/nanoFramework.Hardware.Esp32/$env:GitVersion_NuGetVersionV2"
+    $newBranch = "$env:APPVEYOR_REPO_BRANCH-nfbot/update-version/nanoFramework.Hardware.Esp32/$env:MyNuGetVersion"
 
     # create branch to perform updates
     git checkout -b "$newBranch" develop -q
@@ -56,7 +40,7 @@ if ($env:APPVEYOR_REPO_TAG -eq "true")
     }
     else
     {
-        $commitMessage = "Update nanoFramework.Hardware.Esp32 version to $env:GitVersion_NuGetVersionV2"
+        $commitMessage = "Update nanoFramework.Hardware.Esp32 version to $env:MyNuGetVersion"
 
         # commit changes
         git add -A 2>&1

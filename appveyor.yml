@@ -44,13 +44,12 @@ init:
 - ps: "if($env:APPVEYOR_PULL_REQUEST_NUMBER -eq \"\")\n{\n   \n    if($env:APPVEYOR_REPO_COMMIT_AUTHOR -eq \"nfbot\" -and $env:APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED -like \"*[version update]*\")\n    {\n        # commit was from nfbot AND it's taged as a [version update]\n        # OK to skip AppVeyor build \n        \"Version update only. Skipping build.\" | Write-Host -BackgroundColor White -ForegroundColor Blue\n        Exit-AppveyorBuild\n    }\n}"
 
 install:
-  - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
-  - bundle config --local path vendor/bundle
-  - gem install bundler --quiet --no-ri --no-rdoc
-  - gem install github_changelog_generator --quiet --no-ri --no-rdoc
-  # this needs to be replace with the official version and nuget package as soon as it's released
-  - dotnet tool install -g --version 4.0.0-pullrequest1422-1625 --add-source https://ci.appveyor.com/nuget/gitversion-8nigugxjftrw GitVersion.CommandLine.DotNetCore.Tool
-  - ps: .\install-vsix-appveyor.ps1
+- set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+- bundle config --local path vendor/bundle
+- gem install bundler --quiet --no-ri --no-rdoc
+- gem install github_changelog_generator --quiet --no-ri --no-rdoc
+- dotnet tool install --tool-path . nbgv
+- ps: .\install-vsix-appveyor.ps1
 
 before_build:
 - ps: >-
@@ -59,25 +58,32 @@ before_build:
 
     nuget restore source\nanoFramework.Hardware.Esp32.sln
 
-    dotnet-gitversion /l console /output buildserver /updateAssemblyInfo "source\nanoFramework.Hardware.Esp32\Properties\AssemblyInfo.cs"
+    .\nbgv cloud -p source -a -c
 
 build_script:
-- ps: >-
-
-    msbuild source\nanoFramework.Hardware.Esp32.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+- ps: msbuild source\nanoFramework.Hardware.Esp32.sln /p:PublicRelease=true /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
 before_deploy:
+  - ps:  >-
+      .\nbgv cloud --version=$env:NBGV_SemVer1
+
+      $env:MyNuGetVersion = $env:NBGV_NuGetPackageVersion -replace "\-g$env:NBGV_GitCommitIdShort", " "
+    
+      .\generate-change-log.ps1
+
+  - nuget pack source\nanoFramework.Hardware.Esp32.nuspec -Version %MyNuGetVersion%
+  - nuget pack source\nanoFramework.Hardware.Esp32.DELIVERABLES.nuspec -Version %MyNuGetVersion%
   - ps:  >-
       .\commit-assemblyinfo-changes.ps1
       
       .\generate-change-log.ps1
       
-      Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\source\Nuget.nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.$env:GitVersion_NuGetVersionV2.nupkg 
+      Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\nanoFramework.Hardware.Esp32.$env:MyNuGetVersion.nupkg 
 
 after_deploy:
 # for this environment variable to work here it has to be set in AppVeyor UI
-- nuget push source\Nuget.nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
-- nuget push source\Nuget.nanoFramework.Hardware.Esp32.DELIVERABLES\bin\Release\nanoFramework.Hardware.Esp32.DELIVERABLES.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
+- nuget push nanoFramework.Hardware.Esp32.%MyNuGetVersion%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
+- nuget push nanoFramework.Hardware.Esp32.DELIVERABLES.%MyNuGetVersion%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
 
 # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
 on_failure:
@@ -87,8 +93,6 @@ on_failure:
 
 cache:
   - source\packages -> **source\packages.config
-  - C:\ProgramData\chocolatey\bin -> appveyor.yml
-  - C:\ProgramData\chocolatey\lib -> appveyor.yml
 
 ################################################
 # override configuration for specific branches
@@ -98,7 +102,7 @@ for:
   branches:
     only:
       - master
-      - /v.*/
+      - /v\d.*/
 
   deploy:
   - provider: NuGet
@@ -107,9 +111,9 @@ for:
     on:
       appveyor_repo_tag: true
   - provider: GitHub
-    tag: v$(GitVersion_NuGetVersionV2)
-    release: nanoFramework.Hardware.Esp32 Library v$(GitVersion_NuGetVersionV2)
-    description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    tag: v$(MyNuGetVersion)
+    release: nanoFramework.Hardware.Esp32 Library v$(MyNuGetVersion)
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(MyNuGetVersion)) v$(MyNuGetVersion)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
@@ -122,13 +126,13 @@ for:
 -
   branches:
     only:
-      - /dev.*/
+      - /dev(elop)?$/
 
   deploy:
   - provider: GitHub
-    tag: v$(GitVersion_NuGetVersionV2)
-    release: nanoFramework.Hardware.Esp32 Library v$(GitVersion_NuGetVersionV2)
-    description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\npackage: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Hardware.Esp32/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    tag: v$(MyNuGetVersion)
+    release: nanoFramework.Hardware.Esp32 Library v$(MyNuGetVersion)
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\npackage: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Hardware.Esp32/$(MyNuGetVersion)) v$(MyNuGetVersion)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
@@ -150,9 +154,9 @@ for:
     on:
       appveyor_repo_tag: true
   - provider: GitHub
-    tag: v$(GitVersion_NuGetVersionV2)
-    release: nanoFramework.Hardware.Esp32 Library v$(GitVersion_NuGetVersionV2)
-    description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    tag: v$(MyNuGetVersion)
+    release: nanoFramework.Hardware.Esp32 Library v$(MyNuGetVersion)
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(MyNuGetVersion)) v$(MyNuGetVersion)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
