@@ -65,7 +65,7 @@ before_deploy:
   - ps:  >-
       .\nbgv cloud --version=$env:NBGV_SemVer1
 
-      $env:MyNuGetVersion = $env:NBGV_NuGetPackageVersion -replace "\-g$env:NBGV_GitCommitIdShort", " "
+      $env:MyNuGetVersion = $env:NBGV_NuGetPackageVersion -replace "\-g$env:NBGV_GitCommitIdShort", ""
     
       .\generate-change-log.ps1
 
