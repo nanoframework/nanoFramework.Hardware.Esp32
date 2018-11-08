@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>nanoFramework.Hardware.Esp32.DELIVERABLES</id>
@@ -7,24 +7,26 @@
     <authors>nanoFramework project contributors</authors>
     <owners>nanoFramework project contributors</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>
+    </releaseNotes>
     <developmentDependency>false</developmentDependency>
     <projectUrl>https://github.com/nanoframework</projectUrl>
     <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
-    <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>    
+    <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>
     <description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the nanoFramework.Hardware.Esp32 assembly for nanoFramework. These are for testing purposes and for updating the native code base of the library.</description>
     <summary>nanoFramework.Hardware.Esp32.DELIVERABLES is not meant for development.</summary>
-    <tags></tags>
+    <tags>
+    </tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="[1.0.5-preview024]" />
-    </dependencies>    
+      <dependency id="nanoFramework.CoreLibrary" version="[1.0.6-preview-001]" />
+    </dependencies>
   </metadata>
   <files>
     <file src="nanoFramework.Hardware.Esp32\bin\Release\Stubs\*.*" target="content\Stubs\" />
     <file src="nanoFramework.Hardware.Esp32\obj\Release\*.txt" target="content\txt\" />
     <file src="nanoFramework.Hardware.Esp32\obj\Release\*.dump" target="content\dump\" />
     <file src="nanoFramework.Hardware.Esp32\obj\Release\*.strings" target="content\dump\" />
-    <file src="nanoFramework.Hardware.Esp32\obj\Release\*.resources" target="content\resources\" /> 
-    <file src="nanoFramework.Hardware.Esp32\obj\Release\*.il" target="content\disasm\" /> 
+    <file src="nanoFramework.Hardware.Esp32\obj\Release\*.resources" target="content\resources\" />
+    <file src="nanoFramework.Hardware.Esp32\obj\Release\*.il" target="content\disasm\" />
   </files>
 </package>
