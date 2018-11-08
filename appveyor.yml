@@ -114,7 +114,7 @@ for:
     description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(MyNuGetVersion)) v$(MyNuGetVersion)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
-    artifact: Nuget_Packages
+    artifact:
     draft: true
     prerelease: false
     force_update: true
@@ -157,7 +157,7 @@ for:
     description: 'Check the [changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/$(MyNuGetVersion)) v$(MyNuGetVersion)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
-    artifact: Nuget_Packages
+    artifact:
     draft: true
     prerelease: true
     force_update: true
