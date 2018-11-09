@@ -19,8 +19,8 @@
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="[1.0.6-preview-001]" />
       <dependency id="nanoFramework.Runtime.Events" version="[1.0.2-preview-004]" />
-      <dependency id="nanoFramework.Windows.Devices.Gpio" version="[1.0.2-preview-004]" />
-  </dependencies>
+      <dependency id="nanoFramework.Windows.Devices.Gpio" version="[1.0.2-preview-008]" />
+    </dependencies>
   </metadata>
   <files>
     <file src="nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.dll" target="lib\nanoFramework.Hardware.Esp32.dll" />
