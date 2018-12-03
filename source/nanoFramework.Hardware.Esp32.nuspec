@@ -18,8 +18,8 @@
     <tags>nanoFramework C# csharp netmf netnf esp32</tags>
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="[1.0.6-preview-021]" />
-      <dependency id="nanoFramework.Runtime.Events" version="[1.0.2-preview-021]" />
-      <dependency id="nanoFramework.Windows.Devices.Gpio" version="[1.0.2-preview-024]" />
+      <dependency id="nanoFramework.Runtime.Events" version="[1.0.2-preview-023]" />
+      <dependency id="nanoFramework.Windows.Devices.Gpio" version="[1.0.2-preview-025]" />
     </dependencies>
   </metadata>
   <files>
