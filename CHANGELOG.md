@@ -2,10 +2,18 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.2-preview-017...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.3...HEAD)
 
 **Documentation and other chores:**
 
+- Merge back from Release v1.0.3 [\#44](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/44)
+
+## [v1.0.3](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.3) (2018-12-17)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.2-preview-017...v1.0.3)
+
+**Documentation and other chores:**
+
+- Release v1.0.3 [\#43](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/43)
 - Update 3 NuGet dependencies [\#42](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/42)
 
 ## [v1.0.2-preview-017](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.2-preview-017) (2018-12-03)
