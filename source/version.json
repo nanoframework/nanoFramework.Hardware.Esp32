@@ -15,5 +15,9 @@
   "cloudBuild": {
     "setVersionVariables": true,
     "setAllVariables": true
+  },
+  "release": {
+    "branchName": "release-v{version}",
+    "firstUnstableTag": "preview"
   }
 }
