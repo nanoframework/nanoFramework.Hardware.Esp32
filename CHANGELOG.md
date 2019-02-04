@@ -1,5 +1,13 @@
 # Change Log
 
+## [v1.0.8](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.8) (2019-02-04)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.7...v1.0.8)
+
+**Documentation and other chores:**
+
+- Release v1.0.8 [\#53](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/53)
+- Bumps nanoFramework.Windows.Devices.Gpio from 1.0.4 to 1.0.5 [\#51](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/51)
+
 ## [v1.0.7](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.7) (2019-01-22)
 [Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.5...v1.0.7)
 
