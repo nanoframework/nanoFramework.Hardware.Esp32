@@ -6,6 +6,7 @@
 
 **Documentation and other chores:**
 
+- Update 2 NuGet dependencies [\#57](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/57)
 - Update 2 NuGet dependencies [\#56](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/56)
 
 ## [v1.0.6-preview-009](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.6-preview-009) (2019-03-10)
