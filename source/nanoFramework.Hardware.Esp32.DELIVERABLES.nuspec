@@ -19,8 +19,8 @@
     </tags>
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="[1.1.1]" />
-      <dependency id="nanoFramework.Runtime.Events" version="[1.0.5-preview-007]" />
-      <dependency id="nanoFramework.Windows.Devices.Gpio" version="[1.1.0-preview-007]" />
+      <dependency id="nanoFramework.Runtime.Events" version="[1.0.5-preview-008]" />
+      <dependency id="nanoFramework.Windows.Devices.Gpio" version="[1.1.0-preview-009]" />
     </dependencies>
   </metadata>
   <files>
