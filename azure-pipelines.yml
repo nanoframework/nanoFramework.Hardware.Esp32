@@ -3,7 +3,7 @@ trigger:
     include:
     - master
     - develop
-    - release/*
+    - release-/*
     - refs/tags/*
   paths:
     exclude:
@@ -46,10 +46,7 @@ steps:
 
 # step from template @ nf-tools repo
 # all build, update and publish steps
-- template: azure-pipelines-templates/class-lib-build.yml@templates  
-  parameters:
-    sourceFileName: 'nanoFramework_hardware_esp32_native.cpp'
-    classLibName: 'nanoFramework.Hardware.Esp32'
+- template: azure-pipelines-templates/class-lib-build.yml@templates
 
 # step from template @ nf-tools repo
 # report error
