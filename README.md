@@ -1,24 +1,25 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/nanoframework/Home/blob/master/LICENSE) [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Hardware.Esp32.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)  [![Discord](https://img.shields.io/discord/478725473862549535.svg)](https://discord.gg/gCyBu8T)
+
+
 ![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
 
 -----
 
 ### Welcome to the **nanoFramework** nanoFramework.Hardware.Esp32 Library repository!
 
-[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Hardware.Esp32.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
-
 
 ## Build status
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| nanoFramework.Hardware.Esp32 | [![Build status](https://ci.appveyor.com/api/projects/status/2qjp0dkdv00uxst8/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-nanoframework-hardware-esp32/branch/master) | [![NuGet](https://img.shields.io/nuget/vpre/nanoframework-hardware-esp32.svg)](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/)  |
-| nanoFramework.Hardware.Esp32 (preview) | [![Build status](https://ci.appveyor.com/api/projects/status/2qjp0dkdv00uxst8?svg=true)](https://ci.appveyor.com/project/nfbot/lib-nanoframework-hardware-esp32) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoframework-hardware-esp32.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Hardware.Esp32) |
+| nanoFramework.Hardware.Esp32 | [![Build Status](https://dev.azure.com/nanoframework/nanoFramework.Hardware.Esp32/_apis/build/status/nanoframework.lib-nanoFramework.Hardware.Esp32?branchName=master)](https://dev.azure.com/nanoframework/nanoFramework.Hardware.Esp32/_build/latest?definitionId=11?branchName=master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Hardware.Esp32.svg)](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/)  |
+| nanoFramework.Hardware.Esp32 (preview) | [![Build Status](https://dev.azure.com/nanoframework/nanoFramework.Hardware.Esp32/_apis/build/status/nanoframework.lib-nanoFramework.Hardware.Esp32?branchName=develop)](https://dev.azure.com/nanoframework/nanoFramework.Hardware.Esp32/_build/latest?definitionId=11?branchName=develop) |  [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.Hardware.Esp32.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Hardware.Esp32) |
 
 ## Feedback and documentation
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
 
-Join our Slack community [here](https://join.slack.com/t/nanoframework/shared_invite/enQtMzI3OTg4MTk0NTgwLWQ0ODQ3ZWIwZjgxZWFmNjU3MDIwN2E2YzM2OTdhMWRiY2Q3M2NlOTk2N2IwNTM3MmRlMmQ2NTRlNjZlYzJlMmY).
+Join our Discord community [here](https://discord.gg/gCyBu8T).
 
 
 ## Credits

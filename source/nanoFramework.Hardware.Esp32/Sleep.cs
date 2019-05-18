@@ -1,3 +1,8 @@
+//
+// Copyright (c) 2018 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System;
 using System.Runtime.CompilerServices;
 
@@ -252,11 +257,17 @@ namespace nanoFramework.Hardware.Esp32
         /// Enter deep sleep using configured wakeup sources. 
         /// </summary>
         /// <remarks>
-        /// If no sources configured then it will be a indefinate sleep.</remarks>
-        /// <returns>ESP_OK if ok</returns>
-        public static EspNativeError StartDeepSleep()
+        /// If no wakeup sources configured then it will be a indefinite sleep.
+        /// This call never returns.
+        /// After the device enters deep sleep a wakeup source will wake the device and the execution will start as if it was a reset.
+        /// Keep in mind that the execution WILL NOT continue after the call to this method.
+        /// </remarks>
+        public static void StartDeepSleep()
         {
-            return NativeStartDeepSleep();
+            NativeStartDeepSleep();
+
+            // force an infinite sleep to allow execution engine to exit this thread and pick the reboot flags set on the call above
+            System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite);
         }
 
         /// <summary>
