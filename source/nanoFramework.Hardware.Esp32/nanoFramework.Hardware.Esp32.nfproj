@@ -66,6 +66,13 @@
     <Compile Include="Errors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sleep.cs" />
+    <Compile Include="TouchPad\Enums.cs" />
+    <Compile Include="TouchPad\TouchPad.cs" />
+    <Compile Include="TouchPad\TouchPadBase.cs" />
+    <Compile Include="TouchPad\TouchPadBaseConfig.cs" />
+    <Compile Include="TouchPad\TouchPadConfig.cs" />
+    <Compile Include="TouchPad\TouchPadReader.cs" />
+    <Compile Include="TouchPad\TouchPadReaderConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\key.snk" />
