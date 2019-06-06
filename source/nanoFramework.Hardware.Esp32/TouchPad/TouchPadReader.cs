@@ -8,9 +8,17 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
   public sealed class TouchPadReader : TouchPadBase
   {
 
-    public TouchPadReader(int pinNumber) : base(pinNumber)
+    public TouchPadReader(int pinNumber) : this(pinNumber, new TouchPadReaderConfig())
     { }
 
+		public TouchPadReader(int pinNumber, TouchPadReaderConfig config) : base(pinNumber, config)
+		{ }
 
-  }
+		public ushort Read()
+		{
+			//todo: add config option to Read vs ReadFiltered
+			return TouchPadReadFiltered(_touchPadIndex);
+		}
+
+	}
 }

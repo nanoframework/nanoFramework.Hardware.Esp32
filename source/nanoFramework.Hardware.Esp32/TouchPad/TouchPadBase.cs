@@ -14,31 +14,31 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 
     // this is used as the lock object 
     // a lock is required because multiple threads can access the GpioPin
-    private object _syncLock;
+    private readonly object _syncLock = new object ();
 
-    private readonly int _pinNumber;
+    protected readonly int _pinNumber;
+		protected readonly int _touchPadIndex;
 
-    /// <summary>
-    /// Map of GPIO to touch pad number. 
-    /// ESP32 offers up to 10 capacitive IOs that detect changes in capacitance on touch sensors due to finger contact or proximity. 
-    /// </summary>
-    private static readonly Hashtable GpioTouchPadMap = new Hashtable()
+		/// <summary>
+		/// Map of GPIO to touch pad number. 
+		/// ESP32 offers up to 10 capacitive IOs that detect changes in capacitance on touch sensors due to finger contact or proximity. 
+		/// </summary>
+		private static readonly Hashtable GpioTouchPadMap = new Hashtable()
     {
       {4, 0}, {0, 1}, {2,  2}, {27, 7}, {15, 3}, {13, 4}, {12, 5}, {14, 6}, {33, 8}, {32, 9}
     };
 
 
-    internal TouchPadBase(int pinNumber)
+    protected TouchPadBase(int pinNumber, TouchPadBaseConfig config)
     {
-      _pinNumber = pinNumber;
-      _syncLock = new object();
-
 			if (!GpioTouchPadMap.Contains(_pinNumber))
 				throw new Exception($"Pin {_pinNumber} is not a valid touch pad pin.");
 
-			if (!TouchPadInit())
-				throw new Exception($"Touch pad initialization on pin {_pinNumber} failed.");
+			if(config == null)
+				throw new ArgumentNullException(nameof(config));
 
+			_pinNumber = pinNumber;
+			_touchPadIndex = (int)GpioTouchPadMap[_pinNumber];
 			//lock (_syncLock)
 			//{
 			//  if (s_eventListener == null)
@@ -46,7 +46,30 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 			//    s_eventListener = new GpioPinEventListener();
 			//  }
 			//}
+
+			if (!TouchPadInit())
+				throw new Exception($"Touch pad initialization on pin {_pinNumber} failed.");
+
+			SetFsmMode();
+
+			if (!TouchPadSetVoltage(config.TouchHighVolt, config.TouchLowVolt, config.TouchVoltAtten))
+				throw new Exception($"Setting voltage on pin {_pinNumber} failed.");
+
+			if (!TouchPadConfig(_touchPadIndex, config.TouchThreshNoUse))
+				throw new Exception($"Setting touch pad threshold on pin {_pinNumber} failed.");
+
+			if (!TouchPadSetFilterPeriod(config.TouchPadFilterTouchPeriod))
+				throw new Exception($"Setting touch pad filter on pin {_pinNumber} failed.");
+
 		}
+
+		/// <summary>
+		/// Set touch sensor FSM mode, the test action can be triggered by the timer, as well as by the software.
+		/// The default FSM mode is ‘TOUCH_FSM_MODE_SW’. If you want to use interrupt trigger mode, 
+		/// then set it to ‘TOUCH_FSM_MODE_TIMER’ after calling init function.
+		/// </summary>
+		protected virtual void SetFsmMode()	{ }
+
 
 		#region IDisposable Support
 		private bool _disposedValue;
@@ -94,6 +117,32 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 
 		[MethodImpl(MethodImplOptions.InternalCall)]
 		protected extern bool TouchPadSetFsmMode(TouchFsmMode touchFsmMode); //esp_err_t touch_pad_set_fsm_mode(touch_fsm_mode_tmode) https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/touch_pad.html#_CPPv422touch_pad_set_fsm_mode16touch_fsm_mode_t
+
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		protected extern bool TouchPadSetVoltage(TouchHighVolt touchHighVolt, TouchLowVolt touchLowVolt, TouchVoltAtten touchVoltAtten); //esp_err_t touch_pad_set_voltage(touch_high_volt_trefh, touch_low_volt_trefl, touch_volt_atten_tatten) 
+
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		protected extern bool TouchPadConfig(int touchPadIndex, ushort threshold); //esp_err_t touch_pad_config(touch_pad_ttouch_num, uint16_t threshold)
+
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		protected extern bool TouchPadSetFilterPeriod(uint newPeriodMs); //esp_err_t touch_pad_set_filter_period(uint32_t new_period_ms
+
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		protected extern ushort TouchPadRead(int touchPadIndex); //esp_err_t touch_pad_read(touch_pad_ttouch_num, uint16_t* touch_value)
+
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		protected extern ushort TouchPadReadFiltered(int touchPadIndex); //esp_err_t touch_pad_read_filtered(touch_pad_ttouch_num, uint16_t *touch_value)
+
+		//[MethodImpl(MethodImplOptions.InternalCall)]
+		//protected extern ushort TouchPadSetReadRawData(int touchPadIndex); //esp_err_t touch_pad_read_raw_data(touch_pad_ttouch_num, uint16_t *touch_value)
+
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		protected extern bool TouchPadSetThresh(int touchPadIndex, ushort threshold); //esp_err_t touch_pad_set_thresh(touch_pad_ttouch_num, uint16_t threshold)
+
+
+		//todo
+		//[MethodImpl(MethodImplOptions.InternalCall)]
+		//protected extern bool TouchPadIsrRegister(todo); //esp_err_t touch_pad_isr_register(intr_handler_tfn, void* arg)
 
 		[MethodImpl(MethodImplOptions.InternalCall)]
     private extern void DisposeNative();
