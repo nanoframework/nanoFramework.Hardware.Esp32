@@ -45,7 +45,8 @@
     <Name>nanoFramework.Hardware.Esp32</Name>
   </PropertyGroup>
   <PropertyGroup Label="nanoFramework">
-    <NF_GenerateStubs>true</NF_GenerateStubs>
+    <NF_GenerateStubs>
+    </NF_GenerateStubs>
   </PropertyGroup>
   <ItemGroup>
     <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.CoreLibrary.1.2.1-preview-001\lib\mscorlib.dll">
