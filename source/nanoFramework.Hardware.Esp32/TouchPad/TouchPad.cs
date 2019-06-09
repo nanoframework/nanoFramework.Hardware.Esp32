@@ -36,12 +36,11 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 		}
 
 		/// <summary>
-		/// The default FSM mode is ‘TOUCH_FSM_MODE_SW’. If you want to use interrupt trigger mode, 
-		/// then set it to ‘TOUCH_FSM_MODE_TIMER’ after calling init function.
+		/// Set touch sensor FSM mode for interrupt trigger mode.
 		/// </summary>
 		protected override void SetFsmMode()
 		{
-			if (!base.TouchPadSetFsmMode(TouchFsmMode.TOUCH_FSM_MODE_TIMER))
+			if (!base.TouchPadSetFsmMode(TouchFsmMode.Timer))
 				throw new Exception("Failed to set FSM mode.");
 		}
 

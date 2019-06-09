@@ -33,11 +33,17 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
       {4, 0}, {0, 1}, {2,  2}, {27, 7}, {15, 3}, {13, 4}, {12, 5}, {14, 6}, {33, 8}, {32, 9}
     };
 
-
-    protected TouchPadBase(int pinNumber, TouchPadBaseConfig config)
+		/// <summary>
+		/// Constructs and initializes object based on given configuration.
+		/// </summary>
+		/// <param name="pinNumber">A valid touch pad pin, i.e. 0, 2, 4, 12, 13, 14, 15, 27, 32, 33 </param>
+		/// <param name="config">Touchpad configuration object</param>
+		/// <exception cref="ArgumentException">Invalid touchpad pin number</exception>
+		/// <exception cref="ArgumentNullException">Configuration parameter is null</exception>
+		protected TouchPadBase(int pinNumber, TouchPadBaseConfig config)
     {
 			if (!GpioTouchPadMap.Contains(_pinNumber))
-				throw new Exception($"Pin {_pinNumber} is not a valid touch pad pin.");
+				throw new ArgumentException(nameof(pinNumber));
 
 			if(config == null)
 				throw new ArgumentNullException(nameof(config));
@@ -70,8 +76,8 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 
 		/// <summary>
 		/// Set touch sensor FSM mode, the test action can be triggered by the timer, as well as by the software.
-		/// The default FSM mode is ‘TOUCH_FSM_MODE_SW’. If you want to use interrupt trigger mode, 
-		/// then set it to ‘TOUCH_FSM_MODE_TIMER’ after calling init function.
+		/// The default FSM mode is <see cref="TouchFsmMode.Software"/>. If you want to use interrupt trigger mode, 
+		/// then set it to <see cref="TouchFsmMode.Timer"/> after calling init function.
 		/// </summary>
 		protected virtual void SetFsmMode()	{ }
 
