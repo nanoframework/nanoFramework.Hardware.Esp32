@@ -7,18 +7,18 @@ using System;
 
 namespace nanoFramework.Hardware.Esp32.TouchPad
 {
-/// <summary>
-/// TouchPad sensor using interrupts
-/// </summary>
-  public sealed class TouchPad : TouchPadBase
-  {
+	/// <summary>
+	/// TouchPad sensor using interrupts
+	/// </summary>
+	public sealed class TouchPad : TouchPadBase
+	{
 		/// <summary>
 		/// Event raised when touch is detected.
 		/// </summary>
 		/// <param name="sender"></param>
 		//todo: add a new enumerable to EventCategory in lib-nanoFramework.Runtime.Events.
 		public delegate void TouchPadValueChangedEventHandler(
-        Object sender);
+				Object sender);
 		//TouchPadValueChangedEventArgs e);
 
 
@@ -36,7 +36,7 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 		/// <param name="pinNumber">Valid touch pads pin number</param>
 		/// <param name="config">Configuration settings</param>
 		public TouchPad(int pinNumber, TouchPadConfig config) : base(pinNumber, config)
-    {
+		{
 			SetTouchPadTriggerThreshold(config.InterruptThresholdValue);
 		}
 

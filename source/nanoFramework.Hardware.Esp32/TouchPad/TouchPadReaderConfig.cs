@@ -10,6 +10,9 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 	/// </summary>
 	public class TouchPadReaderConfig : TouchPadBaseConfig
 	{
+		/// <summary>
+		/// Default constructor
+		/// </summary>
 		public TouchPadReaderConfig() : base()
 		{
 		}

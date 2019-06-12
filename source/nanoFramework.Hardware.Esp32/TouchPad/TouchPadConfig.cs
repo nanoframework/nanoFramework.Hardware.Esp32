@@ -21,7 +21,7 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 		public TouchPadConfig() : base()
 		{
 			// By default, use 2/3 of read value as the threshold to trigger interrupt when the pad is touched.
-			InterruptThresholdValue = (float) 2 / 3;
+			InterruptThresholdValue = (float)2 / 3;
 		}
 	}
 }

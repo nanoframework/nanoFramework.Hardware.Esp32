@@ -5,14 +5,14 @@
 
 namespace nanoFramework.Hardware.Esp32.TouchPad
 {
-  /// <summary>
-  /// TouchPad sensor using polling
-  /// </summary>
-  public sealed class TouchPadReader : TouchPadBase
-  {
+	/// <summary>
+	/// TouchPad sensor using polling
+	/// </summary>
+	public sealed class TouchPadReader : TouchPadBase
+	{
 
-    public TouchPadReader(int pinNumber) : this(pinNumber, new TouchPadReaderConfig())
-    { }
+		public TouchPadReader(int pinNumber) : this(pinNumber, new TouchPadReaderConfig())
+		{ }
 
 		public TouchPadReader(int pinNumber, TouchPadReaderConfig config) : base(pinNumber, config)
 		{ }
