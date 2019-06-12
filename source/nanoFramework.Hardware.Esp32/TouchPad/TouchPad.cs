@@ -12,7 +12,12 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 /// </summary>
   public sealed class TouchPad : TouchPadBase
   {
-    public delegate void TouchPadValueChangedEventHandler(
+		/// <summary>
+		/// Event raised when touch is detected.
+		/// </summary>
+		/// <param name="sender"></param>
+		//todo: add a new enumerable to EventCategory in lib-nanoFramework.Runtime.Events.
+		public delegate void TouchPadValueChangedEventHandler(
         Object sender);
 		//TouchPadValueChangedEventArgs e);
 
@@ -38,17 +43,22 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 		/// <summary>
 		/// Set touch sensor FSM mode for interrupt trigger mode.
 		/// </summary>
+		/// <exception cref="Exception">Native call returned not OK return value.</exception>
 		protected override void SetFsmMode()
 		{
 			if (!base.TouchPadSetFsmMode(TouchFsmMode.Timer))
-				throw new Exception("Failed to set FSM mode.");
+				throw new Exception();
 		}
 
+		/// <summary>
+		/// Sets touch pad interrupt threshold.
+		/// </summary>throw new Exception($"Setting voltage on pin {_pinNumber} failed.");
+		/// <exception cref="Exception">Native call returned not OK return value.</exception>
 		private void SetTouchPadTriggerThreshold(float interruptThreshold)
 		{
 			ushort touchPadValue = TouchPadReadFiltered(_touchPadIndex);
 			if (!TouchPadSetThresh(_touchPadIndex, (ushort)(touchPadValue * interruptThreshold)))
-				throw new Exception($"Setting interrupt threshold on pin {_pinNumber} failed."); ;
+				throw new Exception(); ;
 		}
 
 	}

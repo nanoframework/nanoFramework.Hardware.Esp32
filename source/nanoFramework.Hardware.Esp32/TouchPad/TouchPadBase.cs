@@ -40,6 +40,7 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 		/// <param name="config">Touchpad configuration object</param>
 		/// <exception cref="ArgumentException">Invalid touchpad pin number</exception>
 		/// <exception cref="ArgumentNullException">Configuration parameter is null</exception>
+		/// <exception cref="Exception">One of native calls returned not OK return value.</exception>
 		protected TouchPadBase(int pinNumber, TouchPadBaseConfig config)
     {
 			if (!GpioTouchPadMap.Contains(_pinNumber))
@@ -59,18 +60,18 @@ namespace nanoFramework.Hardware.Esp32.TouchPad
 			//}
 
 			if (!TouchPadInit())
-				throw new Exception($"Touch pad initialization on pin {_pinNumber} failed.");
+				throw new Exception();
 
 			SetFsmMode();
 
 			if (!TouchPadSetVoltage(config.TouchHighVolt, config.TouchLowVolt, config.TouchVoltAtten))
-				throw new Exception($"Setting voltage on pin {_pinNumber} failed.");
+				throw new Exception();
 
 			if (!TouchPadConfig(_touchPadIndex, config.TouchThreshNoUse))
-				throw new Exception($"Setting touch pad threshold on pin {_pinNumber} failed.");
+				throw new Exception();
 
 			if (!TouchPadSetFilterPeriod(config.TouchPadFilterTouchPeriod))
-				throw new Exception($"Setting touch pad filter on pin {_pinNumber} failed.");
+				throw new Exception();
 
 		}
 
