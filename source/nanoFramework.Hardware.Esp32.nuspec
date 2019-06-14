@@ -10,16 +10,16 @@
     <releaseNotes>
     </releaseNotes>
     <developmentDependency>false</developmentDependency>
-    <projectUrl>https://github.com/nanoframework</projectUrl>
+    <projectUrl>https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32</projectUrl>
     <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
     <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>
     <description>This package includes the nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects. The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP32 device.</description>
     <summary>nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf esp32</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="[1.2.1-preview-001]" />
-      <dependency id="nanoFramework.Runtime.Events" version="[1.0.6-preview-001]" />
-      <dependency id="nanoFramework.Windows.Devices.Gpio" version="[1.1.0-preview-020]" />
+      <dependency id="nanoFramework.CoreLibrary" version="[1.2.5-preview.1]" />
+      <dependency id="nanoFramework.Runtime.Events" version="[1.0.8-preview.5]" />
+      <dependency id="nanoFramework.Windows.Devices.Gpio" version="[1.1.1-preview.6]" />
     </dependencies>
   </metadata>
   <files>
