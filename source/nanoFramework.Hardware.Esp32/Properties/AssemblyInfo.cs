@@ -8,11 +8,11 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("nanoFramework.Hardware.Esp32")]
 [assembly: AssemblyCompany("nanoFramework Contributors")]
 [assembly: AssemblyProduct("nanoFramework.Hardware.Esp32")]
-[assembly: AssemblyCopyright("Copyright © nanoFramework Contributors 2018")]
+[assembly: AssemblyCopyright("Copyright © nanoFramework Contributors 2019")]
 
 ////////////////////////////////////////////////////////////////
 // update this whenever the native assembly signature changes //
-[assembly: AssemblyNativeVersion("100.0.6.0")]
+[assembly: AssemblyNativeVersion("100.0.7.0")]
 ////////////////////////////////////////////////////////////////
 
 // Setting ComVisible to false makes the types in this assembly not visible 

@@ -62,6 +62,7 @@
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
+    <Compile Include="GpioPins.cs" />
     <Compile Include="HighResEventListener.cs" />
     <Compile Include="HighResTimer.cs" />
     <Compile Include="HighResTimerEvent.cs" />
@@ -84,10 +85,6 @@
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.0.8.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.Runtime.Events.1.0.8-preview.14\lib\nanoFramework.Runtime.Events.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Windows.Devices.Gpio, Version=1.1.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Windows.Devices.Gpio.1.1.1-preview.15\lib\Windows.Devices.Gpio.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
