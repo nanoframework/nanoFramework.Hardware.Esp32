@@ -39,6 +39,10 @@ namespace nanoFramework.Hardware.Esp32
         /// PWM Device type
         /// </summary>
         PWM = 4 * ValueTypes.DeviceType,
+        /// <summary>
+        /// ADC Device type
+        /// </summary>
+        ADC = 5 * ValueTypes.DeviceType,
     };
 
     /// <summary>
@@ -52,9 +56,9 @@ namespace nanoFramework.Hardware.Esp32
         /// </summary>
         SPI1_MOSI = DeviceTypes.SPI + (1 * ValueTypes.DeviceIndex) + 0,
         /// <summary>
-        /// Device function MISI for SPI1 
+        /// Device function MISO for SPI1 
         /// </summary>
-        SPI1_MISI = DeviceTypes.SPI + (1 * ValueTypes.DeviceIndex) + 1,
+        SPI1_MISO = DeviceTypes.SPI + (1 * ValueTypes.DeviceIndex) + 1,
         /// <summary>
         /// Device function CLOCK for SPI1 
         /// </summary>
@@ -65,9 +69,9 @@ namespace nanoFramework.Hardware.Esp32
         /// </summary>
         SPI2_MOSI = DeviceTypes.SPI + (2 * ValueTypes.DeviceIndex) + 0,
         /// <summary>
-        /// Device function MISI for SPI2 
+        /// Device function MISO for SPI2 
         /// </summary>
-        SPI2_MISI = DeviceTypes.SPI + (2 * ValueTypes.DeviceIndex) + 1,
+        SPI2_MISO = DeviceTypes.SPI + (2 * ValueTypes.DeviceIndex) + 1,
         /// <summary>
         /// Device function CLOCK for SPI2 
         /// </summary>
@@ -206,5 +210,100 @@ namespace nanoFramework.Hardware.Esp32
         /// Device function PWM16 
         /// </summary>
         PWM16 = DeviceTypes.PWM + (16 * ValueTypes.DeviceIndex) + 0,
+
+        /// <summary>
+        /// ADC1 channel 0
+        /// </summary>
+        ADC1_CH0 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 0,
+        /// <summary>
+        /// ADC1 channel 1
+        /// </summary>
+        ADC1_CH1 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 1,
+        /// <summary>
+        /// ADC1 channel 2
+        /// </summary>
+        ADC1_CH2 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 2,
+        /// <summary>
+        /// ADC1 channel 3
+        /// </summary>
+        ADC1_CH3 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 3,
+        /// <summary>
+        /// ADC1 channel 4
+        /// </summary>
+        ADC1_CH4 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 4,
+        /// <summary>
+        /// ADC1 channel 5 
+        /// </summary>
+        ADC1_CH5 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 5,
+        /// <summary>
+        /// ADC1 channel 6
+        /// </summary>
+        ADC1_CH6 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 6,
+        /// <summary>
+        /// ADC1 channel 7
+        /// </summary>
+        ADC1_CH7 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 7,
+
+        /// <summary>
+        /// ADC1 channel 8
+        /// Internal Temperture sensor (VP)
+        /// </summary>
+        ADC1_CH8 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 8,
+        /// <summary>
+        /// ADC1 channel 9
+        /// Internal Hall Sensor (VN)
+        /// </summary>
+        ADC1_CH9 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 9,
+        /// <summary>
+        /// ADC1 channel 10
+        /// Internally ESP32 Adc2 channel 10
+        /// </summary>
+        ADC1_CH10 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 10,
+        /// <summary>
+        /// ADC1 channel 11
+        /// Internally ESP32 Adc2 channel 11
+        /// </summary>
+        ADC1_CH11 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 11,
+        /// <summary>
+        /// ADC1 channel 12
+        /// Internally ESP32 Adc2 channel 12
+        /// </summary>
+        ADC1_CH12 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 12,
+        /// <summary>
+        /// ADC1 channel 13 
+        /// Internally ESP32 Adc2 channel 13
+        /// </summary>
+        ADC1_CH13 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 13,
+        /// <summary>
+        /// ADC1 channel 14
+        /// Internally ESP32 Adc2 channel 14
+        /// </summary>
+        ADC1_CH14 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 14,
+        /// <summary>
+        /// ADC1 channel 15
+        /// Internally ESP32 Adc2 channel 15
+        /// </summary>
+        ADC1_CH15 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 15,
+        /// <summary>
+        /// ADC1 channel 16
+        /// Internally ESP32 Adc2 channel 16
+        /// </summary>
+        ADC1_CH16 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 16,
+        /// <summary>
+        /// ADC1 channel 17
+        /// Internally ESP32 Adc2 channel 17
+        /// </summary>
+        ADC1_CH17 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 17,
+        /// <summary>
+        /// ADC1 channel 18
+        /// Internally ESP32 Adc2 channel 18
+        /// </summary>
+        ADC1_CH18 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 18,
+        /// <summary>
+        /// ADC1 channel 19
+        /// Internally ESP32 Adc2 channel 19
+        /// </summary>
+        ADC1_CH19 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 19,
+
     };
  }
