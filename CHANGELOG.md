@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.10-preview.16...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.10-preview.18...HEAD)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#72](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/72)
+- Update readme.txt [\#71](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/71)
+
+## [v1.0.10-preview.18](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.10-preview.18) (2019-07-02)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.10-preview.16...v1.0.10-preview.18)
 
 **Implemented enhancements:**
 
@@ -57,6 +65,10 @@
 ## [v1.0.6-preview-017](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.6-preview-017) (2019-04-07)
 [Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.6-preview-015...v1.0.6-preview-017)
 
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#59](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/59)
+
 ## [v1.0.6-preview-015](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.6-preview-015) (2019-04-03)
 [Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.6-preview-013...v1.0.6-preview-015)
 
@@ -69,7 +81,6 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#59](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/59)
 - Update 2 NuGet dependencies [\#57](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/57)
 - Update 2 NuGet dependencies [\#56](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/56)
 
