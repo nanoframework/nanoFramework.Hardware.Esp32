@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.10-preview.18...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.10-preview.21...HEAD)
+
+**Documentation and other chores:**
+
+- Remove dependency from Windows.Devices.Gpio [\#73](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/73)
+
+## [v1.0.10-preview.21](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.10-preview.21) (2019-07-18)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.10-preview.18...v1.0.10-preview.21)
 
 **Documentation and other chores:**
 
