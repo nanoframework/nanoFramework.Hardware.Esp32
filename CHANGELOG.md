@@ -6,6 +6,7 @@
 
 **Documentation and other chores:**
 
+- Update NuGet references [\#74](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/74)
 - Remove dependency from Windows.Devices.Gpio [\#73](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/73)
 
 ## [v1.0.10-preview.21](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.10-preview.21) (2019-07-18)
