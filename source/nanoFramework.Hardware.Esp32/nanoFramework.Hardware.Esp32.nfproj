@@ -50,13 +50,10 @@
     </NFMDP_PE_ExcludeClassByName>
   </ItemGroup>
   <ItemGroup>
-    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.CoreLibrary.1.2.6-preview.16\lib\mscorlib.dll">
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.CoreLibrary.1.2.6-preview.19\lib\mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
-    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Runtime.Events.1.0.8-preview.20\lib\nanoFramework.Runtime.Events.dll">
-      <InProject>false</InProject>
-    </NFMDP_PE_LoadHints>
-    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Windows.Devices.Gpio.1.1.1-preview.15\lib\nanoFramework.Windows.Devices.Gpio.dll">
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Runtime.Events.1.1.0-preview.4\lib\nanoFramework.Runtime.Events.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
   </ItemGroup>
@@ -75,18 +72,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
-    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.2.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.CoreLibrary.1.2.6-preview.16\lib\mscorlib.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.CoreLibrary.1.2.6-preview.19\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Events, Version=1.0.8.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Runtime.Events.1.0.8-preview.20\lib\nanoFramework.Runtime.Events.dll</HintPath>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.1.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Runtime.Events.1.1.0-preview.4\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
-    </Reference>
+  </Reference>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
