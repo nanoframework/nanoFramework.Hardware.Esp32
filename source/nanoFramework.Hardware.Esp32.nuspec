@@ -7,19 +7,21 @@
     <authors>nanoFramework project contributors</authors>
     <owners>nanoFramework project contributors</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
     <releaseNotes>
     </releaseNotes>
     <developmentDependency>false</developmentDependency>
-    <projectUrl>https://github.com/nanoframework</projectUrl>
+    <projectUrl>https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32</projectUrl>
     <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
+    <repository type="git" url="https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32" commit="$commit$" />
     <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>
-    <description>This package includes the nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects. The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP32 device.</description>
+    <description>This package includes the nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects. The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP32 device.
+This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion$.</description>
     <summary>nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf esp32</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="[1.1.1]" />
-      <dependency id="nanoFramework.Runtime.Events" version="[1.0.4]" />
-      <dependency id="nanoFramework.Windows.Devices.Gpio" version="[1.0.5]" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.2.6" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.1.1" />
     </dependencies>
   </metadata>
   <files>
@@ -28,5 +30,7 @@
     <file src="nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.pdbx" target="lib\nanoFramework.Hardware.Esp32.pdbx" />
     <file src="nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.pe" target="lib\nanoFramework.Hardware.Esp32.pe" />
     <file src="nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.xml" target="lib\nanoFramework.Hardware.Esp32.xml" />
+    <!-- readme -->
+    <file src="readme.txt" target="readme.txt" />
   </files>
 </package>
