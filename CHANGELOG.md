@@ -1,7 +1,6 @@
 # Change Log
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/HEAD)
-
+## [v1.0.8](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.8) (2019-02-04)
 [Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.10-preview.21...HEAD)
 
 **Documentation and other chores:**
