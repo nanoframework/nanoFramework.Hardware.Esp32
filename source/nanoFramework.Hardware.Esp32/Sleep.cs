@@ -35,9 +35,13 @@ namespace nanoFramework.Hardware.Esp32
         public enum WakeupCause
         {
             /// <summary>
-            /// Wakeup not caused from exit from sleep
+            /// In case of deep sleep, reset was not caused by exit from deep sleep
             /// </summary>
             Undefined = 0,
+            /// <summary>
+            /// Not a wakeup cause, used to disable all wakeup sources with esp_sleep_disable_wakeup_source
+            /// </summary>
+			All,
             /// <summary>
             /// Wakeup caused by external signal using RTC_IO
             /// </summary>
@@ -57,7 +61,15 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             ///  Wakeup caused by ULP program
             /// </summary>
-            Ulp          
+            Ulp,
+            /// <summary>
+            /// Wakeup caused by GPIO (light sleep only)
+            /// </summary>
+            Gpio,
+            /// <summary>
+            /// Wakeup caused by UART (light sleep only)
+            /// </summary>
+            Uart
         };
 
 
