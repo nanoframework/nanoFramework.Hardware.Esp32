@@ -39,13 +39,9 @@ namespace nanoFramework.Hardware.Esp32
             /// </summary>
             Undefined = 0,
             /// <summary>
-            /// Not a wakeup cause, used to disable all wakeup sources with esp_sleep_disable_wakeup_source
-            /// </summary>
-			All,
-            /// <summary>
             /// Wakeup caused by external signal using RTC_IO
             /// </summary>
-            Ext0,         
+            Ext0 = 2,         
             /// <summary>
             /// Wakeup caused by external signal using RTC_CNTL
             /// </summary>
