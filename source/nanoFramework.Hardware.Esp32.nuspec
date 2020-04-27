@@ -20,8 +20,8 @@ This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion
     <summary>nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf esp32</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.7.2-preview.4" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.4.2-preview.4" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.7.2-preview.5" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.4.2-preview.5" />
     </dependencies>
   </metadata>
   <files>
