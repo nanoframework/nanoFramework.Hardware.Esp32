@@ -18,8 +18,8 @@
     <tags>
     </tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.7.2-preview.5" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.4.2-preview.5" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.7.2-preview.6" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.4.2-preview.6" />
     </dependencies>
   </metadata>
   <files>
