@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.7...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.9...HEAD)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#117](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/117)
+
+## [v1.3.2-preview.9](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.3.2-preview.9) (2020-09-30)
+
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.7...v1.3.2-preview.9)
 
 **Documentation and other chores:**
 
@@ -444,10 +452,6 @@
 
 [Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.2-preview-001...v1.0.2-preview-004)
 
-**Documentation and other chores:**
-
-- Bumps nanoFramework.Windows.Devices.Gpio from 1.0.0 to 1.0.2-preview-004 [\#30](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/30)
-
 ## [v1.0.2-preview-001](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.2-preview-001) (2018-11-06)
 
 [Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.0.0...v1.0.2-preview-001)
@@ -466,6 +470,7 @@
 
 **Documentation and other chores:**
 
+- Bumps nanoFramework.Windows.Devices.Gpio from 1.0.0 to 1.0.2-preview-004 [\#30](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/30)
 - Update 3 NuGet dependencies [\#25](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/25)
 - Bumps nanoFramework.Windows.Devices.Gpio from 1.0.0-preview226 to 1.0.0-preview228 [\#24](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/24)
 - Update 3 NuGet dependencies [\#23](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/23)
