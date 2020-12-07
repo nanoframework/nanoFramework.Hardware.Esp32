@@ -39,10 +39,10 @@
     </NFMDP_PE_ExcludeClassByName>
   </ItemGroup>
   <ItemGroup>
-    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.CoreLibrary.1.9.1-preview.6\lib\mscorlib.dll">
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.CoreLibrary.1.10.0-preview.4\lib\mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
-    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Runtime.Events.1.8.2-preview.10\lib\nanoFramework.Runtime.Events.dll">
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Runtime.Events.1.9.0-preview.2\lib\nanoFramework.Runtime.Events.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
   </ItemGroup>
@@ -64,12 +64,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.9.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.CoreLibrary.1.9.1-preview.6\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.10.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.CoreLibrary.1.10.0-preview.4\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Events, Version=1.8.2.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Runtime.Events.1.8.2-preview.10\lib\nanoFramework.Runtime.Events.dll</HintPath>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.9.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Runtime.Events.1.9.0-preview.2\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
