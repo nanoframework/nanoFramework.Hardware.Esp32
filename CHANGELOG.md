@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.14...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.16...HEAD)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#123](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/123)
+
+## [v1.3.2-preview.16](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.3.2-preview.16) (2020-12-28)
+
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.14...v1.3.2-preview.16)
 
 **Documentation and other chores:**
 
@@ -371,7 +379,6 @@
 **Documentation and other chores:**
 
 - Update 3 NuGet dependencies [\#60](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/60)
-- Update 2 NuGet dependencies [\#55](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/55)
 
 ## [v1.0.6-preview-017](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.6-preview-017) (2019-04-07)
 
@@ -404,6 +411,7 @@
 
 **Documentation and other chores:**
 
+- Update 2 NuGet dependencies [\#55](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/55)
 - Bumps nanoFramework.Windows.Devices.Gpio from 1.0.4 to 1.0.5 [\#51](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/51)
 
 ## [v1.0.8](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.0.8) (2019-02-04)
