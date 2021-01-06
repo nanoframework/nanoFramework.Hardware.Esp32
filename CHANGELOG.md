@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.16...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.19...HEAD)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#124](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/124)
+
+## [v1.3.2-preview.19](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.3.2-preview.19) (2020-12-29)
+
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.16...v1.3.2-preview.19)
 
 **Documentation and other chores:**
 
