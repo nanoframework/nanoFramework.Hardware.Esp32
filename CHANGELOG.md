@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.21...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.24...HEAD)
+
+**Fixed bugs:**
+
+- Fix issue with Sleep and wake from sleep [\#126](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/pull/126)
+
+## [v1.3.2-preview.24](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/tree/v1.3.2-preview.24) (2021-03-02)
+
+[Full Changelog](https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32/compare/v1.3.2-preview.21...v1.3.2-preview.24)
 
 **Documentation and other chores:**
 
