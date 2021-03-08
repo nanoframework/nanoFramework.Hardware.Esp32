@@ -86,71 +86,71 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             /// Gpio Pin 2 used for wakeup
             /// </summary>
-            Pin2 = 1 << 2,
+            Pin2 = (UInt64)1 << 2,
             /// <summary>
             /// Gpio Pin 4 used for wakeup
             /// </summary>
-            Pin4 = 1 << 4,
+            Pin4 = (UInt64)1 << 4,
             /// <summary>
             /// Gpio Pin 12 used for wakeup
             /// </summary>
-            Pin12 = 1 << 12,
+            Pin12 = (UInt64)1 << 12,
             /// <summary>
             /// Gpio Pin 13 used for wakeup
             /// </summary>
-            Pin13 = 1 << 13,
+            Pin13 = (UInt64)1 << 13,
             /// <summary>
             /// Gpio Pin 14 used for wakeup
             /// </summary>
-            Pin14 = 1 << 14,
+            Pin14 = (UInt64)1 << 14,
             /// <summary>
             /// Gpio Pin 15 used for wakeup
             /// </summary>
-            Pin15 = 1 << 15,
+            Pin15 = (UInt64)1 << 15,
             /// <summary>
             /// Gpio Pin 25 used for wakeup
             /// </summary>
-            Pin25 = 1 << 25,
+            Pin25 = (UInt64)1 << 25,
             /// <summary>
             /// Gpio Pin 26 used for wakeup
             /// </summary>
-            Pin26 = 1 << 26,
+            Pin26 = (UInt64)1 << 26,
             /// <summary>
             /// Gpio Pin 27 used for wakeup
             /// </summary>
-            Pin27 = 1 << 27,
+            Pin27 = (UInt64)1 << 27,
             /// <summary>
             /// Gpio Pin 32 used for wakeup
             /// </summary>
-            Pin32 = 1 << 32,
+            Pin32 = (UInt64)1 << 32,
             /// <summary>
             /// Gpio Pin 33 used for wakeup
             /// </summary>
-            Pin33 = 1 << 33,
+            Pin33 = (UInt64)1 << 33,
             /// <summary>
             /// Gpio Pin 34 used for wakeup
             /// </summary>
-            Pin34 = 1 << 34,
+            Pin34 = (UInt64)1 << 34,
             /// <summary>
             /// Gpio Pin 35 used for wakeup
             /// </summary>
-            Pin35 = 1 << 35,
+            Pin35 = (UInt64)1 << 35,
             /// <summary>
             /// Gpio Pin 36 used for wakeup
             /// </summary>
-            Pin36 = 1 << 36,
+            Pin36 = (UInt64)1 << 36,
             /// <summary>
             /// Gpio Pin 37 used for wakeup
             /// </summary>
-            Pin37 = 1 << 37,
+            Pin37 = (UInt64)1 << 37,
             /// <summary>
             /// Gpio Pin 38 used for wakeup
             /// </summary>
-            Pin38 = 1 << 38,
+            Pin38 = (UInt64)1 << 38,
             /// <summary>
             /// Gpio Pin 39 used for wakeup
             /// </summary>
-            Pin39 = 1 << 39
+            Pin39 = (UInt64)1 << 39
         };
 
         /// <summary>
