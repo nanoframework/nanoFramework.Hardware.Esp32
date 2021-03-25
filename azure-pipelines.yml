@@ -25,7 +25,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   nugetPackageName: 'nanoFramework.Hardware.Esp32'
-  repoName: 'lib-nanoFramework.Hardware.Esp32'
+  repoName: 'nanoFramework.Hardware.Esp32'
 
 steps:
 
