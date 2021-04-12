@@ -10,6 +10,7 @@
   },
   "publicReleaseRefSpec": [
     "^refs/heads/master$",
+    "^refs/heads/main$",
     "^refs/heads/v\\d+(?:\\.\\d+)?$"
   ],
   "cloudBuild": {
