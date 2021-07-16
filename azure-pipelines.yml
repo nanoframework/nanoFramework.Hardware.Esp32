@@ -1,6 +1,6 @@
 trigger:
   branches:
-    include: [master, develop, "release-*" ]
+    include: [main, master, develop, "release-*" ]
   paths:
     exclude: ["*.md", .gitignore]
   tags:
@@ -17,15 +17,15 @@ resources:
       endpoint: nanoframework
 
 pool:
-  vmImage: 'VS2017-Win2016'
+  vmImage: 'windows-2019'
 
 variables:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  solution: '**/source/*.sln'
+  solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   nugetPackageName: 'nanoFramework.Hardware.Esp32'
-  repoName: 'lib-nanoFramework.Hardware.Esp32'
+  repoName: 'nanoFramework.Hardware.Esp32'
 
 steps:
 
