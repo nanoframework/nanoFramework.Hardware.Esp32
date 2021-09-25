@@ -23,26 +23,36 @@ namespace nanoFramework.Hardware.Esp32
         /// GPIO Device type
         /// </summary>
         GPIO   = 0 * ValueTypes.DeviceType,
+
         /// <summary>
         /// SPI Device type
         /// </summary>
         SPI = 1 * ValueTypes.DeviceType,
+
         /// <summary>
         /// I2C Device type
         /// </summary>
         I2C = 2 * ValueTypes.DeviceType,
+
         /// <summary>
         /// SERIAL Device type
         /// </summary>
         SERIAL = 3 * ValueTypes.DeviceType,
+
         /// <summary>
         /// PWM Device type
         /// </summary>
         PWM = 4 * ValueTypes.DeviceType,
+
         /// <summary>
         /// ADC Device type
         /// </summary>
         ADC = 5 * ValueTypes.DeviceType,
+
+        /// <summary>
+        /// I2S Device type
+        /// </summary>
+        I2S = 6 * ValueTypes.DeviceType,
     };
 
     /// <summary>
@@ -305,5 +315,56 @@ namespace nanoFramework.Hardware.Esp32
         /// </summary>
         ADC1_CH19 = DeviceTypes.ADC + (1 * ValueTypes.DeviceIndex) + 19,
 
+        /// <summary>
+        /// I2S1 function Master Clock.
+        /// Used only in master mode.
+        /// </summary>
+        I2S1_MCK = DeviceTypes.I2S + (1 * ValueTypes.DeviceIndex) + 0,
+        /// <summary>
+        /// I2S1 function Bit Clock.
+        /// Used for general purpose read and write on the I2S bus.
+        /// </summary>
+        I2S1_BCK = DeviceTypes.I2S + (1 * ValueTypes.DeviceIndex) + 1,
+        /// <summary>
+        /// I2S1 function WS.
+        /// Used if your have stereo.
+        /// </summary>
+        I2S1_WS = DeviceTypes.I2S + (1 * ValueTypes.DeviceIndex) + 2,
+        /// <summary>
+        /// I2S1 function DATA_OUT.
+        /// Used for output data typically on a speaker.
+        /// </summary>
+        I2S1_DATA_OUT = DeviceTypes.I2S + (1 * ValueTypes.DeviceIndex) + 3,
+        /// <summary>
+        /// I2S1 function MDATA_IN.
+        /// Used for input data typically from a microphone.
+        /// </summary>
+        I2S1_MDATA_IN = DeviceTypes.I2S + (1 * ValueTypes.DeviceIndex) + 4,
+
+        /// <summary>
+        /// I2S2 function Master Clock.
+        /// Used only in master mode.
+        /// </summary>
+        I2S2_MCK = DeviceTypes.I2S + (2 * ValueTypes.DeviceIndex) + 0,
+        /// <summary>
+        /// I2S2 function Bit Clock.
+        /// Used for general purpose read and write on the I2S bus.
+        /// </summary>
+        I2S2_BCK = DeviceTypes.I2S + (2 * ValueTypes.DeviceIndex) + 1,
+        /// <summary>
+        /// I2S2 function WS.
+        /// Used if your have stereo.
+        /// </summary>
+        I2S2_WS = DeviceTypes.I2S + (2 * ValueTypes.DeviceIndex) + 2,
+        /// <summary>
+        /// I2S2 function DATA_OUT.
+        /// Used for output data typically on a speaker.
+        /// </summary>
+        I2S2_DATA_OUT = DeviceTypes.I2S + (2 * ValueTypes.DeviceIndex) + 3,
+        /// <summary>
+        /// I2S2 function MDATA_IN.
+        /// Used for input data typically from a microphone.
+        /// </summary>
+        I2S2_MDATA_IN = DeviceTypes.I2S + (2 * ValueTypes.DeviceIndex) + 4,
     };
  }
