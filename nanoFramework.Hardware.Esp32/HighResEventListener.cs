@@ -16,8 +16,8 @@ namespace nanoFramework.Hardware.Esp32
 
         public HighResEventListener()
         {
-            EventSink.AddEventProcessor(EventCategory.Custom, this);
-            EventSink.AddEventListener(EventCategory.Custom, this);
+            EventSink.AddEventProcessor(EventCategory.HighResolutionTimer, this);
+            EventSink.AddEventListener(EventCategory.HighResolutionTimer, this);
         }
 
         public void InitializeForEventSource()
