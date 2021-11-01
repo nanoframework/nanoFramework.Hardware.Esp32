@@ -35,11 +35,11 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Get information on native memory.
         /// </summary>
-        public static void GetMemoryInfo(MemoryType memType, out UInt32 TotalSize, out UInt32 TotalFreeSize, out UInt32 LargestFreeBlock)
+        public static void GetMemoryInfo(MemoryType memType, out UInt32 totalSize, out UInt32 totalFreeSize, out UInt32 largestFreeBlock)
         {
-            TotalSize = NativeGetMemoryTotalSize((int)memType);
-            TotalFreeSize = NativeGetMemoryTotalFreeSize((int)memType);
-            LargestFreeBlock = NativeGetMemoryLargestFreeBlock((int)memType);
+            totalSize = NativeGetMemoryTotalSize((int)memType);
+            totalFreeSize = NativeGetMemoryTotalFreeSize((int)memType);
+            largestFreeBlock = NativeGetMemoryLargestFreeBlock((int)memType);
         }
 
         #region Native Calls
