@@ -32,7 +32,7 @@ This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion
     <file src="nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.xml" target="lib\nanoFramework.Hardware.Esp32.xml" />
 
     <file src="assets\readme.txt" target="" />
-    <file src="assets\nf-logo.txt" target="images" />
+    <file src="assets\nf-logo.png" target="images" />
     <file src="LICENSE.md" target="" />
   </files>
 </package>
