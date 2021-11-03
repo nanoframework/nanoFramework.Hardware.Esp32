@@ -7,16 +7,16 @@
     <authors>nanoFramework project contributors</authors>
     <owners>nanoFramework project contributors,dotnetfoundation</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <license type="expression">LICENSE.md</license>
+    <license type="file">LICENSE.md</license>
     <releaseNotes>
     </releaseNotes>
     <developmentDependency>false</developmentDependency>
     <projectUrl>https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32</projectUrl>
     <icon>images\nf-logo.png</icon>
-    <repository type="git" url="https://github.com/nanoframework/lib-nanoFramework.Hardware.Esp32" commit="$commit$" />
+    <repository type="git" url="https://github.com/nanoframework/nanoFramework.Hardware.Esp32" commit="$commit$" />
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
-    <description>This package includes the nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects. The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP32 device.
-This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion$.</description>
+    <description>This package includes the nanoFramework.Hardware.Esp32 assembly for .NET nanoFramework C# projects. The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP32 device.
+This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion$ (checksum $checksum$).</description>
     <summary>nanoFramework.Hardware.Esp32 assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf esp32</tags>
     <dependencies>
