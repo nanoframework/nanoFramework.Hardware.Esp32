@@ -16,11 +16,13 @@
     <icon>images\nf-logo.png</icon>
     <repository type="git" url="https://github.com/nanoframework/nanoFramework.Hardware.Esp32" commit="$commit$" />
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
-    <description>This package includes the nanoFramework.Hardware.Esp32 assembly for .NET nanoFramework C# projects.&#10;The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP32 device.&#10;This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion$ (checksum $checksum$).</description>
+    <description>This package includes the nanoFramework.Hardware.Esp32 assembly for .NET nanoFramework C# projects.
+The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP32 device.
+This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion$ (checksum $checksum$).</description>
     <tags>nanoFramework C# csharp netmf netnf esp32</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.10.5" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.9.2-preview.8" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.11.6-preview.2" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.9.2-preview.12" />
     </dependencies>
   </metadata>
   <files>
@@ -29,7 +31,6 @@
     <file src="nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.pdbx" target="lib\nanoFramework.Hardware.Esp32.pdbx" />
     <file src="nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.pe" target="lib\nanoFramework.Hardware.Esp32.pe" />
     <file src="nanoFramework.Hardware.Esp32\bin\Release\nanoFramework.Hardware.Esp32.xml" target="lib\nanoFramework.Hardware.Esp32.xml" />
-
     <file src="assets\readme.txt" target="" />
     <file src="README.md" target="docs\" />
     <file src="assets\nf-logo.png" target="images" />
