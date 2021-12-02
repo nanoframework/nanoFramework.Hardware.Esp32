@@ -1,10 +1,10 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-nanoFramework.Hardware.Esp32&metric=alert_status)](https://sonarcloud.io/dashboard?id=nanoframework_lib-nanoFramework.Hardware.Esp32) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-nanoFramework.Hardware.Esp32&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=nanoframework_lib-nanoFramework.Hardware.Esp32) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Hardware.Esp32.svg?label=NuGet&style=flat&logo=nuget)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md) [![Discord](https://img.shields.io/discord/478725473862549535.svg?logo=discord&logoColor=white&label=Discord&color=7289DA)](https://discord.gg/gCyBu8T)
 
-![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
+![nanoFramework logo](https://raw.githubusercontent.com/nanoframework/Home/main/resources/logo/nanoFramework-repo-logo.png)
 
 -----
 
-### Welcome to the **nanoFramework** nanoFramework.Hardware.Esp32 Library repository!
+### Welcome to the .NET **nanoFramework** nanoFramework.Hardware.Esp32 Library repository
 
 ## Build status
 
@@ -29,7 +29,7 @@ The **nanoFramework** Class Libraries are licensed under the [MIT license](LICEN
 
 ## Code of Conduct
 
-This project has adopted the code of conduct defined by the Contributor Covenant to clarify expected behavior in our community.
+This project has adopted the code of conduct defined by the Contributor Covenant to clarify expected behaviour in our community.
 For more information see the [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct).
 
 ### .NET Foundation
