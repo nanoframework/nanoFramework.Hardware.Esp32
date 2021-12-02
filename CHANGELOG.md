@@ -1,6 +1,8 @@
 # Changelog
 
-[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.4-preview.16...HEAD)
+## [v1.3.4-preview.18](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.4-preview.18) (2021-12-02)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.4-preview.16...v1.3.4-preview.18)
 
 **Documentation and other chores:**
 
