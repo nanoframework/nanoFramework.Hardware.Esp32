@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.4-preview.14...HEAD)
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.4-preview.16...HEAD)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.Runtime.Events from 1.9.2-preview.14 to 1.9.2 [\#153](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/153)
+
+## [v1.3.4-preview.16](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.4-preview.16) (2021-12-02)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.4-preview.14...v1.3.4-preview.16)
 
 **Documentation and other chores:**
 
