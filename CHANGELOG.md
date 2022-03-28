@@ -2,6 +2,74 @@
 
 ## [v1.3.4-preview.18](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.4-preview.18) (2021-12-02)
 
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.5-preview.12...HEAD)
+
+**Documentation and other chores:**
+
+- Update 1 NuGet dependencies [\#162](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/162)
+
+## [v1.3.5-preview.12](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.5-preview.12) (2022-03-28)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.5-preview.10...v1.3.5-preview.12)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#161](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/161)
+
+## [v1.3.5-preview.10](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.5-preview.10) (2022-03-17)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.5-preview.9...v1.3.5-preview.10)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#160](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/160)
+
+## [v1.3.5-preview.9](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.5-preview.9) (2022-03-14)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.5-preview.7...v1.3.5-preview.9)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#159](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/159)
+
+## [v1.3.5-preview.7](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.5-preview.7) (2022-02-17)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.5-preview.6...v1.3.5-preview.7)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#158](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/158)
+
+## [v1.3.5-preview.6](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.5-preview.6) (2022-01-28)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.5-preview.5...v1.3.5-preview.6)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#157](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/157)
+
+## [v1.3.5-preview.5](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.5-preview.5) (2022-01-20)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.5-preview.3...v1.3.5-preview.5)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#156](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/156)
+
+## [v1.3.5-preview.3](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.5-preview.3) (2021-12-28)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.4...v1.3.5-preview.3)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.Runtime.Events from 1.9.2 to 1.10.0-preview.1 [\#155](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/155)
+
+## [v1.3.4](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.4) (2021-12-02)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.4-preview.18...v1.3.4)
+
+## [v1.3.4-preview.18](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.3.4-preview.18) (2021-12-02)
+
 [Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.3.4-preview.16...v1.3.4-preview.18)
 
 **Documentation and other chores:**

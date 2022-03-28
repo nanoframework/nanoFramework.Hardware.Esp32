@@ -1,11 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>nanoFramework.Hardware.Esp32</id>
     <version>$version$</version>
     <title>nanoFramework.Hardware.Esp32</title>
-    <authors>nanoFramework project contributors</authors>
-    <owners>nanoFramework,dotnetfoundation</owners>
+    <authors>nanoframework</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE.md</license>
     <releaseNotes>
@@ -21,8 +20,8 @@ The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP
 This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion$ (checksum $checksum$).</description>
     <tags>nanoFramework C# csharp netmf netnf esp32</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.11.7" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.9.2" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.12.0" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.10.0" />
     </dependencies>
   </metadata>
   <files>
