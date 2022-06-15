@@ -19,7 +19,7 @@ namespace nanoFramework.Hardware.Esp32
         public enum MemoryType 
         { 
             /// <summary>
-            /// All memory ( Internal and SpiRam
+            /// All memory ( Internal and SpiRam ).
             /// </summary>
             All, 
             /// <summary>

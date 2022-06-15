@@ -16,6 +16,7 @@ namespace nanoFramework.Hardware.Esp32
         /// No error
         /// </summary>
         OK = 0,
+
         /// <summary>
         /// The function failed
         /// </summary>
