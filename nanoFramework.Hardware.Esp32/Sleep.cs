@@ -328,7 +328,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Returns a combination of pins that caused the wakeup.
         /// </summary>
-        /// <returns>returns a combination of the pins that caused the wakeup.</returns>
+        /// <returns>Returns a combination of the pins that caused the wakeup.</returns>
         public static WakeupGpioPin GetWakeupGpioPin()
         {
             return NativeGetWakeupGpioPin();
