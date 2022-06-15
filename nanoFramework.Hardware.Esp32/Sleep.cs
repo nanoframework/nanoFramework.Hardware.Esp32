@@ -241,7 +241,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Enable Wakeup by Timer.
         /// </summary>
-        /// <param name="time">period after which wakeup occurs.</param>
+        /// <param name="time">Period after which wakeup occurs.</param>
         /// <returns>returns ESP32 native error enumeration.</returns>
         public static EspNativeError EnableWakeupByTimer(TimeSpan time)
         {
@@ -255,7 +255,7 @@ namespace nanoFramework.Hardware.Esp32
         /// </summary>
         /// <param name="pin">GPIO number used as wakeup source. Only pins that have RTC functionality can be used.
         /// 0,2,4,12->15,25->27,32->39</param>
-        /// <param name="level"></param>
+        /// <param name="level">analog threshold at or above which pin causes wake up, or zero if pin is not active for wakeup.</param>
         /// <returns>returns ESP32 native error enumeration.</returns>
         public static EspNativeError EnableWakeupByPin(WakeupGpioPin pin, int level)
         {
@@ -268,8 +268,8 @@ namespace nanoFramework.Hardware.Esp32
         /// <remarks>
         /// Only pins that are RTC connected. 
         /// </remarks>
-        /// <param name="pins"></param>
-        /// <param name="mode"></param>
+        /// <param name="pins">Combination of pins that are enabled for wakeup.</param>
+        /// <param name="mode">Logical mode used for wakeup to occur.</param>
         /// <returns>returns ESP32 native error enumeration.</returns>
         public static EspNativeError EnableWakeupByMultiPins(WakeupGpioPin pins, WakeupMode mode)
         {
@@ -298,11 +298,16 @@ namespace nanoFramework.Hardware.Esp32
         /// Enter deep sleep using configured wakeup sources. 
         /// </summary>
         /// <remarks>
-        /// If no wakeup sources configured then it will be a indefinite sleep.
-        /// This call never returns.
-        /// After the device enters deep sleep a wakeup source will wake the device and the execution will start as if it was a reset.
+        /// After a call to this method the device enters deep sleep, a wakeup source will wake the device and the execution will start as if it was a reset.
+        /// After this occurs the cause can be queried using <see cref="GetWakeupCause"/>.
         /// Keep in mind that the execution WILL NOT continue after the call to this method.
+        /// This call never returns.
+        /// If no wakeup sources are configured then the device enters an indefinite sleep.
         /// </remarks>
+        /// <seealso cref="EnableWakeupByMultiPins(WakeupGpioPin, WakeupMode)"/>
+        /// <seealso cref="EnableWakeupByPin(WakeupGpioPin, int)"/>
+        /// <seealso cref="EnableWakeupByTimer(TimeSpan)"/>
+        /// <seealso cref="EnableWakeupByTouchPad"/>
         public static void StartDeepSleep()
         {
             NativeStartDeepSleep();
@@ -314,25 +319,25 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Get the cause for waking up.
         /// </summary>
-        /// <returns>Return the Wakeup cause.</returns>
+        /// <returns>Returns the wakeup cause.</returns>
         public static WakeupCause GetWakeupCause()
         {
             return NativeGetWakeupCause();
         }
 
         /// <summary>
-        /// Returns a bit mask of pins that caused the wakeup.
+        /// Returns a combination of pins that caused the wakeup.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>returns a combination of the pins that caused the wakeup.</returns>
         public static WakeupGpioPin GetWakeupGpioPin()
         {
             return NativeGetWakeupGpioPin();
         }
 
         /// <summary>
-        /// Get the Touchpad which caused wakeup. 
+        /// Get the Touchpad which caused the wakeup. 
         /// </summary>
-        /// <returns>Return TouchPad number or None</returns>
+        /// <returns>Returns TouchPad number which caused the wakeup, else <see cref="WakeupGpioPin.None"/></returns>
         public static TouchPad GetWakeupTouchpad()
         {
             return NativeGetWakeupTouchpad();
