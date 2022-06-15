@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 namespace nanoFramework.Hardware.Esp32
 {
     /// <summary>
-    /// Encapsulates ESP32 sleep functions
+    /// Encapsulates ESP32 sleep functions.
     /// </summary>
     public class Sleep
     {
@@ -19,12 +19,12 @@ namespace nanoFramework.Hardware.Esp32
         public enum WakeupMode
         {
             /// <summary>
-            /// Wakeup when all pins are low
+            /// Wakeup when all pins are low.
             /// </summary>
             AllLow = 0,
 
             /// <summary>
-            /// Wakeup when any pin is high
+            /// Wakeup when any pin is high.
             /// </summary>
             AnyHigh = 1
         }
@@ -35,42 +35,42 @@ namespace nanoFramework.Hardware.Esp32
         public enum WakeupCause
         {
             /// <summary>
-            /// In case of deep sleep, reset was not caused by exit from deep sleep
+            /// In case of deep sleep, reset was not caused by exit from deep sleep.
             /// </summary>
             Undefined = 0,
 
             /// <summary>
-            /// Wakeup caused by external signal using RTC_IO
+            /// Wakeup caused by external signal using RTC_IO.
             /// </summary>
             Ext0 = 2,
 
             /// <summary>
-            /// Wakeup caused by external signal using RTC_CNTL
+            /// Wakeup caused by external signal using RTC_CNTL.
             /// </summary>
             Ext1,
 
             /// <summary>
-            /// Wakeup caused by timer
+            /// Wakeup caused by timer.
             /// </summary>
             Timer,
 
             /// <summary>
-            ///  Wakeup caused by Touchpad
+            ///  Wakeup caused by Touchpad.
             /// </summary>
             TouchPad,
 
             /// <summary>
-            ///  Wakeup caused by ULP program
+            ///  Wakeup caused by ULP program.
             /// </summary>
             Ulp,
 
             /// <summary>
-            /// Wakeup caused by GPIO (light sleep only)
+            /// Wakeup caused by GPIO (light sleep only).
             /// </summary>
             Gpio,
 
             /// <summary>
-            /// Wakeup caused by UART (light sleep only)
+            /// Wakeup caused by UART (light sleep only).
             /// </summary>
             Uart
         }
@@ -82,97 +82,97 @@ namespace nanoFramework.Hardware.Esp32
         public enum WakeupGpioPin : UInt64
         {
             /// <summary>
-            /// No wake up pin
+            /// No wake up pin.
             /// </summary>
             None = 0,
 
             /// <summary>
-            /// Gpio Pin 1 used for wakeup
+            /// Gpio Pin 1 used for wakeup.
             /// </summary>
             Pin0 = 1,
 
             /// <summary>
-            /// Gpio Pin 2 used for wakeup
+            /// Gpio Pin 2 used for wakeup.
             /// </summary>
             Pin2 = (UInt64)1 << 2,
 
             /// <summary>
-            /// Gpio Pin 4 used for wakeup
+            /// Gpio Pin 4 used for wakeup.
             /// </summary>
             Pin4 = (UInt64)1 << 4,
 
             /// <summary>
-            /// Gpio Pin 12 used for wakeup
+            /// Gpio Pin 12 used for wakeup.
             /// </summary>
             Pin12 = (UInt64)1 << 12,
 
             /// <summary>
-            /// Gpio Pin 13 used for wakeup
+            /// Gpio Pin 13 used for wakeup.
             /// </summary>
             Pin13 = (UInt64)1 << 13,
 
             /// <summary>
-            /// Gpio Pin 14 used for wakeup
+            /// Gpio Pin 14 used for wakeup.
             /// </summary>
             Pin14 = (UInt64)1 << 14,
 
             /// <summary>
-            /// Gpio Pin 15 used for wakeup
+            /// Gpio Pin 15 used for wakeup.
             /// </summary>
             Pin15 = (UInt64)1 << 15,
 
             /// <summary>
-            /// Gpio Pin 25 used for wakeup
+            /// Gpio Pin 25 used for wakeup.
             /// </summary>
             Pin25 = (UInt64)1 << 25,
 
             /// <summary>
-            /// Gpio Pin 26 used for wakeup
+            /// Gpio Pin 26 used for wakeup.
             /// </summary>
             Pin26 = (UInt64)1 << 26,
 
             /// <summary>
-            /// Gpio Pin 27 used for wakeup
+            /// Gpio Pin 27 used for wakeup.
             /// </summary>
             Pin27 = (UInt64)1 << 27,
 
             /// <summary>
-            /// Gpio Pin 32 used for wakeup
+            /// Gpio Pin 32 used for wakeup.
             /// </summary>
             Pin32 = (UInt64)1 << 32,
 
             /// <summary>
-            /// Gpio Pin 33 used for wakeup
+            /// Gpio Pin 33 used for wakeup.
             /// </summary>
             Pin33 = (UInt64)1 << 33,
 
             /// <summary>
-            /// Gpio Pin 34 used for wakeup
+            /// Gpio Pin 34 used for wakeup.
             /// </summary>
             Pin34 = (UInt64)1 << 34,
 
             /// <summary>
-            /// Gpio Pin 35 used for wakeup
+            /// Gpio Pin 35 used for wakeup.
             /// </summary>
             Pin35 = (UInt64)1 << 35,
 
             /// <summary>
-            /// Gpio Pin 36 used for wakeup
+            /// Gpio Pin 36 used for wakeup.
             /// </summary>
             Pin36 = (UInt64)1 << 36,
 
             /// <summary>
-            /// Gpio Pin 37 used for wakeup
+            /// Gpio Pin 37 used for wakeup.
             /// </summary>
             Pin37 = (UInt64)1 << 37,
 
             /// <summary>
-            /// Gpio Pin 38 used for wakeup
+            /// Gpio Pin 38 used for wakeup.
             /// </summary>
             Pin38 = (UInt64)1 << 38,
 
             /// <summary>
-            /// Gpio Pin 39 used for wakeup
+            /// Gpio Pin 39 used for wakeup.
             /// </summary>
             Pin39 = (UInt64)1 << 39
         }
@@ -183,57 +183,57 @@ namespace nanoFramework.Hardware.Esp32
         public enum TouchPad
         {
             /// <summary>
-            ///  Touchpad channel 0 is GPIO4
+            ///  Touchpad channel 0 is GPIO4.
             /// </summary>
             Num0 = 0,
 
             /// <summary>
-            /// Touchpad channel 1 is GPIO0
+            /// Touchpad channel 1 is GPIO0.
             /// </summary>
             Num1,
 
             /// <summary>
-            /// Touchpad channel 2 is GPIO2
+            /// Touchpad channel 2 is GPIO2.
             /// </summary>
             Num2,
 
             /// <summary>
-            /// Touchpad channel 3 is GPIO15
+            /// Touchpad channel 3 is GPIO15.
             /// </summary>
             Num3,
 
             /// <summary>
-            /// Touchpad channel 4 is GPIO13
+            /// Touchpad channel 4 is GPIO13.
             /// </summary>
             Num4,
 
             /// <summary>
-            /// Touchpad channel 5 is GPIO12
+            /// Touchpad channel 5 is GPIO12.
             /// </summary>
             Num5,
 
             /// <summary>
-            /// Touchpad channel 6 is GPIO14
+            /// Touchpad channel 6 is GPIO14.
             /// </summary>
             Num6,
 
             /// <summary>
-            /// Touchpad channel 7 is GPIO27
+            /// Touchpad channel 7 is GPIO27.
             /// </summary>
             Num7,
 
             /// <summary>
-            /// Touchpad channel 8 is GPIO33
+            /// Touchpad channel 8 is GPIO33.
             /// </summary>
             Num8,
 
             /// <summary>
-            /// Touchpad channel 9 is GPIO32
+            /// Touchpad channel 9 is GPIO32.
             /// </summary>
             Num9,
 
             /// <summary>
-            /// Number returned when no Touchpad used on wakeup 
+            /// Number returned when no Touchpad used on wakeup.
             /// </summary>
             None
         }
@@ -337,7 +337,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Get the Touchpad which caused the wakeup. 
         /// </summary>
-        /// <returns>Returns TouchPad number which caused the wakeup, else <see cref="WakeupGpioPin.None"/></returns>
+        /// <returns>Returns TouchPad number which caused the wakeup, else <see cref="WakeupGpioPin.None"/>.</returns>
         public static TouchPad GetWakeupTouchpad()
         {
             return NativeGetWakeupTouchpad();
