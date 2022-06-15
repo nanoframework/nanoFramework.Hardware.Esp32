@@ -255,7 +255,7 @@ namespace nanoFramework.Hardware.Esp32
         /// </summary>
         /// <param name="pin">GPIO number used as wakeup source. Only pins that have RTC functionality can be used.
         /// 0,2,4,12->15,25->27,32->39</param>
-        /// <param name="level">analog threshold at or above which pin causes wake up, or zero if pin is not active for wakeup.</param>
+        /// <param name="level">Analog threshold at or above which pin causes wake up, or zero if pin is not active for wakeup.</param>
         /// <returns>returns ESP32 native error enumeration.</returns>
         public static EspNativeError EnableWakeupByPin(WakeupGpioPin pin, int level)
         {
