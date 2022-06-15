@@ -270,7 +270,7 @@ namespace nanoFramework.Hardware.Esp32
         /// </remarks>
         /// <param name="pins">Combination of pins that are enabled for wakeup.</param>
         /// <param name="mode">Logical mode used for wakeup to occur.</param>
-        /// <returns>returns ESP32 native error enumeration.</returns>
+        /// <returns>Returns ESP32 native error enumeration.</returns>
         public static EspNativeError EnableWakeupByMultiPins(WakeupGpioPin pins, WakeupMode mode)
         {
             return NativeEnableWakeupByMultiPins(pins, mode);
