@@ -288,7 +288,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Enter light sleep with the configured wakeup options. 
         /// </summary>
-        /// <returns>returns ESP32 native error enumeration, ESP_ERR_INVALID_STATE if Wifi or BT is not stopped.</returns>
+        /// <returns>Returns ESP32 native error enumeration, ESP_ERR_INVALID_STATE if Wifi or BT is not stopped.</returns>
         public static EspNativeError StartLightSleep()
         {
             return NativeStartLightSleep();
