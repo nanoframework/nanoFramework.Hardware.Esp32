@@ -279,7 +279,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Enable wakeup by Touchpad.
         /// </summary>
-        /// <returns>returns ESP32 native error enumeration.</returns>
+        /// <returns>Returns ESP32 native error enumeration.</returns>
         public static EspNativeError EnableWakeupByTouchPad()
         {
             return NativeEnableWakeupByTouchPad();
