@@ -72,7 +72,27 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             /// Wakeup caused by UART (light sleep only).
             /// </summary>
-            Uart
+            Uart,
+
+            /// <summary>
+            /// Wakeup caused by WIFI (light sleep only).
+            /// </summary>
+            Wifi,
+
+            /// <summary>
+            /// Wakeup caused by COCPU int.
+            /// </summary>
+            CoCpu,
+
+            /// <summary>
+            /// Wakeup caused by COCPU crash.
+            /// </summary>
+            CoCpuTrapTrig,
+
+            /// <summary>
+            /// Wakeup caused by BT (light sleep only).
+            /// </summary>
+            Bt
         }
 
         /// <summary>
@@ -89,7 +109,7 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             /// Gpio Pin 1 used for wakeup.
             /// </summary>
-            Pin0 = 1,
+            Pin1 = (UInt64)1 << 1,
 
             /// <summary>
             /// Gpio Pin 2 used for wakeup.
@@ -97,9 +117,49 @@ namespace nanoFramework.Hardware.Esp32
             Pin2 = (UInt64)1 << 2,
 
             /// <summary>
+            /// Gpio Pin 3 used for wakeup.
+            /// </summary>
+            Pin3 = (UInt64)1 << 3,
+
+            /// <summary>
             /// Gpio Pin 4 used for wakeup.
             /// </summary>
             Pin4 = (UInt64)1 << 4,
+
+            /// <summary>
+            /// Gpio Pin 5 used for wakeup.
+            /// </summary>
+            Pin5 = (UInt64)1 << 5,
+
+            /// <summary>
+            /// Gpio Pin 6 used for wakeup.
+            /// </summary>
+            Pin6 = (UInt64)1 << 6,
+
+            /// <summary>
+            /// Gpio Pin 7 used for wakeup.
+            /// </summary>
+            Pin7 = (UInt64)1 << 7,
+
+            /// <summary>
+            /// Gpio Pin 8 used for wakeup.
+            /// </summary>
+            Pin8 = (UInt64)1 << 8,
+
+            /// <summary>
+            /// Gpio Pin 9 used for wakeup.
+            /// </summary>
+            Pin9 = (UInt64)1 << 9,
+
+            /// <summary>
+            /// Gpio Pin 10 used for wakeup.
+            /// </summary>
+            Pin10 = (UInt64)1 << 10,
+
+            /// <summary>
+            /// Gpio Pin 11 used for wakeup.
+            /// </summary>
+            Pin11 = (UInt64)1 << 11,
 
             /// <summary>
             /// Gpio Pin 12 used for wakeup.
@@ -122,6 +182,51 @@ namespace nanoFramework.Hardware.Esp32
             Pin15 = (UInt64)1 << 15,
 
             /// <summary>
+            /// Gpio Pin 16 used for wakeup.
+            /// </summary>
+            Pin16 = (UInt64)1 << 16,
+
+            /// <summary>
+            /// Gpio Pin 17 used for wakeup.
+            /// </summary>
+            Pin17 = (UInt64)1 << 17,
+
+            /// <summary>
+            /// Gpio Pin 18 used for wakeup.
+            /// </summary>
+            Pin18 = (UInt64)1 << 18,
+
+            /// <summary>
+            /// Gpio Pin 19 used for wakeup.
+            /// </summary>
+            Pin19 = (UInt64)1 << 19,
+
+            /// <summary>
+            /// Gpio Pin 20 used for wakeup.
+            /// </summary>
+            Pin20 = (UInt64)1 << 20,
+
+            /// <summary>
+            /// Gpio Pin 21 used for wakeup.
+            /// </summary>
+            Pin21 = (UInt64)1 << 21,
+
+            /// <summary>
+            /// Gpio Pin 22 used for wakeup.
+            /// </summary>
+            Pin22 = (UInt64)1 << 22,
+
+            /// <summary>
+            /// Gpio Pin 23 used for wakeup.
+            /// </summary>
+            Pin23 = (UInt64)1 << 23,
+
+            /// <summary>
+            /// Gpio Pin 24 used for wakeup.
+            /// </summary>
+            Pin24 = (UInt64)1 << 24,
+
+            /// <summary>
             /// Gpio Pin 25 used for wakeup.
             /// </summary>
             Pin25 = (UInt64)1 << 25,
@@ -135,6 +240,26 @@ namespace nanoFramework.Hardware.Esp32
             /// Gpio Pin 27 used for wakeup.
             /// </summary>
             Pin27 = (UInt64)1 << 27,
+
+            /// <summary>
+            /// Gpio Pin 28 used for wakeup.
+            /// </summary>
+            Pin28 = (UInt64)1 << 28,
+
+            /// <summary>
+            /// Gpio Pin 29 used for wakeup.
+            /// </summary>
+            Pin29 = (UInt64)1 << 29,
+
+            /// <summary>
+            /// Gpio Pin 30 used for wakeup.
+            /// </summary>
+            Pin30 = (UInt64)1 << 30,
+
+            /// <summary>
+            /// Gpio Pin 31 used for wakeup.
+            /// </summary>
+            Pin31 = (UInt64)1 << 31,
 
             /// <summary>
             /// Gpio Pin 32 used for wakeup.
@@ -253,8 +378,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Enable wakeup using a gpio pin.
         /// </summary>
-        /// <param name="pin">GPIO number used as wakeup source. Only pins that have RTC functionality can be used.
-        /// 0,2,4,12->15,25->27,32->39</param>
+        /// <param name="pin">GPIO number used as wakeup source. Only pins that have RTC functionality can be used. Actual pins used are implementation specific, refer to documentation for details.</param>
         /// <param name="level">Analog threshold at or above which pin causes wake up, or zero if pin is not active for wakeup.</param>
         /// <returns>Returns ESP32 native error enumeration.</returns>
         public static EspNativeError EnableWakeupByPin(WakeupGpioPin pin, int level)
