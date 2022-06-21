@@ -305,6 +305,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Enumeration of Touchpad numbers.
         /// </summary>
+        /// <remarks>note that the number of touchpad channels available varies by ESP32 model</remarks>
         public enum TouchPad
         {
             /// <summary>
@@ -358,9 +359,39 @@ namespace nanoFramework.Hardware.Esp32
             Num9,
 
             /// <summary>
+            /// Touchpad channel 10.
+            /// </summary>
+            Num10,
+
+            /// <summary>
+            /// Touchpad channel 11.
+            /// </summary>
+            Num11,
+
+            /// <summary>
+            /// Touchpad channel 12.
+            /// </summary>
+            Num12,
+
+            /// <summary>
+            /// Touchpad channel 13.
+            /// </summary>
+            Num13,
+
+            /// <summary>
+            /// Touchpad channel 14.
+            /// </summary>
+            Num14,
+
+            /// <summary>
             /// Number returned when no Touchpad used on wakeup.
             /// </summary>
-            None
+            None = 10,
+
+            /// <summary>
+            /// Number returned when no Touchpad used on wakeup, ESP32 S2/S3 only
+            /// </summary>
+            NoneEsp32S2 = 15
         }
 
         /// <summary>
