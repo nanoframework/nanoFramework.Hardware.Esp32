@@ -308,52 +308,52 @@ namespace nanoFramework.Hardware.Esp32
         public enum TouchPad
         {
             /// <summary>
-            ///  Touchpad channel 0 is GPIO4.
+            ///  Touchpad channel 0.
             /// </summary>
             Num0 = 0,
 
             /// <summary>
-            /// Touchpad channel 1 is GPIO0.
+            /// Touchpad channel 1.
             /// </summary>
             Num1,
 
             /// <summary>
-            /// Touchpad channel 2 is GPIO2.
+            /// Touchpad channel 2.
             /// </summary>
             Num2,
 
             /// <summary>
-            /// Touchpad channel 3 is GPIO15.
+            /// Touchpad channel 3.
             /// </summary>
             Num3,
 
             /// <summary>
-            /// Touchpad channel 4 is GPIO13.
+            /// Touchpad channel 4.
             /// </summary>
             Num4,
 
             /// <summary>
-            /// Touchpad channel 5 is GPIO12.
+            /// Touchpad channel 5.
             /// </summary>
             Num5,
 
             /// <summary>
-            /// Touchpad channel 6 is GPIO14.
+            /// Touchpad channel 6.
             /// </summary>
             Num6,
 
             /// <summary>
-            /// Touchpad channel 7 is GPIO27.
+            /// Touchpad channel 7.
             /// </summary>
             Num7,
 
             /// <summary>
-            /// Touchpad channel 8 is GPIO33.
+            /// Touchpad channel 8.
             /// </summary>
             Num8,
 
             /// <summary>
-            /// Touchpad channel 9 is GPIO32.
+            /// Touchpad channel 9.
             /// </summary>
             Num9,
 
