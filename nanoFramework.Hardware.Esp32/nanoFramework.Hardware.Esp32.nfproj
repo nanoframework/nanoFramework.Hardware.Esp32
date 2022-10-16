@@ -54,6 +54,9 @@
     <Compile Include="Sleep.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.lock.json" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="key.snk" />
     <None Include="packages.config" />
   </ItemGroup>
