@@ -12,21 +12,9 @@ on:
   repository_dispatch:
     types: update-dependencies
 
-defaults:
-  run:
-    shell: pwsh
-
 jobs:
-  update-dotnet-preview:
-    name: Update .NET nanoFramework dependencies
-    timeout-minutes: 15
-    runs-on: windows-latest
-    env:
-      GITHUB_TOKEN: ${{ github.token }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Update dependencies
-        uses: nanoframework/nanodu@v1
-        with:
-          solutionsToCheck: 'nanoFramework.Hardware.Esp32.sln'
+  update-dependencies:
+    name: nanoFramework
+    uses: nanoframework/nf-tools/.github/workflows/update-dependencies.yml@main
+    with:
+      solutionsToCheck: 'nanoFramework.Hardware.Esp32.sln'
