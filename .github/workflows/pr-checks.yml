@@ -13,5 +13,6 @@ jobs:
   check_nuget_latest:
     name: nanoFramework
     uses: nanoframework/nf-tools/.github/workflows/check-packages-updated.yml@main
+    secrets: inherit
     with:
       solution: 'nanoFramework.Hardware.Esp32.sln'
