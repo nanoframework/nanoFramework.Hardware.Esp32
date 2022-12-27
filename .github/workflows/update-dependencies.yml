@@ -16,5 +16,6 @@ jobs:
   update-dependencies:
     name: nanoFramework
     uses: nanoframework/nf-tools/.github/workflows/update-dependencies.yml@main
+    secrets: inherit
     with:
       solutionsToCheck: 'nanoFramework.Hardware.Esp32.sln'
