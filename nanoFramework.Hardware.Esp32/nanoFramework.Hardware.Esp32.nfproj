@@ -54,6 +54,19 @@
     <Compile Include="NativeMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sleep.cs" />
+    <Compile Include="Touch\MeasurementMode.cs" />
+    <Compile Include="Touch\MeasurementTime.cs" />
+    <Compile Include="Touch\PinValueChangedEventHandler.cs" />
+    <Compile Include="Touch\TouchChargeSpeed.cs" />
+    <Compile Include="Touch\TouchHighVoltage.cs" />
+    <Compile Include="Touch\TouchHighVoltageAttenuation.cs" />
+    <Compile Include="Touch\TouchLowVoltage.cs" />
+    <Compile Include="Touch\TouchPad.cs" />
+    <Compile Include="Touch\TouchPadEvent.cs" />
+    <Compile Include="Touch\TouchPadEventArgs.cs" />
+    <Compile Include="Touch\TouchPadEventHandler.cs" />
+    <Compile Include="Touch\TouchTriggerMode.cs" />
+    <Compile Include="Touch\WakeUpSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.lock.json" />
