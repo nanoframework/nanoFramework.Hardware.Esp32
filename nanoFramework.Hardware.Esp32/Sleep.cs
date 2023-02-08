@@ -183,59 +183,84 @@ namespace nanoFramework.Hardware.Esp32
         public enum TouchPad
         {
             /// <summary>
-            ///  Touchpad channel 0 is GPIO4.
+            /// Number returned when no Touchpad used on wakeup.
+            /// </summary>
+            None = -1,
+
+            /// <summary>
+            ///  Touchpad channel 0 is GPIO4(ESP32).
             /// </summary>
             Num0 = 0,
 
             /// <summary>
-            /// Touchpad channel 1 is GPIO0.
+            /// Touchpad channel 1 is GPIO0(ESP32) / GPIO1(ESP32-S2).
             /// </summary>
             Num1,
 
             /// <summary>
-            /// Touchpad channel 2 is GPIO2.
+            /// Touchpad channel 2 is GPIO2(ESP32) / GPIO2(ESP32-S2).
             /// </summary>
             Num2,
 
             /// <summary>
-            /// Touchpad channel 3 is GPIO15.
+            /// Touchpad channel 3 is GPIO15(ESP32) / GPIO3(ESP32-S2).
             /// </summary>
             Num3,
 
             /// <summary>
-            /// Touchpad channel 4 is GPIO13.
+            /// Touchpad channel 4 is GPIO13(ESP32) / GPIO4(ESP32-S2).
             /// </summary>
             Num4,
 
             /// <summary>
-            /// Touchpad channel 5 is GPIO12.
+            /// Touchpad channel 5 is GPIO12(ESP32) / GPIO5(ESP32-S2).
             /// </summary>
             Num5,
 
             /// <summary>
-            /// Touchpad channel 6 is GPIO14.
+            /// Touchpad channel 6 is GPIO14(ESP32) / GPIO6(ESP32-S2).
             /// </summary>
             Num6,
 
             /// <summary>
-            /// Touchpad channel 7 is GPIO27.
+            /// Touchpad channel 7 is GPIO27(ESP32) / GPIO7(ESP32-S2).
             /// </summary>
             Num7,
 
             /// <summary>
-            /// Touchpad channel 8 is GPIO33.
+            /// Touchpad channel 8 is GPIO33(ESP32) / GPIO8(ESP32-S2).
             /// </summary>
             Num8,
 
             /// <summary>
-            /// Touchpad channel 9 is GPIO32.
+            /// Touchpad channel 9 is GPIO32(ESP32) / GPIO9(ESP32-S2).
             /// </summary>
             Num9,
 
             /// <summary>
-            /// Number returned when no Touchpad used on wakeup.
+            /// Touchpad channel 10 is GPIO10(ESP32-S2).
             /// </summary>
-            None
+            Num10,
+
+            /// <summary>
+            /// Touchpad channel 11 is GPIO11(ESP32-S2).
+            /// </summary>
+            Num11,
+
+            /// <summary>
+            /// Touchpad channel 12 is GPIO12(ESP32-S2).
+            /// </summary>
+            Num12,
+
+            /// <summary>
+            /// Touchpad channel 13 is GPIO13(ESP32-S2).
+            /// </summary>
+            Num13,
+
+            /// <summary>
+            /// Touchpad channel 14 is GPIO14(ESP32-S2).
+            /// </summary>
+            Num14,
         }
 
         /// <summary>
