@@ -125,15 +125,15 @@ namespace nanoFramework.Hardware.Esp32.Touch
         /// Starts a filtering on a specific period. This is the same for **ALL** the touch pads. Chaning this value will change the behavior for all of them.
         /// Warning: this consume CPU and should be used carefully.
         /// </summary>
-        /// <param name="period">The period in milliseconds for the filtering.</param>
-        public static void StartFilter(TimeSpan period)
+        /// <param name="filterSetting">The <see cref="IPeriodSetting"/> depending on your ESP32 series. ESP32 <seealso cref="Esp32PeriodSetting"/> and ESP32-S2/S3 <seealso cref="S2S3PeriodSetting"/> have different settings.</param>
+        public static void StartFilter(IPeriodSetting filterSetting)
         {
             if (_isFilterOn)
             {
                 return;
             }
 
-            NativeStartFilter((uint)period.TotalMilliseconds);
+            NativeStartFilter(filterSetting);
             _isFilterOn = true;
         }
 
@@ -204,7 +204,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
         /// Reads a value. This is accessible regardless of the mode used.
         /// </summary>
         /// <returns>A touch value.</returns>
-        public int Read() => NativeRead();
+        public uint Read() => NativeRead();
 
         /// <summary>
         /// Gets the calibration data which can be used as a reference point.
@@ -228,7 +228,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
         /// This will depends of the surface you have as touch point.
         /// To understand the best value, you should read values to find the lower point.
         /// </summary>
-        public ushort Threshold
+        public uint Threshold
         {
             get => NativeGetThreshold();
             set
@@ -363,13 +363,13 @@ namespace nanoFramework.Hardware.Esp32.Touch
         private extern void NativeDeinit();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern int NativeRead();
+        private extern uint NativeRead();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern ushort NativeGetThreshold();
+        private extern uint NativeGetThreshold();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern void NativeSetThreshold(ushort threshold);
+        private extern void NativeSetThreshold(uint threshold);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void NativeGetTouchSpeed(ref int speed, ref int charge);
@@ -405,7 +405,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
         private extern static void NativeGetVoltage(ref TouchHighVoltage touchHighVoltage, ref TouchLowVoltage touchLowVoltage, ref TouchHighVoltageAttenuation touchHighVoltageAttenuation);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern static void NativeStartFilter(uint millisec);
+        private extern static void NativeStartFilter(IPeriodSetting periodSetting);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern static void NativeStopFilter();
