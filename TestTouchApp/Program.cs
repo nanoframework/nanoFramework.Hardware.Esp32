@@ -74,8 +74,8 @@ namespace TestTouchApp
             Console.WriteLine("Testing timer mode for 20 seconds");
             TouchPad.MeasurementMode = MeasurementMode.Timer;
             TouchPad.SetVoltage(TouchHighVoltage.Volt2V7, TouchLowVoltage.Volt0V5, TouchHighVoltageAttenuation.Volt1V0);
-            touchpad.Threshold = (ushort)(touchpad.CalibrationData * 2 / 3);
-            //TouchPad.StartFilter(TimeSpan.FromMilliseconds(10));
+            touchpad.Threshold = (uint)(touchpad.CalibrationData * 2 / 3);
+            TouchPad.StartFilter(new Esp32FilterSetting() { Period = 10 });
             touchpad.ValueChanged += TouchpadValueChanged;
             Thread.Sleep(20_000);
 

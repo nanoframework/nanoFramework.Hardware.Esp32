@@ -125,8 +125,8 @@ namespace nanoFramework.Hardware.Esp32.Touch
         /// Starts a filtering on a specific period. This is the same for **ALL** the touch pads. Chaning this value will change the behavior for all of them.
         /// Warning: this consume CPU and should be used carefully.
         /// </summary>
-        /// <param name="filterSetting">The <see cref="IPeriodSetting"/> depending on your ESP32 series. ESP32 <seealso cref="Esp32PeriodSetting"/> and ESP32-S2/S3 <seealso cref="S2S3PeriodSetting"/> have different settings.</param>
-        public static void StartFilter(IPeriodSetting filterSetting)
+        /// <param name="filterSetting">The <see cref="IFilterSetting"/> depending on your ESP32 series. ESP32 <seealso cref="Esp32FilterSetting"/> and ESP32-S2/S3 <seealso cref="S2S3FilterSetting"/> have different settings.</param>
+        public static void StartFilter(IFilterSetting filterSetting)
         {
             if (_isFilterOn)
             {
@@ -405,7 +405,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
         private extern static void NativeGetVoltage(ref TouchHighVoltage touchHighVoltage, ref TouchLowVoltage touchLowVoltage, ref TouchHighVoltageAttenuation touchHighVoltageAttenuation);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern static void NativeStartFilter(IPeriodSetting periodSetting);
+        private extern static void NativeStartFilter(IFilterSetting periodSetting);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern static void NativeStopFilter();
