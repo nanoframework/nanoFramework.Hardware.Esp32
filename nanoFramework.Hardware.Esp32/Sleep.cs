@@ -175,93 +175,7 @@ namespace nanoFramework.Hardware.Esp32
             /// Gpio Pin 39 used for wakeup.
             /// </summary>
             Pin39 = (UInt64)1 << 39
-        }
-
-        /// <summary>
-        /// Enumeration of Touchpad numbers.
-        /// </summary>
-        public enum TouchPad
-        {
-            /// <summary>
-            /// Number returned when no Touchpad used on wakeup.
-            /// </summary>
-            None = -1,
-
-            /// <summary>
-            ///  Touchpad channel 0 is GPIO4(ESP32).
-            /// </summary>
-            Num0 = 0,
-
-            /// <summary>
-            /// Touchpad channel 1 is GPIO0(ESP32) / GPIO1(ESP32-S2).
-            /// </summary>
-            Num1,
-
-            /// <summary>
-            /// Touchpad channel 2 is GPIO2(ESP32) / GPIO2(ESP32-S2).
-            /// </summary>
-            Num2,
-
-            /// <summary>
-            /// Touchpad channel 3 is GPIO15(ESP32) / GPIO3(ESP32-S2).
-            /// </summary>
-            Num3,
-
-            /// <summary>
-            /// Touchpad channel 4 is GPIO13(ESP32) / GPIO4(ESP32-S2).
-            /// </summary>
-            Num4,
-
-            /// <summary>
-            /// Touchpad channel 5 is GPIO12(ESP32) / GPIO5(ESP32-S2).
-            /// </summary>
-            Num5,
-
-            /// <summary>
-            /// Touchpad channel 6 is GPIO14(ESP32) / GPIO6(ESP32-S2).
-            /// </summary>
-            Num6,
-
-            /// <summary>
-            /// Touchpad channel 7 is GPIO27(ESP32) / GPIO7(ESP32-S2).
-            /// </summary>
-            Num7,
-
-            /// <summary>
-            /// Touchpad channel 8 is GPIO33(ESP32) / GPIO8(ESP32-S2).
-            /// </summary>
-            Num8,
-
-            /// <summary>
-            /// Touchpad channel 9 is GPIO32(ESP32) / GPIO9(ESP32-S2).
-            /// </summary>
-            Num9,
-
-            /// <summary>
-            /// Touchpad channel 10 is GPIO10(ESP32-S2).
-            /// </summary>
-            Num10,
-
-            /// <summary>
-            /// Touchpad channel 11 is GPIO11(ESP32-S2).
-            /// </summary>
-            Num11,
-
-            /// <summary>
-            /// Touchpad channel 12 is GPIO12(ESP32-S2).
-            /// </summary>
-            Num12,
-
-            /// <summary>
-            /// Touchpad channel 13 is GPIO13(ESP32-S2).
-            /// </summary>
-            Num13,
-
-            /// <summary>
-            /// Touchpad channel 14 is GPIO14(ESP32-S2).
-            /// </summary>
-            Num14,
-        }
+        }        
 
         /// <summary>
         /// Enable Wakeup by Timer.
@@ -304,10 +218,13 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Enable wakeup by Touchpad.
         /// </summary>
+        /// <param name="padNumber1">A valid pad number to wake up the device.</param>
+        /// <param name="padNumber2">If a valid pad number, will be used in comibation of the first pad number.</param>
+        /// <remarks>See <see cref="Touch.TouchPad.GetGpioNumberFromTouchNumber(int)"/> to understand which GPIO maps with which pad.</remarks>
         /// <returns>Returns ESP32 native error enumeration.</returns>
-        public static EspNativeError EnableWakeupByTouchPad()
+        public static EspNativeError EnableWakeupByTouchPad(int padNumber1, int padNumber2 = -1)
         {
-            return NativeEnableWakeupByTouchPad();
+            return NativeEnableWakeupByTouchPad(padNumber1, padNumber2);
         }
 
         /// <summary>
@@ -363,7 +280,7 @@ namespace nanoFramework.Hardware.Esp32
         /// Get the Touchpad which caused the wakeup. 
         /// </summary>
         /// <returns>Returns TouchPad number which caused the wakeup, else <see cref="WakeupGpioPin.None"/>.</returns>
-        public static TouchPad GetWakeupTouchpad()
+        public static int GetWakeupTouchpad()
         {
             return NativeGetWakeupTouchpad();
         }
@@ -380,7 +297,7 @@ namespace nanoFramework.Hardware.Esp32
         private static extern EspNativeError NativeEnableWakeupByMultiPins(WakeupGpioPin pins, WakeupMode mode);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern EspNativeError NativeEnableWakeupByTouchPad();
+        private static extern EspNativeError NativeEnableWakeupByTouchPad(int padNumber1, int padNumber2);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern EspNativeError NativeStartLightSleep();
@@ -395,7 +312,7 @@ namespace nanoFramework.Hardware.Esp32
         private static extern WakeupGpioPin NativeGetWakeupGpioPin();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern TouchPad NativeGetWakeupTouchpad();
+        private static extern int NativeGetWakeupTouchpad();
 
         #endregion
     }
