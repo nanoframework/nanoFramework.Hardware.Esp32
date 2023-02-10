@@ -8,7 +8,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
     /// <summary>
     /// Infinite impulse response (IIR) filter mode
     /// </summary>
-    public enum PeriodeSettingMode
+    public enum FilterSettingMode
     {
         /// <summary>
         /// The filter mode is first-order IIR filter.The coefficient is 4.
