@@ -26,7 +26,7 @@ namespace TestTouchApp
             //var pinNum = TouchPad.GetGpioNumberFromTouchNumber(TouchPadNumber0);
             //Console.WriteLine($"Pad {TouchPadNumber0} is GPIO{pinNum}");
             //pinNum = TouchPad.GetGpioNumberFromTouchNumber(TouchPadNumber1);
-            //Console.WriteLine($"Pad {TouchPadNumber1} is GPIO{pinNum}");            
+            //Console.WriteLine($"Pad {TouchPadNumber1} is GPIO{pinNum}");
 
             //TouchPad touchpad0 = new(TouchPadNumber0);
             //Debug.WriteLine("Initialized!");

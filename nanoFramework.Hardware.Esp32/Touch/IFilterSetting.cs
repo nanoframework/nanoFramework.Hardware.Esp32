@@ -10,18 +10,5 @@ namespace nanoFramework.Hardware.Esp32.Touch
     /// </summary>
     public interface IFilterSetting
     {
-        /// <summary>
-        /// The configuration type
-        /// </summary>
-        public enum FilterType
-        {
-            Esp32 = 0,
-            S2_S3
-        }
-
-        /// <summary>
-        /// The configuration type.
-        /// </summary>
-        public FilterType Type { get; }
     }
 }

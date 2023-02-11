@@ -220,11 +220,12 @@ namespace nanoFramework.Hardware.Esp32
         /// </summary>
         /// <param name="padNumber1">A valid pad number to wake up the device.</param>
         /// <param name="padNumber2">If a valid pad number, will be used in comibation of the first pad number.</param>
+        /// <param name="thresholdCoefficient">Threshold coefficient for automatic calibration. Percentage from 0 to 100. Default value is 80% seems to work in most cases.</param>
         /// <remarks>See <see cref="Touch.TouchPad.GetGpioNumberFromTouchNumber(int)"/> to understand which GPIO maps with which pad.</remarks>
         /// <returns>Returns ESP32 native error enumeration.</returns>
-        public static EspNativeError EnableWakeupByTouchPad(int padNumber1, int padNumber2 = -1)
+        public static EspNativeError EnableWakeupByTouchPad(int padNumber1, int padNumber2 = -1, byte thresholdCoefficient = 80)
         {
-            return NativeEnableWakeupByTouchPad(padNumber1, padNumber2);
+            return NativeEnableWakeupByTouchPad(padNumber1, padNumber2, thresholdCoefficient);
         }
 
         /// <summary>
@@ -297,7 +298,7 @@ namespace nanoFramework.Hardware.Esp32
         private static extern EspNativeError NativeEnableWakeupByMultiPins(WakeupGpioPin pins, WakeupMode mode);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern EspNativeError NativeEnableWakeupByTouchPad(int padNumber1, int padNumber2);
+        private static extern EspNativeError NativeEnableWakeupByTouchPad(int padNumber1, int padNumber2, byte thresholdCoefficient);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern EspNativeError NativeStartLightSleep();

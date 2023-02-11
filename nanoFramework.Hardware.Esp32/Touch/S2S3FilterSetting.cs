@@ -13,7 +13,6 @@ namespace nanoFramework.Hardware.Esp32.Touch
         private FilterSettingMode _periodeSettingMode;
         private FilterSettingDebounce _filterSettingDebounce;
         private FilterSettingNoiseThreshold _filterSettingNoiseThreshold;
-        private IFilterSetting.FilterType _type = IFilterSetting.FilterType.S2_S3;
         private byte _jitterSize;
         private FilterSettingSmoothMode _filterSettingSmoothMode;
 
@@ -82,8 +81,5 @@ namespace nanoFramework.Hardware.Esp32.Touch
                 _filterSettingSmoothMode = value;
             }
         }
-
-        /// <inheritdoc/>
-        public IFilterSetting.FilterType Type => _type;
     }
 }
