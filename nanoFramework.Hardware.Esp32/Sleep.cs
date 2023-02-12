@@ -72,7 +72,27 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             /// Wakeup caused by UART (light sleep only).
             /// </summary>
-            Uart
+            Uart,
+
+            /// <summary>
+            /// Wakeup caused by WIFI (light sleep only).
+            /// </summary>
+            Wifi,
+
+            /// <summary>
+            /// Wakeup caused by COCPU int.
+            /// </summary>
+            CoCpu,
+
+            /// <summary>
+            /// Wakeup caused by COCPU crash.
+            /// </summary>
+            CoCpuTrapTrig,
+
+            /// <summary>
+            /// Wakeup caused by BT (light sleep only).
+            /// </summary>
+            Bt
         }
 
         /// <summary>
@@ -89,7 +109,7 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             /// Gpio Pin 1 used for wakeup.
             /// </summary>
-            Pin0 = 1,
+            Pin1 = (UInt64)1 << 1,
 
             /// <summary>
             /// Gpio Pin 2 used for wakeup.
@@ -97,9 +117,49 @@ namespace nanoFramework.Hardware.Esp32
             Pin2 = (UInt64)1 << 2,
 
             /// <summary>
+            /// Gpio Pin 3 used for wakeup.
+            /// </summary>
+            Pin3 = (UInt64)1 << 3,
+
+            /// <summary>
             /// Gpio Pin 4 used for wakeup.
             /// </summary>
             Pin4 = (UInt64)1 << 4,
+
+            /// <summary>
+            /// Gpio Pin 5 used for wakeup.
+            /// </summary>
+            Pin5 = (UInt64)1 << 5,
+
+            /// <summary>
+            /// Gpio Pin 6 used for wakeup.
+            /// </summary>
+            Pin6 = (UInt64)1 << 6,
+
+            /// <summary>
+            /// Gpio Pin 7 used for wakeup.
+            /// </summary>
+            Pin7 = (UInt64)1 << 7,
+
+            /// <summary>
+            /// Gpio Pin 8 used for wakeup.
+            /// </summary>
+            Pin8 = (UInt64)1 << 8,
+
+            /// <summary>
+            /// Gpio Pin 9 used for wakeup.
+            /// </summary>
+            Pin9 = (UInt64)1 << 9,
+
+            /// <summary>
+            /// Gpio Pin 10 used for wakeup.
+            /// </summary>
+            Pin10 = (UInt64)1 << 10,
+
+            /// <summary>
+            /// Gpio Pin 11 used for wakeup.
+            /// </summary>
+            Pin11 = (UInt64)1 << 11,
 
             /// <summary>
             /// Gpio Pin 12 used for wakeup.
@@ -122,6 +182,51 @@ namespace nanoFramework.Hardware.Esp32
             Pin15 = (UInt64)1 << 15,
 
             /// <summary>
+            /// Gpio Pin 16 used for wakeup.
+            /// </summary>
+            Pin16 = (UInt64)1 << 16,
+
+            /// <summary>
+            /// Gpio Pin 17 used for wakeup.
+            /// </summary>
+            Pin17 = (UInt64)1 << 17,
+
+            /// <summary>
+            /// Gpio Pin 18 used for wakeup.
+            /// </summary>
+            Pin18 = (UInt64)1 << 18,
+
+            /// <summary>
+            /// Gpio Pin 19 used for wakeup.
+            /// </summary>
+            Pin19 = (UInt64)1 << 19,
+
+            /// <summary>
+            /// Gpio Pin 20 used for wakeup.
+            /// </summary>
+            Pin20 = (UInt64)1 << 20,
+
+            /// <summary>
+            /// Gpio Pin 21 used for wakeup.
+            /// </summary>
+            Pin21 = (UInt64)1 << 21,
+
+            /// <summary>
+            /// Gpio Pin 22 used for wakeup.
+            /// </summary>
+            Pin22 = (UInt64)1 << 22,
+
+            /// <summary>
+            /// Gpio Pin 23 used for wakeup.
+            /// </summary>
+            Pin23 = (UInt64)1 << 23,
+
+            /// <summary>
+            /// Gpio Pin 24 used for wakeup.
+            /// </summary>
+            Pin24 = (UInt64)1 << 24,
+
+            /// <summary>
             /// Gpio Pin 25 used for wakeup.
             /// </summary>
             Pin25 = (UInt64)1 << 25,
@@ -135,6 +240,26 @@ namespace nanoFramework.Hardware.Esp32
             /// Gpio Pin 27 used for wakeup.
             /// </summary>
             Pin27 = (UInt64)1 << 27,
+
+            /// <summary>
+            /// Gpio Pin 28 used for wakeup.
+            /// </summary>
+            Pin28 = (UInt64)1 << 28,
+
+            /// <summary>
+            /// Gpio Pin 29 used for wakeup.
+            /// </summary>
+            Pin29 = (UInt64)1 << 29,
+
+            /// <summary>
+            /// Gpio Pin 30 used for wakeup.
+            /// </summary>
+            Pin30 = (UInt64)1 << 30,
+
+            /// <summary>
+            /// Gpio Pin 31 used for wakeup.
+            /// </summary>
+            Pin31 = (UInt64)1 << 31,
 
             /// <summary>
             /// Gpio Pin 32 used for wakeup.
@@ -180,62 +305,93 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Enumeration of Touchpad numbers.
         /// </summary>
+        /// <remarks>note that the number of touchpad channels available varies by ESP32 model</remarks>
         public enum TouchPad
         {
             /// <summary>
-            ///  Touchpad channel 0 is GPIO4.
+            ///  Touchpad channel 0.
             /// </summary>
             Num0 = 0,
 
             /// <summary>
-            /// Touchpad channel 1 is GPIO0.
+            /// Touchpad channel 1.
             /// </summary>
             Num1,
 
             /// <summary>
-            /// Touchpad channel 2 is GPIO2.
+            /// Touchpad channel 2.
             /// </summary>
             Num2,
 
             /// <summary>
-            /// Touchpad channel 3 is GPIO15.
+            /// Touchpad channel 3.
             /// </summary>
             Num3,
 
             /// <summary>
-            /// Touchpad channel 4 is GPIO13.
+            /// Touchpad channel 4.
             /// </summary>
             Num4,
 
             /// <summary>
-            /// Touchpad channel 5 is GPIO12.
+            /// Touchpad channel 5.
             /// </summary>
             Num5,
 
             /// <summary>
-            /// Touchpad channel 6 is GPIO14.
+            /// Touchpad channel 6.
             /// </summary>
             Num6,
 
             /// <summary>
-            /// Touchpad channel 7 is GPIO27.
+            /// Touchpad channel 7.
             /// </summary>
             Num7,
 
             /// <summary>
-            /// Touchpad channel 8 is GPIO33.
+            /// Touchpad channel 8.
             /// </summary>
             Num8,
 
             /// <summary>
-            /// Touchpad channel 9 is GPIO32.
+            /// Touchpad channel 9.
             /// </summary>
             Num9,
 
             /// <summary>
+            /// Touchpad channel 10.
+            /// </summary>
+            Num10,
+
+            /// <summary>
+            /// Touchpad channel 11.
+            /// </summary>
+            Num11,
+
+            /// <summary>
+            /// Touchpad channel 12.
+            /// </summary>
+            Num12,
+
+            /// <summary>
+            /// Touchpad channel 13.
+            /// </summary>
+            Num13,
+
+            /// <summary>
+            /// Touchpad channel 14.
+            /// </summary>
+            Num14,
+
+            /// <summary>
             /// Number returned when no Touchpad used on wakeup.
             /// </summary>
-            None
+            None = 10,
+
+            /// <summary>
+            /// Number returned when no Touchpad used on wakeup, ESP32 S2/S3 only
+            /// </summary>
+            NoneEsp32S2 = 15
         }
 
         /// <summary>
@@ -253,8 +409,7 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Enable wakeup using a gpio pin.
         /// </summary>
-        /// <param name="pin">GPIO number used as wakeup source. Only pins that have RTC functionality can be used.
-        /// 0,2,4,12->15,25->27,32->39</param>
+        /// <param name="pin">GPIO number used as wakeup source. Only pins that have RTC functionality can be used. Actual pins used are implementation specific, refer to documentation for details.</param>
         /// <param name="level">Analog threshold at or above which pin causes wake up, or zero if pin is not active for wakeup.</param>
         /// <returns>Returns ESP32 native error enumeration.</returns>
         public static EspNativeError EnableWakeupByPin(WakeupGpioPin pin, int level)
