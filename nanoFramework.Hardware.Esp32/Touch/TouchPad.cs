@@ -19,6 +19,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
         private static TouchLowVoltage _touchLowVoltage = (TouchLowVoltage)(-1);
         private static TouchHighVoltageAttenuation _touchHighVoltageAttenuation = (TouchHighVoltageAttenuation)(-1);
         private static bool _isFilterOn = false;
+        private static bool _denoiseEnabled = false;
         // Needed to handle the eventing
         private static readonly TouchPadEventHandler _touchPadEventHandler = new TouchPadEventHandler();
 
@@ -186,6 +187,39 @@ namespace nanoFramework.Hardware.Esp32.Touch
         }
 
         /// <summary>
+        /// Sets denoise. This is available only for ESP32-S2 and ESP32-S3.
+        /// </summary>
+        /// <param name="denoiseSetting">The <see cref="DenoiseSetting"/>.</param>
+        public static void SetDenoise(DenoiseSetting denoiseSetting)
+        {
+            NativeSetDenoise(denoiseSetting);
+        }
+
+        /// <summary>
+        /// Gets denoise. This is available only for ESP32-S2 and ESP32-S3.
+        /// </summary>
+        /// <returns>The <see cref="DenoiseSetting"/>.</returns>
+        public static DenoiseSetting GetDenoise()
+        {
+            DenoiseSetting denoiseSetting = new DenoiseSetting();
+            NativeGetDenoise(denoiseSetting);
+            return denoiseSetting;
+        }
+
+        /// <summary>
+        /// Gets or sets the denoise enabled. This is available only for ESP32-S2 and ESP32-S3.
+        /// </summary>
+        public static bool DenoiseEnabled
+        {
+            get => _denoiseEnabled;
+            set
+            {
+                NativeDenoiseEnabled(value);
+                _denoiseEnabled = value;
+            }
+        }
+
+        /// <summary>
         /// Creates a <see cref="TouchPad"/>.
         /// </summary>
         /// <param name="touchPadNumber">A valid touch pad number.</param>
@@ -224,7 +258,8 @@ namespace nanoFramework.Hardware.Esp32.Touch
 
         /// <summary>
         /// Gets or sets the threshold used to detect a touch.
-        /// Using a value of 2/3 of the calibration data is a good estimation to start with.
+        /// Using a value of 2/3 of the calibration data is a good estimation to start with for ESP32.
+        /// Using a value of x 1.3 of the calibration data is a good estimation to start with for S2/S3.
         /// This will depends of the surface you have as touch point.
         /// To understand the best value, you should read values to find the lower point.
         /// </summary>
@@ -415,6 +450,15 @@ namespace nanoFramework.Hardware.Esp32.Touch
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern static void NativeGetMeasurementTime(ref ushort sleep, ref ushort meas);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern static void NativeGetDenoise(DenoiseSetting denoiseSetting);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern static void NativeSetDenoise(DenoiseSetting denoiseSetting);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern static void NativeDenoiseEnabled(bool enabled);
 
         #endregion
     }

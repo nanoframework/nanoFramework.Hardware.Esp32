@@ -48,7 +48,7 @@
     </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="Logging_LogLevel">
       <InProject>false</InProject>
-    </NFMDP_PE_ExcludeClassByName>    
+    </NFMDP_PE_ExcludeClassByName>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
@@ -63,6 +63,9 @@
     <Compile Include="NativeMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sleep.cs" />
+    <Compile Include="Touch\DenoiseCapacitance.cs" />
+    <Compile Include="Touch\DenoiseRange.cs" />
+    <Compile Include="Touch\DenoiseSetting.cs" />
     <Compile Include="Touch\Esp32FilterSetting.cs" />
     <Compile Include="Touch\FilterSettingDebounce.cs" />
     <Compile Include="Touch\FilterSettingNoiseThreshold.cs" />

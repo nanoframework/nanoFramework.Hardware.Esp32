@@ -5,6 +5,9 @@ using System;
 
 namespace nanoFramework.Hardware.Esp32.Touch
 {
+    /// <summary>
+    /// Filter settings for the smooth mode.
+    /// </summary>
     public enum FilterSettingSmoothMode
     {
         /// <summary>No filtering of raw data.</summary>
