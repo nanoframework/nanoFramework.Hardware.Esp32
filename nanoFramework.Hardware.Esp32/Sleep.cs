@@ -175,68 +175,7 @@ namespace nanoFramework.Hardware.Esp32
             /// Gpio Pin 39 used for wakeup.
             /// </summary>
             Pin39 = (UInt64)1 << 39
-        }
-
-        /// <summary>
-        /// Enumeration of Touchpad numbers.
-        /// </summary>
-        public enum TouchPad
-        {
-            /// <summary>
-            ///  Touchpad channel 0 is GPIO4.
-            /// </summary>
-            Num0 = 0,
-
-            /// <summary>
-            /// Touchpad channel 1 is GPIO0.
-            /// </summary>
-            Num1,
-
-            /// <summary>
-            /// Touchpad channel 2 is GPIO2.
-            /// </summary>
-            Num2,
-
-            /// <summary>
-            /// Touchpad channel 3 is GPIO15.
-            /// </summary>
-            Num3,
-
-            /// <summary>
-            /// Touchpad channel 4 is GPIO13.
-            /// </summary>
-            Num4,
-
-            /// <summary>
-            /// Touchpad channel 5 is GPIO12.
-            /// </summary>
-            Num5,
-
-            /// <summary>
-            /// Touchpad channel 6 is GPIO14.
-            /// </summary>
-            Num6,
-
-            /// <summary>
-            /// Touchpad channel 7 is GPIO27.
-            /// </summary>
-            Num7,
-
-            /// <summary>
-            /// Touchpad channel 8 is GPIO33.
-            /// </summary>
-            Num8,
-
-            /// <summary>
-            /// Touchpad channel 9 is GPIO32.
-            /// </summary>
-            Num9,
-
-            /// <summary>
-            /// Number returned when no Touchpad used on wakeup.
-            /// </summary>
-            None
-        }
+        }        
 
         /// <summary>
         /// Enable Wakeup by Timer.
@@ -279,10 +218,14 @@ namespace nanoFramework.Hardware.Esp32
         /// <summary>
         /// Enable wakeup by Touchpad.
         /// </summary>
+        /// <param name="padNumber1">A valid pad number to wake up the device.</param>
+        /// <param name="padNumber2">If a valid pad number, will be used in comibation of the first pad number.</param>
+        /// <param name="thresholdCoefficient">Threshold coefficient for automatic calibration. Percentage from 0 to 100. Default value is 80% seems to work in most cases.</param>
+        /// <remarks>See <see cref="Touch.TouchPad.GetGpioNumberFromTouchNumber(int)"/> to understand which GPIO maps with which pad.</remarks>
         /// <returns>Returns ESP32 native error enumeration.</returns>
-        public static EspNativeError EnableWakeupByTouchPad()
+        public static EspNativeError EnableWakeupByTouchPad(int padNumber1, int padNumber2 = -1, byte thresholdCoefficient = 80)
         {
-            return NativeEnableWakeupByTouchPad();
+            return NativeEnableWakeupByTouchPad(padNumber1, padNumber2, thresholdCoefficient);
         }
 
         /// <summary>
@@ -338,7 +281,7 @@ namespace nanoFramework.Hardware.Esp32
         /// Get the Touchpad which caused the wakeup. 
         /// </summary>
         /// <returns>Returns TouchPad number which caused the wakeup, else <see cref="WakeupGpioPin.None"/>.</returns>
-        public static TouchPad GetWakeupTouchpad()
+        public static int GetWakeupTouchpad()
         {
             return NativeGetWakeupTouchpad();
         }
@@ -355,7 +298,7 @@ namespace nanoFramework.Hardware.Esp32
         private static extern EspNativeError NativeEnableWakeupByMultiPins(WakeupGpioPin pins, WakeupMode mode);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern EspNativeError NativeEnableWakeupByTouchPad();
+        private static extern EspNativeError NativeEnableWakeupByTouchPad(int padNumber1, int padNumber2, byte thresholdCoefficient);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern EspNativeError NativeStartLightSleep();
@@ -370,7 +313,7 @@ namespace nanoFramework.Hardware.Esp32
         private static extern WakeupGpioPin NativeGetWakeupGpioPin();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern TouchPad NativeGetWakeupTouchpad();
+        private static extern int NativeGetWakeupTouchpad();
 
         #endregion
     }

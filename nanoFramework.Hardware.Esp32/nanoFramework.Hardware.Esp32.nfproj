@@ -48,7 +48,7 @@
     </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="Logging_LogLevel">
       <InProject>false</InProject>
-    </NFMDP_PE_ExcludeClassByName>    
+    </NFMDP_PE_ExcludeClassByName>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
@@ -63,6 +63,29 @@
     <Compile Include="NativeMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sleep.cs" />
+    <Compile Include="Touch\DenoiseCapacitance.cs" />
+    <Compile Include="Touch\DenoiseRange.cs" />
+    <Compile Include="Touch\DenoiseSetting.cs" />
+    <Compile Include="Touch\Esp32FilterSetting.cs" />
+    <Compile Include="Touch\FilterSettingDebounce.cs" />
+    <Compile Include="Touch\FilterSettingNoiseThreshold.cs" />
+    <Compile Include="Touch\FilterSettingSmoothMode.cs" />
+    <Compile Include="Touch\IFilterSetting.cs" />
+    <Compile Include="Touch\MeasurementMode.cs" />
+    <Compile Include="Touch\MeasurementTime.cs" />
+    <Compile Include="Touch\FilterSettingMode.cs" />
+    <Compile Include="Touch\TouchPadValueChangedEventHandler.cs" />
+    <Compile Include="Touch\S2S3FilterSetting.cs" />
+    <Compile Include="Touch\TouchChargeSpeed.cs" />
+    <Compile Include="Touch\TouchHighVoltage.cs" />
+    <Compile Include="Touch\TouchHighVoltageAttenuation.cs" />
+    <Compile Include="Touch\TouchLowVoltage.cs" />
+    <Compile Include="Touch\TouchPad.cs" />
+    <Compile Include="Touch\TouchPadEvent.cs" />
+    <Compile Include="Touch\TouchPadEventArgs.cs" />
+    <Compile Include="Touch\TouchPadEventHandler.cs" />
+    <Compile Include="Touch\TouchTriggerMode.cs" />
+    <Compile Include="Touch\WakeUpSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.lock.json" />
