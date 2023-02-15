@@ -1,5 +1,17 @@
 # Changelog
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.5.1...HEAD)
+
+**Implemented enhancements:**
+
+- Add Touch Pad support [\#178](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/178)
+
+## [v1.5.1](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.5.1) (2022-12-28)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v0.0.0...v1.5.1)
+
 ## [v0.0.0](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v0.0.0) (2022-12-27)
 
 [Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.4.4...v0.0.0)
