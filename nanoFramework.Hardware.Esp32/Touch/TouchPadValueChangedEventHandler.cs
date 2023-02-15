@@ -10,7 +10,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
     /// </summary>
     /// <param name="sender">The sender <see cref="TouchPad"/>.</param>
     /// <param name="e">The touch arguments.</param>
-    public delegate void PinValueChangedEventHandler(
+    public delegate void TouchPadValueChangedEventHandler(
         object sender,
         TouchPadEventArgs e);
 }

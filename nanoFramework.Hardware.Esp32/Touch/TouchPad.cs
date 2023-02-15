@@ -25,7 +25,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
 
         private int _calibrationData;
         // For events
-        private PinValueChangedEventHandler _callbacks = null;
+        private TouchPadValueChangedEventHandler _callbacks = null;
         private readonly object _syncLock = new object();
         private bool _disposedValue;
 
@@ -302,7 +302,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
         /// <summary>
         /// Occurs when the value of the touch pad changes. this happens when the touch pad is touched or released.
         /// </summary>
-        public event PinValueChangedEventHandler ValueChanged
+        public event TouchPadValueChangedEventHandler ValueChanged
         {
             add
             {
@@ -314,7 +314,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
                     }
 
                     var callbacksOld = _callbacks;
-                    var callbacksNew = (PinValueChangedEventHandler)Delegate.Combine(callbacksOld, value);
+                    var callbacksNew = (TouchPadValueChangedEventHandler)Delegate.Combine(callbacksOld, value);
 
                     try
                     {
@@ -338,7 +338,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
                     }
 
                     var callbacksOld = _callbacks;
-                    var callbacksNew = (PinValueChangedEventHandler)Delegate.Remove(callbacksOld, value);
+                    var callbacksNew = (TouchPadValueChangedEventHandler)Delegate.Remove(callbacksOld, value);
 
                     try
                     {
@@ -359,7 +359,7 @@ namespace nanoFramework.Hardware.Esp32.Touch
         /// <param name="touched">Tur if touched, false if not, so if it's been released.</param>
         internal void OnPinChangedInternal(bool touched)
         {
-            PinValueChangedEventHandler callbacks = null;
+            TouchPadValueChangedEventHandler callbacks = null;
 
             lock (_syncLock)
             {

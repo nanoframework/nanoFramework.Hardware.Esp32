@@ -74,7 +74,7 @@
     <Compile Include="Touch\MeasurementMode.cs" />
     <Compile Include="Touch\MeasurementTime.cs" />
     <Compile Include="Touch\FilterSettingMode.cs" />
-    <Compile Include="Touch\PinValueChangedEventHandler.cs" />
+    <Compile Include="Touch\TouchPadValueChangedEventHandler.cs" />
     <Compile Include="Touch\S2S3FilterSetting.cs" />
     <Compile Include="Touch\TouchChargeSpeed.cs" />
     <Compile Include="Touch\TouchHighVoltage.cs" />
