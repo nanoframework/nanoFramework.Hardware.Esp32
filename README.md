@@ -106,6 +106,70 @@ S2 can only be woke up with 1 touch pad. It is recommended to do tests to find t
 Sleep.EnableWakeupByTouchPad(PadForSleep, thresholdCoefficient: 90);
 ```
 
+## Pulse Counter
+
+Pulse counter allows to count pulses without having to setup a GPIO controller and events. It's a fast way to get count during a specific amount of time. This pulse counter allows as well to use 2 different pins and get a pulse count depending on their respective polarities.
+
+### Pulse Counter with 1 pin
+
+The following code illustrate how to setup a counter for 1 pin:
+
+```csharp
+Gpio​PulseCounter counter = new Gpio​PulseCounter(26);
+counter.Polarity = GpioPulsePolarity.Rising;
+counter.FilterPulses = 0;
+
+counter.Start();
+int inc = 0;
+GpioPulseCount counterCount;
+while (inc++ < 100)
+{
+    counterCount = counter.Read();
+    Console.WriteLine($"{counterCount.RelativeTime}: {counterCount.Count}");
+    Thread.Sleep(1000);
+}
+
+counter.Stop();
+counter.Dispose();
+```
+
+The counter will always be positive and incremental. You can reset to 0 the count by calling the `Reset` function:
+
+```csharp
+GpioPulseCount pulses = counter.Reset();
+// pulses.Count contains the actual count, it is then put to 0 once the function is called
+```
+
+## Pulse Counter with 2 pins
+
+This is typically a rotary encoder scenario. In this case, you need 2 pins and they'll act like in this graphic:**
+
+![rotary encoder principal](https://github.com/nanoframework/nanoFramework.IoT.Device/blob/develop/devices/RotaryEncoder/encoder.png?raw=true)
+
+You can then use a rotary encoder connected to 2 pins:
+
+![rotary encoder](https://github.com/nanoframework/nanoFramework.IoT.Device/blob/develop/devices/RotaryEncoder/RotaryEncoder.Sample_bb.png?raw=true)
+
+The associated code is the same as for 1 pin except in the constructor:
+
+```csharp
+Gpio​PulseCounter encoder = new Gpio​PulseCounter(12, 14);
+encoder.Start();
+int incEncod = 0;
+GpioPulseCount counterCountEncode;
+while (incEncod++ < 100)
+{
+    counterCountEncode = encoder.Read();
+    Console.WriteLine($"{counterCountEncode.RelativeTime}: {counterCountEncode.Count}");
+    Thread.Sleep(1000);
+}
+
+encoder.Stop();
+encoder.Dispose();
+```
+
+As a result, you'll get positives and negative pulses 
+
 ## Feedback and documentation
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
