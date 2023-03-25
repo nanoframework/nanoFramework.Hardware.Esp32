@@ -53,6 +53,9 @@
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
     <Compile Include="GpioPins.cs" />
+    <Compile Include="Gpio\GpioPulseCount.cs" />
+    <Compile Include="Gpio\GpioPulsePolarity.cs" />
+    <Compile Include="Gpio\Gpio​PulseCounter.cs" />
     <Compile Include="HighResEventListener.cs" />
     <Compile Include="HighResTimer.cs" />
     <Compile Include="HighResTimerEvent.cs" />
