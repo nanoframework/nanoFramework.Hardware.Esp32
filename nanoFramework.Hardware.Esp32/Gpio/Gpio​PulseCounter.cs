@@ -21,15 +21,15 @@ namespace System.Device.Gpio
     public sealed class Gpio​PulseCounter : IDisposable
     {
         // property backing fields
-        private int _pinNumberA;
-        private int _pinNumberB;
+        private readonly int _pinNumberA;
+        private readonly int _pinNumberB;
         private GpioPulsePolarity _polarity = GpioPulsePolarity.Falling;
         private bool _countActive = false;
         private ushort _filter;
 
         // this is used as the lock object 
         // a lock is required because multiple threads can access the Gpio​Change​Counter
-        private object _syncLock = new object();
+        private readonly object _syncLock = new object();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Gpio​PulseCounter"/> class associated with the specified pin.

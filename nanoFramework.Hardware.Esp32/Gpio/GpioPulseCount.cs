@@ -9,6 +9,8 @@ namespace System.Device.Gpio
     /// </summary>
     public struct GpioPulseCount
     {
+        // NOTE: This structure is used by the native code, so it must be kept in sync with the native code.
+        // So no auto property used as not supported by nanoCLR. For simplicity, no backing field either.
         /// <summary>
         /// The number of times the transition of polarity specified by <see cref="GpioPulsePolarity"/> occured on the pin.
         /// </summary>
