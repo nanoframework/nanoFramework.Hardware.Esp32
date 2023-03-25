@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.5.1...HEAD)
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.6.1...HEAD)
+
+**Implemented enhancements:**
+
+- Adding Pulse Count for ESP32 and ESP32-S2/S3 [\#179](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/179)
+
+## [v1.6.1](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.6.1) (2023-02-15)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.5.1...v1.6.1)
 
 **Implemented enhancements:**
 
