@@ -175,7 +175,23 @@ namespace nanoFramework.Hardware.Esp32
             /// Gpio Pin 39 used for wakeup.
             /// </summary>
             Pin39 = (UInt64)1 << 39
-        }        
+        }
+
+        /// <summary>
+        /// UART port used for wakeup.
+        /// </summary>
+        public enum WakeUpPort
+        {
+            /// <summary>
+            /// COM1 port.
+            /// </summary>
+            COM1 = 0,
+
+            /// <summary>
+            /// COM2 port.
+            /// </summary>
+            COM2 = 1,
+        }
 
         /// <summary>
         /// Enable Wakeup by Timer.
@@ -226,6 +242,17 @@ namespace nanoFramework.Hardware.Esp32
         public static EspNativeError EnableWakeupByTouchPad(int padNumber1, int padNumber2 = -1, byte thresholdCoefficient = 80)
         {
             return NativeEnableWakeupByTouchPad(padNumber1, padNumber2, thresholdCoefficient);
+        }
+
+        /// <summary>
+        /// Enable wakeup by UART.
+        /// </summary>
+        /// <param name="portNumber">The port to use, only COM1 and COM2 are supported. Pins MUST be properly configured for COM2 for this to work.</param>
+        /// <param name="edgeCount">The number of changes in the RX pin to wakeup the ESP.</param>
+        /// <returns>Returns ESP32 native error enumeration.</returns>
+        public static EspNativeError EnableWakeupByUart(WakeUpPort portNumber, int edgeCount)
+        {
+            return NativeEnableWakeupByUart(portNumber, edgeCount);
         }
 
         /// <summary>
@@ -299,6 +326,9 @@ namespace nanoFramework.Hardware.Esp32
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern EspNativeError NativeEnableWakeupByTouchPad(int padNumber1, int padNumber2, byte thresholdCoefficient);
+        
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private static extern EspNativeError NativeEnableWakeupByUart(WakeUpPort padNumber1, int edgeCount);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern EspNativeError NativeStartLightSleep();
