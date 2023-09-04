@@ -106,6 +106,27 @@ S2 can only be woke up with 1 touch pad. It is recommended to do tests to find t
 Sleep.EnableWakeupByTouchPad(PadForSleep, thresholdCoefficient: 90);
 ```
 
+## UART wake up from light sleep mode
+
+It is possible to use light sleep in any supported nanoFramework ESP32 with UART wake up. There are few elements to keep in mind:
+
+* You **must** properly setup your COM port, in the following for COM2:
+
+    ```csharp
+    nanoFramework.Hardware.Esp32.Configuration.SetPinFunction(19, nanoFramework.Hardware.Esp32.DeviceFunction.COM2_TX);
+    nanoFramework.Hardware.Esp32.Configuration.SetPinFunction(21, nanoFramework.Hardware.Esp32.DeviceFunction.COM2_RX);
+    ```
+
+* Only COM1 and COM2 are supported. Note that by default COM1 is used for debug. Except if you've build your own version, you may not necessarily use it are a normal UART. But you can definitely use it to wake up your board. In that case, the pins are the default ones and the previous step is not necessary.
+* In order to wake up the board, you need to set a threshold on how many changes in the RX pin (the reception pin of the UART) is necessary. According to [the documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/sleep_modes.html#uart-wakeup-light-sleep-only), you will lose few characters. So the sender should take this into consideration in the protocol.
+
+Usage is straight forward:
+
+```csharp
+EnableWakeupByUart(WakeUpPort.COM2, 5);
+StartLightSleep();
+```
+
 ## Pulse Counter
 
 Pulse counter allows to count pulses without having to setup a GPIO controller and events. It's a fast way to get count during a specific amount of time. This pulse counter allows as well to use 2 different pins and get a pulse count depending on their respective polarities.
