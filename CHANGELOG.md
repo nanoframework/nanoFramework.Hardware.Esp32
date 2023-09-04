@@ -2,7 +2,21 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.6.1...HEAD)
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.6.3...HEAD)
+
+**Implemented enhancements:**
+
+- Adding UART wakeup [\#183](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/183)
+
+**Documentation and other chores:**
+
+- Update 1 NuGet dependencies [\#182](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/182)
+- Update 1 NuGet dependencies [\#181](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/181)
+- Update 1 NuGet dependencies [\#180](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/pull/180)
+
+## [v1.6.3](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/tree/v1.6.3) (2023-03-25)
+
+[Full Changelog](https://github.com/nanoframework/nanoFramework.Hardware.Esp32/compare/v1.6.1...v1.6.3)
 
 **Implemented enhancements:**
 
