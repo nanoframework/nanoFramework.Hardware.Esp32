@@ -72,7 +72,27 @@ namespace nanoFramework.Hardware.Esp32
             /// <summary>
             /// Wakeup caused by UART (light sleep only).
             /// </summary>
-            Uart
+            Uart,
+
+            /// <summary>
+            /// Wakeup caused by WIFI (light sleep only).
+            /// </summary>
+            Wifi,
+
+            /// <summary>
+            /// Wakeup caused by COCPU int.
+            /// </summary>
+            CoCpu,
+
+            /// <summary>
+            /// Wakeup caused by COCPU crash.
+            /// </summary>
+            CoCpuTrapTrig,
+
+            /// <summary>
+            /// Wakeup caused by BT (light sleep only).
+            /// </summary>
+            Bt
         }
 
         /// <summary>
