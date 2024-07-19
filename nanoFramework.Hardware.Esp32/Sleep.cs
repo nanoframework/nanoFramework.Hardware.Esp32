@@ -77,6 +77,12 @@ namespace nanoFramework.Hardware.Esp32
 
         /// <summary>
         /// Gpio pins that can be used for wakeup.
+        ///
+        /// ESP32:    0, 2, 4, 12-15, 25-27, 32-39
+        /// ESP32-S2: 0-21
+        /// ESP32-S3: 0-21
+        /// ESP32-C6: 0-7
+        /// ESP32-H2: 7-14
         /// </summary>
         [Flags]
         public enum WakeupGpioPin : UInt64
@@ -88,91 +94,199 @@ namespace nanoFramework.Hardware.Esp32
 
             /// <summary>
             /// Gpio Pin 1 used for wakeup.
+            /// ESP32, ESP32_S2, ESP32_S3, ESP32-C6 only
             /// </summary>
             Pin0 = 1,
 
             /// <summary>
             /// Gpio Pin 2 used for wakeup.
+            /// ESP32_S2, ESP32_S3, ESP32-C6 only
+            /// </summary>
+            Pin1 = (UInt64)1 << 1,
+
+            /// <summary>
+            /// Gpio Pin 2 used for wakeup.
+            /// ESP32, ESP32_S2, ESP32_S3, ESP32-C6 only
             /// </summary>
             Pin2 = (UInt64)1 << 2,
 
             /// <summary>
+            /// Gpio Pin 3 used for wakeup.
+            /// ESP32_S2, ESP32_S3, ESP32-C6 only
+            /// </summary>
+            Pin3 = (UInt64)1 << 3,
+
+            /// <summary>
             /// Gpio Pin 4 used for wakeup.
+            /// ESP32, ESP32_S2, ESP32_S3, ESP32-C6 only
             /// </summary>
             Pin4 = (UInt64)1 << 4,
 
             /// <summary>
+            /// Gpio Pin 5 used for wakeup.
+            /// ESP32_S2, ESP32_S3, ESP32-C6 only
+            /// </summary>
+            Pin5 = (UInt64)1 << 5,
+
+            /// <summary>
+            /// Gpio Pin 6 used for wakeup.
+            /// ESP32_S2, ESP32_S3, ESP32-C6 only
+            /// </summary>
+            Pin6 = (UInt64)1 << 6,
+
+            /// <summary>
+            /// Gpio Pin 7 used for wakeup.
+            /// ESP32_S2, ESP32_S3, ESP32-C6, ESP32_H2 only
+            /// </summary>
+            Pin7 = (UInt64)1 << 7,
+
+            /// <summary>
+            /// Gpio Pin 8 used for wakeup.
+            /// ESP32_S2, ESP32_S3, ESP32_H2 only
+            /// </summary>
+            Pin8 = (UInt64)1 << 8,
+
+            /// <summary>
+            /// Gpio Pin 9 used for wakeup.
+            /// ESP32_S2, ESP32_S3, ESP32_H2 only
+            /// </summary>
+            Pin9 = (UInt64)1 << 9,
+
+            /// <summary>
+            /// Gpio Pin 10 used for wakeup.
+            /// ESP32_S2, ESP32_S3, ESP32_H2 only
+            /// </summary>
+            Pin10 = (UInt64)1 << 10,
+
+            /// <summary>
+            /// Gpio Pin 11 used for wakeup.
+            /// ESP32_S2, ESP32_S3, ESP32_H2 only
+            /// </summary>
+            Pin11 = (UInt64)1 << 11,
+
+            /// <summary>
             /// Gpio Pin 12 used for wakeup.
+            /// ESP32, ESP32_S2, ESP32_S3, ESP32_H2 only
             /// </summary>
             Pin12 = (UInt64)1 << 12,
 
             /// <summary>
             /// Gpio Pin 13 used for wakeup.
+            /// ESP32, ESP32_S2, ESP32_S3, ESP32_H2 only
             /// </summary>
             Pin13 = (UInt64)1 << 13,
 
             /// <summary>
             /// Gpio Pin 14 used for wakeup.
+            /// ESP32, ESP32_S2, ESP32_S3, ESP32_H2 only
             /// </summary>
             Pin14 = (UInt64)1 << 14,
 
             /// <summary>
             /// Gpio Pin 15 used for wakeup.
+            /// ESP32, ESP32_S2, ESP32_S3 only
             /// </summary>
             Pin15 = (UInt64)1 << 15,
 
             /// <summary>
+            /// Gpio Pin 16 used for wakeup.
+            /// ESP32_S2, ESP32_S3 only
+            /// </summary>
+            Pin16 = (UInt64)1 << 16,
+
+            /// <summary>
+            /// Gpio Pin 17 used for wakeup.
+            /// ESP32_S2, ESP32_S3 only
+            /// </summary>
+            Pin17 = (UInt64)1 << 17,
+
+            /// <summary>
+            /// Gpio Pin 18 used for wakeup.
+            /// ESP32_S2, ESP32_S3 only
+            /// </summary>
+            Pin18 = (UInt64)1 << 18,
+
+            /// <summary>
+            /// Gpio Pin 19 used for wakeup.
+            /// ESP32_S2, ESP32_S3 only
+            /// </summary>
+            Pin19 = (UInt64)1 << 19,
+
+            /// <summary>
+            /// Gpio Pin 20 used for wakeup.
+            /// ESP32_S2, ESP32_S3 only
+            /// </summary>
+            Pin20 = (UInt64)1 << 20,
+
+            /// <summary>
+            /// Gpio Pin 21 used for wakeup.
+            /// ESP32_S2, ESP32_S3 only
+            /// </summary>
+            Pin21 = (UInt64)1 << 21,
+
+            /// <summary>
             /// Gpio Pin 25 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin25 = (UInt64)1 << 25,
 
             /// <summary>
             /// Gpio Pin 26 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin26 = (UInt64)1 << 26,
 
             /// <summary>
             /// Gpio Pin 27 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin27 = (UInt64)1 << 27,
 
             /// <summary>
             /// Gpio Pin 32 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin32 = (UInt64)1 << 32,
 
             /// <summary>
             /// Gpio Pin 33 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin33 = (UInt64)1 << 33,
 
             /// <summary>
             /// Gpio Pin 34 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin34 = (UInt64)1 << 34,
 
             /// <summary>
             /// Gpio Pin 35 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin35 = (UInt64)1 << 35,
 
             /// <summary>
             /// Gpio Pin 36 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin36 = (UInt64)1 << 36,
 
             /// <summary>
             /// Gpio Pin 37 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin37 = (UInt64)1 << 37,
 
             /// <summary>
             /// Gpio Pin 38 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin38 = (UInt64)1 << 38,
 
             /// <summary>
             /// Gpio Pin 39 used for wakeup.
+            /// ESP32 only
             /// </summary>
             Pin39 = (UInt64)1 << 39
         }
