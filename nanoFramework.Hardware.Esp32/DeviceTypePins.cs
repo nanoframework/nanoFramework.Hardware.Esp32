@@ -162,6 +162,23 @@ namespace nanoFramework.Hardware.Esp32
         COM3_CTS = DeviceTypes.SERIAL + (3 * ValueTypes.DeviceIndex) + 3,
 
         /// <summary>
+        /// Device function TX data for COM4 
+        /// </summary>
+        COM4_TX = DeviceTypes.SERIAL + (4 * ValueTypes.DeviceIndex) + 0,
+        /// <summary>
+        /// Device function RX data for COM4 
+        /// </summary>
+        COM4_RX = DeviceTypes.SERIAL + (4 * ValueTypes.DeviceIndex) + 1,
+        /// <summary>
+        /// Device function Request to Send(RTS) for COM4
+        /// </summary>
+        COM4_RTS = DeviceTypes.SERIAL + (4 * ValueTypes.DeviceIndex) + 2,
+        /// <summary>
+        /// Device function Clear to Send(CTS) for COM4
+        /// </summary>
+        COM4_CTS = DeviceTypes.SERIAL + (4 * ValueTypes.DeviceIndex) + 3,
+
+        /// <summary>
         /// Device function PWM1 
         /// </summary>
         PWM1 =  DeviceTypes.PWM + (1 * ValueTypes.DeviceIndex) + 0,
