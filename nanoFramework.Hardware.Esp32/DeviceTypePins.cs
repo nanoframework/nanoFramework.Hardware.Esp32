@@ -53,6 +53,11 @@ namespace nanoFramework.Hardware.Esp32
         /// I2S Device type
         /// </summary>
         I2S = 6 * ValueTypes.DeviceType,
+
+        /// <summary>
+        /// SDMMC SD card pins
+        /// </summary>
+        SDMMC = 8 * ValueTypes.DeviceType
     };
 
     /// <summary>
@@ -155,6 +160,23 @@ namespace nanoFramework.Hardware.Esp32
         /// Device function Clear to Send(CTS) for COM3 
         /// </summary>
         COM3_CTS = DeviceTypes.SERIAL + (3 * ValueTypes.DeviceIndex) + 3,
+
+        /// <summary>
+        /// Device function TX data for COM4 
+        /// </summary>
+        COM4_TX = DeviceTypes.SERIAL + (4 * ValueTypes.DeviceIndex) + 0,
+        /// <summary>
+        /// Device function RX data for COM4 
+        /// </summary>
+        COM4_RX = DeviceTypes.SERIAL + (4 * ValueTypes.DeviceIndex) + 1,
+        /// <summary>
+        /// Device function Request to Send(RTS) for COM4
+        /// </summary>
+        COM4_RTS = DeviceTypes.SERIAL + (4 * ValueTypes.DeviceIndex) + 2,
+        /// <summary>
+        /// Device function Clear to Send(CTS) for COM4
+        /// </summary>
+        COM4_CTS = DeviceTypes.SERIAL + (4 * ValueTypes.DeviceIndex) + 3,
 
         /// <summary>
         /// Device function PWM1 
@@ -366,5 +388,65 @@ namespace nanoFramework.Hardware.Esp32
         /// Used for input data typically from a microphone.
         /// </summary>
         I2S2_MDATA_IN = DeviceTypes.I2S + (2 * ValueTypes.DeviceIndex) + 4,
+
+        /// <summary>
+        /// SDMMC clock pin.
+        /// </summary>
+        SDMMC1_CLOCK = DeviceTypes.SDMMC + (1 * ValueTypes.DeviceIndex) + 0,
+
+        /// <summary>
+        /// SDMMC1 command pin
+        /// </summary>
+        SDMMC1_COMMAND = DeviceTypes.SDMMC + (1 * ValueTypes.DeviceIndex) + 1,
+
+        /// <summary>
+        /// SDMMC1 data pin D0
+        /// </summary>
+        SDMMC1_D0 = DeviceTypes.SDMMC + (1 * ValueTypes.DeviceIndex) + 2,
+
+        /// <summary>
+        /// SDMMC1 data pin D1
+        /// </summary>
+        SDMMC1_D1 = DeviceTypes.SDMMC + (1 * ValueTypes.DeviceIndex) + 3,
+
+        /// <summary>
+        /// SDMMC1 data pin D2
+        /// </summary>
+        SDMMC1_D2 = DeviceTypes.SDMMC + (1 * ValueTypes.DeviceIndex) + 4,
+
+        /// <summary>
+        /// SDMMC1 data pin D3
+        /// </summary>
+        SDMMC1_D3 = DeviceTypes.SDMMC + (1 * ValueTypes.DeviceIndex) + 5,
+
+        /// <summary>
+        /// SDMMC2 clock pin.
+        /// </summary>
+        SDMMC2_CLOCK = DeviceTypes.SDMMC + (2 * ValueTypes.DeviceIndex) + 0,
+
+        /// <summary>
+        /// SDMMC2 command pin
+        /// </summary>
+        SDMMC2_COMMAND = DeviceTypes.SDMMC + (2 * ValueTypes.DeviceIndex) + 1,
+
+        /// <summary>
+        /// SDMMC2 data pin D0
+        /// </summary>
+        SDMMC2_D0 = DeviceTypes.SDMMC + (2 * ValueTypes.DeviceIndex) + 2,
+
+        /// <summary>
+        /// SDMMC2 data pin D1
+        /// </summary>
+        SDMMC2_D1 = DeviceTypes.SDMMC + (2 * ValueTypes.DeviceIndex) + 3,
+
+        /// <summary>
+        /// SDMMC2 data pin D2
+        /// </summary>
+        SDMMC2_D2 = DeviceTypes.SDMMC + (2 * ValueTypes.DeviceIndex) + 4,
+
+        /// <summary>
+        /// SDMMC2 data pin D3
+        /// </summary>
+        SDMMC2_D3 = DeviceTypes.SDMMC + (2 * ValueTypes.DeviceIndex) + 5
     };
  }
