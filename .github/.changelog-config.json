@@ -1,0 +1,45 @@
+{
+    "categories": [
+        {
+            "title": "## New Features and enhancements",
+            "labels": [
+                "Type: enhancement"
+            ],
+            "exhaustive": true
+        },
+        {
+            "title": "## Bug Fixes",
+            "labels": [
+                "Type: bug"
+            ],
+            "exhaustive": true
+        },
+        {
+            "title": "## Documentation",
+            "labels": [
+                "Type: documentation"
+            ],
+            "exhaustive": true
+        },
+        {
+            "title": "## ⚠️ Breaking Changes",
+            "labels": [
+                "Breaking-Change"
+            ],
+            "exhaustive": true
+        },
+        {
+            "title": "## Updated dependencies",
+            "labels": [
+                "Type: dependencies"
+            ],
+            "exhaustive": true
+        }
+    ],
+    "sort": "ASC",
+    "template": "${{CHANGELOG}}\n\n**Full Changelog:** ${{RELEASE_DIFF}}\n\nThe following NuGet package is available from this release:\n\n:package: [nanoFramework.Hardware.Esp32](https://www.nuget.org/packages/nanoFramework.Hardware.Esp32/)",
+    "pr_template": "* ${{TITLE}} by @${{AUTHOR}} in #${{NUMBER}}",
+    "empty_template": "- no changes",
+    "max_tags_to_fetch": 200,
+    "max_pull_requests": 200
+}
