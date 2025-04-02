@@ -20,8 +20,8 @@ The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP
 This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion$ (checksum $checksum$).</description>
     <tags>nanoFramework C# csharp netmf netnf esp32</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.17.7" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.11.31" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.17.11" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.11.32" />
     </dependencies>
   </metadata>
   <files>
