@@ -50,7 +50,7 @@ namespace nanoFramework.Hardware.Esp32
                 }
             }
 
-            callbacks?.Invoke(this, new EventArgs());
+            callbacks?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
