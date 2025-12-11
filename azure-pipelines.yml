@@ -52,6 +52,7 @@ steps:
 - template: azure-pipelines-templates/class-lib-build.yml@templates
   parameters:
     sonarCloudProject: 'nanoframework_lib-nanoFramework.Hardware.Esp32'
+    usePreviewBuild: true
 
 # step from template @ nf-tools repo
 # report error
