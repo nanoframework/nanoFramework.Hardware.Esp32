@@ -10,7 +10,7 @@ on:
   # At 00:10 UTC every Mond and Thu.
   - cron:  '00 10 * * Mon,Thu'
   repository_dispatch:
-    types: update-dependencies
+    types: update-dependencies-develop
 
 jobs:
   update-dependencies:
