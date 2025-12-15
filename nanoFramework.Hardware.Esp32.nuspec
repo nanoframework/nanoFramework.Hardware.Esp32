@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>nanoFramework.Hardware.Esp32</id>
@@ -20,8 +20,8 @@ The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP
 This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion$ (checksum $checksum$).</description>
     <tags>nanoFramework C# csharp netmf netnf esp32</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="2.0.0-preview.29" />
-      <dependency id="nanoFramework.Runtime.Events" version="2.0.0-preview.1" />
+      <dependency id="nanoFramework.CoreLibrary" version="2.0.0-preview.30" />
+      <dependency id="nanoFramework.Runtime.Events" version="2.0.0-preview.5" />
     </dependencies>
   </metadata>
   <files>
