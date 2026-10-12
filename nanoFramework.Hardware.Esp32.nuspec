@@ -17,11 +17,11 @@
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
     <description>This package includes the nanoFramework.Hardware.Esp32 assembly for .NET nanoFramework C# projects.
 The nanoFramework.Hardware.Esp32 assembly contains functions specific to the ESP32 device.
-This package requires a target with nanoFramework.Hardware.Esp32 v$nativeVersion$ (checksum $checksum$).</description>
-    <tags>nanoFramework C# csharp netmf netnf esp32</tags>
+This package requires a target with nanoFramework.Hardware.Esp32 native contract hash $nativeContractHash$.</description>
+    <tags>nanoFramework C# csharp netmf netnf esp32 nfnc-$nativeContractHash$</tags>
     <dependencies>
       <group targetFramework=".NETnanoFramework1.0">
-        <dependency id="nanoFramework.CoreLibrary" version="2.0.0-preview.52" />
+        <dependency id="nanoFramework.CoreLibrary" version="2.0.0-preview.63" />
         <dependency id="nanoFramework.Runtime.Events" version="2.0.0-preview.13" />
       </group>
     </dependencies>

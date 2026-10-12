@@ -10,11 +10,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("nanoFramework.Hardware.Esp32")]
 [assembly: AssemblyCopyright("Copyright © nanoFramework Contributors 2019")]
 
-////////////////////////////////////////////////////////////////
-// update this whenever the native assembly signature changes //
-[assembly: AssemblyNativeVersion("100.2.0.1")]
-////////////////////////////////////////////////////////////////
-
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
