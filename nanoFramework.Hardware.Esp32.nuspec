@@ -22,7 +22,7 @@ This package requires a target with nanoFramework.Hardware.Esp32 native contract
     <dependencies>
       <group targetFramework=".NETnanoFramework1.0">
         <dependency id="nanoFramework.CoreLibrary" version="2.0.0-preview.63" />
-        <dependency id="nanoFramework.Runtime.Events" version="2.0.0-preview.13" />
+        <dependency id="nanoFramework.Runtime.Events" version="2.0.0-preview.19" />
       </group>
     </dependencies>
   </metadata>
